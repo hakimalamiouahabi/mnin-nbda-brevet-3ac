@@ -1,0 +1,24 @@
+name: Validation sans API
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validation-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  controls:
+    name: Contrôle documentaire et PHP
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Télécharger le dépôt
+        uses: actions/checkout@v4
+      - name: Vérifier le référentiel et syntaxe PHP
+        run: python3 scripts/validate_workspace.py
