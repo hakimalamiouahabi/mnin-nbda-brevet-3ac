@@ -1,9 +1,7 @@
-name: Validation sans API
+name: Validation organigramme (sans API)
 on:
-  push:
-    branches: [main]
-  pull_request:
   workflow_dispatch:
+  pull_request:
 
 permissions:
   contents: read
@@ -13,12 +11,11 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  controls:
-    name: Contrôle documentaire et PHP
+  validation:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - name: Télécharger le dépôt
+      - name: Checkout
         uses: actions/checkout@v4
-      - name: Vérifier le référentiel et syntaxe PHP
+      - name: Contrôle structure des agents et PHP si disponible
         run: python3 scripts/validate_workspace.py
