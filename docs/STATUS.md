@@ -1,27 +1,28 @@
-# État factuel — 11 octobre 2026
+# État vérifié — 12 octobre 2026
 
-## Vérifié
-- WordPress.com existant : site MNIN BDA sur sous-domaine de staging intellego718821273.wpcomstaging.com ; non lancé publiquement.
-- Accès d'administration via intégration WordPress.com disponible.
-- Thème actif : MNIN NBDA V4 (slug mnin-nbda).
-- Extensions actives : WordPress Agent, Gutenberg, Jetpack, Page Optimize, Akismet, CoBlocks, Gravatar Enhanced, Layout Grid.
-- GitHub : hakimalamiouahabi/mnin-nbda-brevet-3ac accessible en écriture ; dépôt initialement vide.
-- Prompts masters V4.2 et Desktop XL importés comme références textuelles.
+## Réalisé
+- Site WordPress.com MNIN NBDA accessible par intégration : staging intellego718821273.wpcomstaging.com ; site non lancé publiquement.
+- Thème actif vérifié : **MNIN NBDA V4**, slug `mnin-nbda`.
+- Extensions actives constatées : WordPress Agent, Gutenberg, Jetpack, Page Optimize, Akismet, CoBlocks, Gravatar Enhanced, Layout Grid.
+- Dépôt privé GitHub **hakimalamiouahabi/mnin-nbda-brevet-3ac** accessible en écriture.
+- Deux prompts masters importés dans docs/references/ ; sauts de ligne du master V4.2 corrigés.
+- **Huit consignes de rôle créées** (DSI, Data Eng, Data Scientist, Data Analyst, AI Eng, Web, Design/Content, DevOps), manifest et protocole de coordination ajoutés.
+- GitHub Actions : script de validation documentaire et syntaxique prévu ; exécution effective du workflow NON TESTÉ.
 
-## Pas encore vérifié
-- Fichiers réels du thème WordPress, sa compatibilité et son archivage.
-- Conformité réelle de la dernière maquette approuvée.
-- Disponibilité d'un environnement WordPress local pour tests d'activation.
-- Exécution réelle de tests et déploiement de ZIP.
-- Prise en charge par Work d'une programmation autonome de quatre rôles.
-- Validation du périmètre de classes : V4.2 privilégie le Brevet 3AC, la maquette la plus récente mentionne aussi 1AC et 2AC.
-- Référence visuelle originale (images) non encore enregistrée dans ce dépôt.
+## Travail non encore exécuté
+- Aucun des huit rôles n'a été déployé comme processus IA permanent ou sous-agent simultané.
+- Aucune tâche Work récurrente n'a été configurée ni déclenchée.
+- Audit complet des sources du thème actif ; sauvegarde et comparaison visuelle avec la dernière maquette approuvée.
+- Implémentation réelle du code du site dans le dépôt ; tests WordPress sur installation propre ; création des ZIP livrables.
+- Précision de périmètre entre V4.2 (Brevet 3AC) et maquette (1AC/2AC/3AC).
+- Contrôle du coût/quota réel de GitHub Actions pour le compte connecté.
 
-## Prochaine action P0
-Auditer en lecture seule le thème et les contenus actuels ; vérifier les contraintes de WordPress.com et préparer une sauvegarde. Aucun déploiement permis avant approbation.
+## Première tâche P0
+DSI + Web + DevOps + Design : audit **non destructif** de WordPress et du thème actuel, plan de sauvegarde et liste d'écarts avec les maquettes validées.
 
-## Prochaine action P1
-Mettre en œuvre et tester la Home selon la dernière maquette validée sur FR/AR et desktop/mobile. Aucun bloc matières sur la Home.
-
-## Alerte coûts et autonomie
-Aucune API payante utilisée. Les fichiers de rôle sont créés mais l'autonomie Work/Codex et la planification restent non activées. GitHub Actions est soumis au quota propre au compte.
+## Points de contrôle
+- Aucune API IA payante ajoutée.
+- Aucune extension WordPress installée/activée/désactivée par ces travaux.
+- Aucun déploiement WordPress réalisé.
+- GitHub Actions n'exécute pas d'agents IA.
+- Ne pas considérer la finalisation acquise avant recette technique et validation explicite.
