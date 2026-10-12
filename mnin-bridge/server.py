@@ -12,6 +12,11 @@ from access_policy import public_policy_summary
 mcp = FastMCP("MNIN Bridge", host="127.0.0.1", port=8000, stateless_http=True, json_response=True)
 
 
+def _require_verified_pro_standard_chat() -> None:
+    """OAuth integration is not implemented. NEVER trust user/model-supplied claims."""
+    raise PermissionError("Protected tools disabled: OAuth, Pro entitlement and standard chat client attestation are not verified")
+
+
 @mcp.tool()
 def bridge_status() -> dict:
     """Read actual readiness. Does not claim agents are active."""
@@ -30,12 +35,14 @@ def bridge_status() -> dict:
 @mcp.tool()
 def bridge_list_assets() -> dict:
     """List image filenames in the approved, private, mounted asset directory."""
+    _require_verified_pro_standard_chat()
     return list_assets()
 
 
 @mcp.tool()
 def bridge_verify_original(filename: str, expected_sha256: str = "") -> dict:
     """Read original bytes and verify SHA-256; do not change image pixels."""
+    _require_verified_pro_standard_chat()
     return asset_info(filename, expected_sha256)
 
 
@@ -48,12 +55,14 @@ def bridge_request_home_qa(branch: str, home_path: str, owner_approved: bool = F
 @mcp.tool()
 def bridge_get_qa_run(run_id: int) -> dict:
     """Read factual GitHub Actions execution status."""
+    _require_verified_pro_standard_chat()
     return qa_run(run_id)
 
 
 @mcp.tool()
 def bridge_get_qa_artifacts(run_id: int) -> dict:
     """Read names and download URLs for genuine workflow artifacts."""
+    _require_verified_pro_standard_chat()
     return qa_artifacts(run_id)
 
 
@@ -80,30 +89,35 @@ def bridge_validate_mission(kind: str, inputs: dict) -> dict:
 @mcp.tool()
 def bridge_propose_mission(kind: str, inputs: dict, idempotency_key: str = "") -> dict:
     """Store a planned mission locally. DOES NOT execute code, deploy or spawn agents."""
+    _require_verified_pro_standard_chat()
     return _local_store().propose(kind, inputs, idempotency_key)
 
 
 @mcp.tool()
 def bridge_list_missions(limit: int = 20) -> list[dict]:
     """Read recorded mission proposals. Local authorization still required."""
+    _require_verified_pro_standard_chat()
     return _local_store().list(limit)
 
 
 @mcp.tool()
 def bridge_get_mission(mission_id: str) -> dict:
     """Read one mission, without execution."""
+    _require_verified_pro_standard_chat()
     return _local_store().read(mission_id)
 
 
 @mcp.tool()
 def bridge_preview_mission(mission_id: str) -> dict:
     """Show planned roles, blockers, evidence requirements and scope."""
+    _require_verified_pro_standard_chat()
     return _local_store().preview(mission_id)
 
 
 @mcp.tool()
 def bridge_mission_audit(mission_id: str) -> list[dict]:
     """Read recorded audit events from the local mission store."""
+    _require_verified_pro_standard_chat()
     return _local_store().audit(mission_id)
 
 
