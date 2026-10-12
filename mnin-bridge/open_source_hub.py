@@ -21,14 +21,14 @@ TOOLS = (
         "url": "https://github.com/dequelabs/axe-core", "license": "MPL-2.0",
         "purpose": "Rule-based accessibility violations in local browser QA",
         "domains": ["accessibility", "browser", "fr_ar_rtl"],
-        "package": "axe-core", "execution": "OPTIONAL_BROWSER_QA",
+        "package": "axe-core", "execution": "IN_MANUAL_BROWSER_QA_CODE",
     },
     {
         "id": "html_validate", "repository": "html-validate/html-validate",
         "url": "https://github.com/html-validate/html-validate", "license": "MIT",
         "purpose": "Offline HTML structure validation",
         "domains": ["html", "accessibility", "quality"],
-        "package": "html-validate", "execution": "OPTIONAL_CI",
+        "package": "html-validate", "execution": "IN_MANUAL_BROWSER_QA_WORKFLOW",
     },
     {
         "id": "lighthouse", "repository": "GoogleChrome/lighthouse",
