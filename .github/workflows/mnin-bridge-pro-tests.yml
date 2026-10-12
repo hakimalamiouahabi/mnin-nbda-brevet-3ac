@@ -1,0 +1,36 @@
+name: MNIN Bridge Pro - Unit checks
+on:
+  pull_request:
+    paths:
+      - 'mnin-bridge/**'
+      - '.github/workflows/mnin-bridge-pro-tests.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  safe-unit-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Compile all Python sources
+        run: python -m compileall -q mnin-bridge
+      - name: Run unit tests (no network or paid API)
+        run: python -m unittest discover -s mnin-bridge/tests -v
+      - name: Verify policy manifest
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          p=pathlib.Path('mnin-bridge/owner_delegation_policy.json')
+          v=json.loads(p.read_text(encoding='utf-8'))
+          assert v['standing_delegation']['enabled'] is True
+          assert v['identity_gate']['target_subscription']=='Pro'
+          assert 'wordpress.production_write' in v['standing_delegation']['requires_per_action_approval']
+          assert v['operational_state']['mcp_server_deployed'] is False
+          print('POLICY_MANIFEST_PASS')
+          PY
+      - name: Never deploy
+        run: echo 'Tests only. No WordPress changes, no service deploy, no secrets.'
