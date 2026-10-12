@@ -1,0 +1,54 @@
+name: MNIN Bridge - Home browser QA
+on:
+  workflow_dispatch:
+    inputs:
+      home_path:
+        description: "HTML local sous site/, home/ ou preview/"
+        required: true
+        default: site/index.html
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  browser-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check local HTML path
+        env:
+          MNIN_HOME_PATH: ${{ inputs.home_path }}
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import os, pathlib, re
+          p = os.environ['MNIN_HOME_PATH']
+          assert re.fullmatch(r'(site|home|preview)/[A-Za-z0-9._/-]+\.html', p) and '..' not in p
+          assert pathlib.Path(p).is_file(), 'BLOQUE: missing local HTML ' + p
+          PY
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install browser tooling (job-scoped)
+        run: |
+          cd mnin-bridge/runner
+          npm install --no-save --no-package-lock playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Serve local static checkout
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/mnin-http.log 2>&1 &
+          sleep 2
+      - name: Test and capture full pages
+        env:
+          MNIN_HOME_PATH: ${{ inputs.home_path }}
+        run: node mnin-bridge/runner/home-qa.mjs
+      - name: Return QA artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mnin-bridge-qa-evidence
+          path: mnin-bridge-qa-results/
+          if-no-files-found: warn
+          retention-days: 7
