@@ -19,7 +19,7 @@ def bridge_status() -> dict:
         "repository": github_repo(),
         "asset_directory_configured": bool(os.getenv("MNIN_ASSET_ROOT")),
         "github_credentials_configured": bool(os.getenv("MNIN_GITHUB_TOKEN")),
-        "qa_dispatch_enabled": os.getenv("MNIN_ENABLE_DISPATCH") == "1",
+        "qa_dispatch_enabled": False,  # No independent OAuth approval system yet
         "active_autonomous_agents": "NOT VERIFIED",
         "wordpress_writes": "DISABLED",
         "remote_mcp_connection": "NOT CONFIGURED",
@@ -41,7 +41,7 @@ def bridge_verify_original(filename: str, expected_sha256: str = "") -> dict:
 @mcp.tool()
 def bridge_request_home_qa(branch: str, home_path: str, owner_approved: bool = False) -> dict:
     """Request a browser QA job only if separately authorized and enabled."""
-    return dispatch_qa(branch, home_path, owner_approved)
+    raise RuntimeError("QA execution disabled in v0.2 until independent authenticated approval is implemented")
 
 
 @mcp.tool()
@@ -102,7 +102,7 @@ def bridge_preview_mission(mission_id: str) -> dict:
 
 @mcp.tool()
 def bridge_mission_audit(mission_id: str) -> list[dict]:
-    """Read immutable audit events from the local mission store."""
+    """Read recorded audit events from the local mission store."""
     return _local_store().audit(mission_id)
 
 
