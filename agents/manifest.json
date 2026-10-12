@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "project": "MNIN NBDA",
+  "execution_mode": "role_prompts_for_work_codex_not_autonomous_running_processes",
+  "policy": {
+    "paid_ai_api": false,
+    "write_to_wordpress_requires_approval": true,
+    "production_deploy_requires_approval": true,
+    "student_personal_data_in_git": false,
+    "required_test_statuses": [
+      "PASS",
+      "FAIL",
+      "NON TESTÉ",
+      "BLOQUÉ"
+    ]
+  },
+  "orchestrator": "DSI",
+  "agents": [
+    {
+      "id": "DSI",
+      "name": "Directeur SI",
+      "file": "agents/01-directeur-si.md",
+      "outputs": [
+        "architecture",
+        "backlog",
+        "decision_log"
+      ]
+    },
+    {
+      "id": "DATA_ENG",
+      "name": "Data Engineering",
+      "file": "agents/02-data-engineering.md",
+      "outputs": [
+        "data_model",
+        "lineage",
+        "ingestion_contracts"
+      ]
+    },
+    {
+      "id": "DATA_SCI",
+      "name": "Data Scientist",
+      "file": "agents/03-data-science.md",
+      "outputs": [
+        "diagnostic_method",
+        "measurement_plan",
+        "evaluations"
+      ]
+    },
+    {
+      "id": "DATA_ANALYST",
+      "name": "Data Analyst",
+      "file": "agents/04-data-analyst.md",
+      "outputs": [
+        "kpi_dictionary",
+        "reporting_spec",
+        "dashboards"
+      ]
+    },
+    {
+      "id": "AI_ENG",
+      "name": "AI Engineering",
+      "file": "agents/05-ia-engineering.md",
+      "outputs": [
+        "ai_architecture",
+        "evaluation",
+        "safety_review"
+      ]
+    },
+    {
+      "id": "WEB_DEV",
+      "name": "Web Developer",
+      "file": "agents/06-developpement-web.md",
+      "outputs": [
+        "theme",
+        "core_plugin",
+        "tests"
+      ]
+    },
+    {
+      "id": "DESIGN_CONTENT",
+      "name": "Design & Content Creator",
+      "file": "agents/07-design-content.md",
+      "outputs": [
+        "design_system",
+        "content_guide",
+        "ui_audits"
+      ]
+    },
+    {
+      "id": "DEVOPS",
+      "name": "DevOps",
+      "file": "agents/08-devops.md",
+      "outputs": [
+        "ci",
+        "builds",
+        "qa_artifacts"
+      ]
+    }
+  ]
+}
