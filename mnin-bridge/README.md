@@ -1,15 +1,14 @@
-# MNIN Bridge Pro — v0.5 / ChatGPT Pro standard uniquement
+# MNIN Bridge Pro v0.7 — développement premium assisté par open source
 
-**Code disponible dans GitHub, mais plugin personnalisé NON connecté, NON déployé et sans privilège d'écriture MCP.** Aucun agent autonome indépendant, aucune écriture WordPress. Work et Codex exclus des parcours ciblés.
+**Livré dans une branche GitHub, non connecté comme plugin MCP personnalisé à ChatGPT.** Chat standard cible Pro, hors Work/Codex. Aucune API IA payante, aucun site WordPress modifié, aucun agent autonome lancé.
 
-- [Documentation 0.5 et périmètre Pro](docs/CHATGPT_PRO_PREMIUM_V05.md)
-- [Skill Directeur SI ChatGPT Pro](skills/chatgpt-pro/SKILL.md)
-- `agent_conductor.py` : 4 flux premium, chaîne réelle de 43 rôles, preuves et dépendances.
-- `premium_suite.py` : 10 modules spécialisés et délégation classifiée.
-- `owner_delegation_policy.json` : **consigne propriétaire permanente** et autonomie maximale dans les capacités réelles, révocable. Elle ne remplace ni OAuth, ni les droits des applications ou les confirmations obligatoires.
-- `tests/` et `.github/workflows/validation.yml` : syntaxe et tests unitaires lancés par GitHub Actions à chaque pull request (résultats à vérifier).
+**Intégrations à partir des dépôts officiels :** [huit projets open source](docs/OPEN_SOURCE_INTEGRATIONS_V07.md). Le runner GitHub QA manuel combine désormais Playwright, axe-core et HTML-Validate (code présent, exécution non vérifiée). Lighthouse, SVGO, Sharp, WordPress Coding Standards et Prettier sont catalogués comme pistes futures, et non installés.
 
-**Vérification Pro exclusivement :** faute d'attestation fiable de forfait et de surface fournie au serveur, tout privilège réservé à Pro reste **BLOQUÉ**. Le serveur de planification ne prétend pas filtrer techniquement les utilisateurs par abonnement.
+**Outils MCP ajoutés :** `bridge_open_source_catalog`, `bridge_open_source_pipeline`, `bridge_audit_local_home`. Le dernier analyse une copie HTML locale approuvée hors réseau, inspecte le SHA-256 et les dimensions d'images, relève des anomalies HTML/RTL, et produit des priorités de correction sans écriture.
+
+**Délégation permanente** : volonté du propriétaire intégrée à `owner_delegation_policy.json`, dans le cadre des permissions authentifiées et validations imposées. La restriction technique « Pro uniquement » reste **NON VÉRIFIÉE** sans preuve fiable de forfait/surface. Aucun accès privilégié implicite.
+
+**Tests :** nouveaux fichiers unitaires et CI déclarative ; ne pas indiquer PASS sans exécution observée.
 
 ---
 
