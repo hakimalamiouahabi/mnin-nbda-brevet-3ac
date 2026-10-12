@@ -1,3 +1,48 @@
+
+# MNIN Bridge v0.5 — Hub de bibliothèques GitHub publiques
+
+**Statut : 11 référentiels GitHub publics et non archivés vérifiés, 6 bibliothèques npm déclarées pour environnement isolé, outils MCP de catalogue enregistrés, serveur ChatGPT non connecté.**
+
+## Registre officiel
+`integrations/open_source_registry.json` recense les URL, licences SPDX, compétences et états de connexion de :
+Playwright, Lighthouse, axe-core, Pixelmatch, Sharp, SVGO, Three.js, glTF-Transform, WP-CLI, MCP Python SDK et glTF-Validator.
+
+**Distinctions :**
+- `catalogued` : GitHub public recensé, pas installé ni exécutable.
+- `proposed_runtime_dependency` : dépendance déclarée dans `runner/package.json`, installation uniquement durant des tests/runner autorisés.
+- `already_integrated_code` : code source de l'adaptateur présent, ne signifie pas que le navigateur a été lancé.
+- `existing_python_dependency` : référence à la dépendance `mcp` de `requirements.txt`, serveur non connecté.
+
+## Les connexions réellement préparées
+- BrowserLab : Playwright, 21 formats et captures viewport / pleine page.
+- AccessibilityLab : axe-core branché au test navigateur via `MNIN_A11Y_MODE=on` ; contrôles automatiques partiels, pas certificat WCAG.
+- VisualDiffLab : `compare-captures.mjs` utilise Pixelmatch et PNGJS ; mêmes dimensions obligatoires, sortie dérivée, jamais de retouche du PNG original.
+- AssetLab : Sharp déclaré dans un runner isolé ; module Python interne pour lire dimensions natives PNG/JPEG/WebP, SVG et métadonnées GLB.
+- VectorLab : SVGO déclaré et vérifié par smoke test npm ; jamais de réécriture automatique du SVG approuvé.
+- GitHub Registry : deux outils MCP de lecture (`bridge_open_source_catalog`, `bridge_open_source_readiness`).
+
+## Sources cataloguées pour intégration ultérieure
+Lighthouse, Three.js, glTF-Transform, glTF-Validator, WP-CLI : **aucune intégration opérationnelle déclarée ici**. Leur présence dans le registre ne donne aucun droit ou accès WordPress.
+
+## Installer les dépendances pour test (dans runner isolé)
+```bash
+cd mnin-bridge/runner
+npm install --no-audit --no-fund --no-package-lock
+npm run oss:smoke
+```
+Le pipeline CI `mnin-bridge-oss-checks.yml` valide les packages et les tests Python en parallèle, sans modifier WordPress.
+Le workflow QA BrowserLab peut uniquement être demandé avec le site HTML existant dans `site/`, `home/` ou `preview/`. La QA réelle est **BLOQUÉE** sans fichier HTML et runner effectivement exécuté.
+
+## Ce que GitHub et ChatGPT Pro ne font pas automatiquement
+Un dépôt public n'est ni une application installée ni un agent. Une connexion GitHub peut lire le code mais ne charge pas ses exécutables dans ChatGPT. Pour appeler les outils dans les conversations ChatGPT Pro classiques, il faut déployer **un serveur MCP HTTPS réellement authentifié**, ajouter le plugin à ChatGPT depuis l'interface et satisfaire les permissions. Le contrôle strict de l'abonnement Pro seul et l'exclusion Work/Codex nécessitent une preuve d'identité de surface qui n'est pas garantie par un dépôt GitHub ou un manifeste.
+
+Sans preuve fiable d'appartenance au plan Pro et à la bonne surface, les outils privés restent bloqués (fail closed). Les bibliothèques open source peuvent avoir un coût d'infrastructure ou d'exécution et leurs licences doivent être respectées.
+
+## Protection de la maquette originale
+Pas de régénération non autorisée, pas de redimensionnement présentant le raster d'origine comme une vraie source 8K, pas de publication du PNG original dans un dépôt public. Les captures pleine page doivent garder leur hauteur naturelle et leurs noms documenter largeur, hauteur et viewport.
+
+---
+
 # MNIN Bridge Pro — v0.3 (ChatGPT Pro, conversation classique)
 
 **ÉTAT : code préparé sur branche isolée ; plugin non installé, non déployé et sans serveur d'authentification. 43 tests unitaires PASS sur GitHub Actions (run 38322321083) ; tests OAuth de bout en bout et intégration MCP NON TESTÉS.**
