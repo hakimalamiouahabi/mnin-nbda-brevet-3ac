@@ -107,15 +107,9 @@ def github_api(method, path, payload=None):
 
 def dispatch_qa(branch, home_path, owner_approved=False):
     validate_dispatch(branch, home_path)
-    if os.getenv("MNIN_ENABLE_DISPATCH") != "1":
-        raise RuntimeError("Dispatch is disabled by default")
-    if not owner_approved:
-        raise RuntimeError("Owner approval required for this run")
-    res = github_api("POST", "/actions/workflows/" + WORKFLOW + "/dispatches",
-                     {"ref": branch, "inputs": {"home_path": home_path}})
-    return {"submitted": res["status"] == 204, "branch": branch,
-            "home_path": home_path,
-            "note": "Submission is NOT proof of success; check run status"}
+    # Model-provided owner_approved is never accepted as authorization.
+    # No public MCP write tool is exposed until real OAuth user approval exists.
+    raise RuntimeError("QA dispatch is hard-disabled pending out-of-band authorization")
 
 
 def qa_run(run_id):
