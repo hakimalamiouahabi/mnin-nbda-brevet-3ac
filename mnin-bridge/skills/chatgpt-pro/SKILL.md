@@ -41,3 +41,12 @@ L'objectif est un site WordPress premium, conforme au design approuvé, authenti
 
 ## Rapport final obligatoire
 Un compte rendu sobre, factuel, concis et daté : objectif ; rôles mobilisés dans l'analyse ; artefacts et commits réels ; statut des tests PASS/FAIL/NON TESTÉ/BLOQUÉ ; preuves ; changements WordPress réels ; risques ; action suivante. Ne jamais présenter des rôles virtuels, des tâches prévues ou une maquette générée comme du travail exécuté par des agents indépendants.
+
+
+## Outillage GitHub open source v0.7
+Consulter `docs/OPEN_SOURCE_INTEGRATIONS_V07.md` puis `open_source_hub.py` pour huit dépôts officiels, les licences et l'état **réel** de leur intégration. Ne jamais confondre un lien GitHub avec une app ChatGPT installée ou un module effectivement exécuté.
+
+Le `bridge_open_source_catalog()` liste les projets publics ; `bridge_open_source_pipeline(mission)` propose les tâches sans les lancer. Pour un contrôle hors réseau sur une copie HTML locale expressément montée, `bridge_audit_local_home(html_path, target_dpr)` analyse les fichiers et livre un rapport P0/P1/P2, sans correction. Le workflow browser QA manuel combine Playwright, axe-core et HTML-Validate pour les vraies pages HTML présentes en branche ; aucun résultat PASS sans run observé.
+
+Privilégier les références approuvées, SHA-256, SVG vectoriels et médias natifs ; aucune promesse de 8K via simple mise à l'échelle. Toute dépendance tierce nécessite revue de sa version, licence, supply-chain et ressources d'exécution. Aucun accès réseau d'une page HTML non vérifiée, aucune publication WordPress automatique.
+
