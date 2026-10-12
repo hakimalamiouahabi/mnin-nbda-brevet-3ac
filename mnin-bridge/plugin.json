@@ -20,7 +20,23 @@
   ],
   "extensions": {
     "com.openai": {
-      "onboardingSkill": "./skills/chatgpt-pro/SKILL.md"
+      "onboardingSkill": "./skills/chatgpt-pro/SKILL.md",
+      "interface": {
+        "displayName": "MNIN Bridge Pro",
+        "shortDescription": "Direction SI et qualité premium pour WordPress dans le chat standard.",
+        "longDescription": "Orchestration documentaire des 43 rôles MNIN NBDA, dix modules premium et quatre parcours de livraison. Aucune API IA payante, aucune écriture WordPress et aucune instance autonome lancée par le plugin.",
+        "developerName": "Équipe MNIN NBDA",
+        "category": "Productivity",
+        "capabilities": [
+          "Read"
+        ],
+        "websiteURL": "https://github.com/hakimalamiouahabi/mnin-nbda-brevet-3ac",
+        "defaultPrompt": [
+          "Prépare une mission de refonte premium de ma Home WordPress en respectant la maquette validée.",
+          "Audite les originaux et explique les risques de pixellisation sur écrans haute densité.",
+          "Coordonne les rôles nécessaires pour un module pédagogique bilingue FR/AR RTL sans modifier le site."
+        ]
+      }
     }
   }
 }
