@@ -1,26 +1,27 @@
-# MNIN NBDA — développement WordPress
+# MNIN NBDA — Référentiel des huit experts IA
 
-Référentiel du projet éducatif marocain MNIN NBDA. État initial : **orchestration préparée, agents non autonomes tant que les exécutions Work/Codex ne sont pas configurées**.
+Dépôt de coordination ChatGPT Work / Codex / GitHub pour le projet WordPress MNIN NBDA. **Huit rôles sont configurés en Markdown, mais aucun service IA permanent n'est lancé par leur seule création.**
 
-## Références
-- docs/references/PROMPT_MASTER_WORDPRESS_V4_2.md : spécifications métier et techniques V4.2.
-- docs/references/PROMPT_MASTER_HOME_DESKTOP_XL_2026-10-11.md : dernière référence textuelle responsive de l'accueil.
-- AGENTS.md : règles transversales de travail.
-- agents/ : quatre rôles spécialisés à utiliser dans ChatGPT Work / Codex.
-- docs/WORK_MASTER_START.md : instruction de démarrage dans Work.
-- docs/ROADMAP.md : étapes, dépendances et recette.
-- docs/STATUS.md : situation réelle et points en attente.
+## Commencer
+1. Lire docs/WORK_MASTER_START.md dans ChatGPT Work avec l'accès au dépôt GitHub.
+2. Confier la première mission au DSI : audit **sans écriture** du site WordPress MNIN NBDA V4 et préparation du backlog.
+3. Répartir les travaux uniquement entre les rôles pertinents.
+4. Versionner les changements, tester, documenter et obtenir l'accord avant déploiement.
 
-## Contraintes invariantes
-- Aucune clé ni abonnement à une API IA payante.
-- Pas de nouveau coût logiciel obligatoire ; aucune opération susceptible de facturation sans autorisation.
-- Aucune modification du WordPress existant avant approbation explicite de la livraison.
-- Site WordPress.com déjà existant (staging) : ne pas substituer ce dépôt à ses fichiers sans sauvegarde/audit.
-- Respect intégral de la dernière maquette validée : priorité à l'accueil, aucun bloc de matières sur l'accueil.
-- Thème personnalisé et extension métier mnin-nbda-core ; pas de Tutor LMS / Elementor obligatoire.
-- Langues FR/AR et RTL ; Polylang Free facultatif, activation conditionnée à un test.
-- Protection des données des mineurs et séparation stricte des données des foyers.
-- Aucun test non réalisé ne doit être déclaré réussi.
+## Fichiers centraux
+- AGENTS.md : règles communes.
+- agents/manifest.json : inventaire formel des huit rôles.
+- agents/01-directeur-si.md à agents/08-devops.md : prompts spécialisés.
+- docs/AGENT_OPERATING_MODEL.md : orchestration, handoffs, portes de validation.
+- docs/WORK_MASTER_START.md : prompt maître de démarrage dans Work.
+- docs/ROADMAP.md, docs/STATUS.md : phases et état vérifié.
+- docs/references/PROMPT_MASTER_WORDPRESS_V4_2.md : cahier directeur.
+- docs/references/PROMPT_MASTER_HOME_DESKTOP_XL_2026-10-11.md : référence textuelle de Home.
+- scripts/validate_workspace.py : contrôles déterministes locaux.
+- .github/workflows/validation.yml : CI sans clé API IA.
 
-## Démarrage
-Dans Work : ouvrir le dépôt autorisé, lire AGENTS.md, docs/WORK_MASTER_START.md et les deux prompts masters ; procéder à l'audit non destructif puis produire les premières tâches. Les fichiers agents/ sont des consignes de rôle, pas des processus automatiquement activés.
+## Architecture cible
+WordPress personnalisé : mnin-nbda-theme (design) + mnin-nbda-core (pédagogie). Éviter Tutor LMS / Elementor obligatoires, préserver FR/AR et RTL, aucune dépendance externe payante nécessaire aux fonctions essentielles.
+
+## Sécurité et limites
+Le site WordPress existant est en staging. Aucun écrasement, installation, activation d'extension ou mise en production n'est autorisé automatiquement. Aucune API IA payante n'est configurée. Les quotas GitHub Actions et les fonctionnalités Work/Codex dépendent du compte et de l'offre accessibles ; **une exécution 24 h/24 non-stop n'est pas mise en place ici**.
