@@ -54,7 +54,7 @@ class _PageParser(HTMLParser):
         if tag == "meta":
             if (attrs.get("name") or "").lower() == "description" and (attrs.get("content") or "").strip():
                 self.meta_description = True
-            if attrs.get("name", "").lower() == "viewport":
+            if (attrs.get("name") or "").lower() == "viewport":
                 self.viewport = True
         if tag == "img":
             self.images.append(attrs)
