@@ -1,6 +1,6 @@
 # MNIN Bridge Pro — v0.3 (ChatGPT Pro, conversation classique)
 
-**ÉTAT : code préparé sur branche isolée ; plugin non installé, non déployé et sans serveur d'authentification. Les tests Python restent NON TESTÉS.**
+**ÉTAT : code préparé sur branche isolée ; plugin non installé, non déployé et sans serveur d'authentification. 43 tests unitaires PASS sur GitHub Actions (run 38322321083) ; tests OAuth de bout en bout et intégration MCP NON TESTÉS.**
 
 ### Autorisation permanente demandée par le propriétaire
 
