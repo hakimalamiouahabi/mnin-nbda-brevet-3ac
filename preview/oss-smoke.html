@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Page factice pour les tests automatiques du plugin MNIN Bridge Pro.">
+    <title>Test technique MNIN Bridge Pro</title>
+    <style>
+      :root { color-scheme: light; }
+      * { box-sizing: border-box; }
+      body { margin: 0; font-family: Arial, sans-serif; color: #14213d; background: #fffdf6; }
+      .shell { width: min(100% - 2rem, 70rem); margin: auto; }
+      header, footer { padding: 1.5rem 0; }
+      main { min-height: 55vh; padding: 2rem 0 4rem; }
+      h1 { font-size: clamp(2rem, 5vw, 4rem); line-height: 1.12; max-width: 18ch; }
+      p { font-size: 1.1rem; max-width: 55ch; line-height: 1.6; }
+      img { display: block; max-width: 100%; height: auto; }
+      .layout { display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 2rem; }
+      a { color: #153b79; }
+      a:focus-visible { outline: 3px solid #c17800; outline-offset: 4px; }
+      @media (max-width: 650px) { .layout { grid-template-columns: 1fr; } }
+    </style>
+  </head>
+  <body>
+    <header class="shell"><strong>MNIN Bridge Pro — fixture technique</strong></header>
+    <main class="shell">
+      <div class="layout">
+        <section aria-labelledby="title">
+          <h1 id="title">Validation open source, sans données réelles</h1>
+          <p>Ce document est une page de test artificielle. Ce n'est ni une maquette validée, ni la page d'accueil WordPress existante.</p>
+          <a href="#verification">Lire les critères de vérification</a>
+        </section>
+        <img src="oss-smoke.svg" width="480" height="320" alt="Illustration géométrique de test avec un cercle et des rectangles colorés">
+      </div>
+      <section id="verification" aria-labelledby="criteria">
+        <h2 id="criteria">Critères de vérification</h2>
+        <p>Navigation clavier, HTML valide, responsive et médias locaux, sans requête vers un service distant.</p>
+      </section>
+    </main>
+    <footer class="shell">Exemple public fictif, destiné exclusivement au contrôle CI.</footer>
+  </body>
+</html>
