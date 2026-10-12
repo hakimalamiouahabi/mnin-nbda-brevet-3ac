@@ -1,50 +1,40 @@
-# Modèle d'orchestration — 8 rôles IA, sans API IA payante
+# Modèle d'orchestration — 43 profils / 6 équipes / sans API IA payante
 
-## Vue d'ensemble
-**DSI = coordinateur.** Sept spécialistes fournissent analyses, code, tests et rapports. Les instructions sont adaptées à ChatGPT Work / Codex / GitHub connectés. Un fichier de rôle n'installe ni une instance indépendante, ni un ordonnanceur permanent.
+## Architecture
+**1 Directeur SI, 3 Senior Managers, 3 Managers, 6 Team Leaders, 30 agents spécialisés** ; document normatif : `agents/manifest.json` ; vue arborescente : `agents/org-structure.json`.
 
-## Règle d'activation
-Un cycle démarre uniquement lorsqu'un utilisateur ouvre Work avec docs/WORK_MASTER_START.md, ou lorsqu'un déclencheur Work effectivement autorisé/configuré le permet. L'orchestrateur lit les fichiers du dépôt et **assume les rôles un par un** si Work ne peut pas lancer de véritables agents parallèles.
-Aucune utilisation directe d'une API IA payante, clé OpenAI ou wallet. GitHub Actions exécute seulement des tests déterministes ; il ne fournit pas une IA autonome.
+| Senior Manager | Manager | Team Leaders (5 experts chacun) |
+|---|---|---|
+| SM_PRODUCT | M_PRODUCT | TL_PRODUCT_EDTECH + TL_DESIGN_CONTENT |
+| SM_ENGINEERING | M_ENGINEERING | TL_WEB_PLATFORM + TL_DATA_AI |
+| SM_TRUST | M_DELIVERY | TL_QA_SECURITY + TL_DEVOPS_RELEASE |
 
-## Entrées obligatoires
-- AGENTS.md et les prompts masters V4.2 + Home Desktop XL.
-- docs/STATUS.md, docs/ROADMAP.md, décisions les plus récentes.
-- État du thème WordPress MNIN NBDA V4 audité, **avant** toute écriture.
-- Référence visuelle originale quand disponible : sinon aucune affirmation pixel-perfect.
+## Gouvernance
+Le **DSI** arbitre les dépendances, les coûts, l'architecture et les risques. Les **Senior Managers** contrôlent les objectifs et les arbitrages transversaux. Les **Managers** traduisent les objectifs en lots. Les **Team Leaders** distribuent des tâches à leurs 5 spécialistes, contrôlent et consolident les livrables. Les **agents experts** exécutent les missions autorisées et documentent les preuves. Les spécialistes n'ont pas à tous travailler simultanément.
 
-## Workflow d'un cycle
-1. **DSI** : audit de l'état, choix d'une tâche P0 ou P1, risques, statut et acceptation.
-2. **Design** : spécification UI et contenus si tâche interface ; **Data Engineering** : contrat de données si tâche backend.
-3. **Data Scientist** : protocole diagnostic/mesures si tâche pédagogique ; **Data Analyst** : définition KPI si reporting ; **AI Engineering** : architecture facultative/local, seulement après besoin validé.
-4. **Web Dev** : implémentation, tests, commit et rapport. Ne pas déployer.
-5. **DevOps** : contrôles, ZIP éventuels et vérifications de reproductibilité ; aucun lancement automatique WordPress.
-6. **DSI** : revue croisée et mise à jour des statuts factuels ; tâche suivante ou arbitrage nécessaire.
+## Exécution réelle
+Les fichiers Markdown ne créent pas un runtime d'agents. Dans ChatGPT Work ou Codex, utiliser `docs/WORK_MASTER_START.md` pour mobiliser les rôles disponibles. Si des processus/sous-agents parallèles ne sont pas réellement exposés, exécuter la chaîne **séquentiellement** et notifier le contexte. Aucun agent ni planification 24 h/24 n'est activé du seul fait de ce dépôt. Ne jamais introduire une API IA payante pour donner une illusion d'autonomie.
 
-Le DSI peut sauter les spécialistes non pertinents pour une tâche. Ne pas fabriquer du travail Data Science ou IA pour un simple correctif CSS.
+## Cycle DSI
+1. Lire les masters et les décisions vérifiées. Identifier une tâche prioritaire et ses risques.
+2. DSI → Senior Manager : problème, sources, contraintes, critères de réussite.
+3. Senior Manager → Manager : découpage en lots, points d'intégration, budget nul d'API payante.
+4. Manager → Team Leader : backlog local et affectation d'une ou plusieurs tâches à leurs experts.
+5. Expert : produire le livrable et sa preuve ; aucun changement sensible non autorisé.
+6. Team Leader : revue, regroupement, statut PASS/FAIL/NON TESTÉ/BLOQUÉ.
+7. Manager → Senior Manager : synthèse des lots et risques ; expertise QA/Security obligatoire avant livraison sensible.
+8. Senior Manager → DSI : preuves et décisions à arbitrer ; DSI clôt ou remet en planification.
 
-## Contrat de transfert (handoff)
-Chaque tâche doit comporter :
-- ID et titre ; propriétaire du rôle ; description de l'objectif.
-- Sources validées ; hypothèses séparées des faits ; exclusions ; dépendances.
-- Modifications/fichiers proposés ; critères d'acceptation ; tests.
-- Preuves (commit, sorties réelles, captures si disponibles) et statut PASS / FAIL / NON TESTÉ / BLOQUÉ.
-- Risques de confidentialité, coût, sécurité et conformité.
-- Décision attendue du propriétaire si changement visible/sensible.
+## Transfert standard
+ID de tâche ; responsable de niveau ; spécialiste assigné ; sources et versions ; état initial ; résultat demandé ; modifications ; commandes/tests réellement exécutés ; preuves avec commits/captures ; risques ; blocages ; besoin d'autorisation ; prochaine action.
 
 ## Portes de validation
-**Gate 0 — Audit** : état réel du WordPress existant et sauvegarde possible. Sans preuve, pas d'écrasement du site.
-**Gate 1 — Maquette Home** : validation du rendu par propriétaire avant propagation des composants.
-**Gate 2 — Données mineurs** : minimisation, ségrégation, autorisations, tests d'accès ; pas de donnée réelle dans Git.
-**Gate 3 — Fonction pédagogique** : scénarios fonctionnels réels et preuves.
-**Gate 4 — Livraison** : ZIP réellement installés et testés sur WordPress propre, QA et rollback.
-**Gate 5 — Déploiement** : autorisation explicite de la version ciblée.
+**G0 Audit** : site WordPress existant analysé en lecture seule, sauvegarde et rollback déterminés.
+**G1 Maquette** : Home conforme à l'original approuvé ; si visuel absent, déclarer comparaison impossible.
+**G2 Données** : sécurisation Parent/Élève, minimisation et tests autorisés sur jeux fictifs.
+**G3 Métier** : scénarios pédagogiques diagnostique/exercice/progrès réellement testés.
+**G4 Livraison** : thème et core séparés, ZIP installés sur WordPress propre, QA documentée.
+**G5 Publication** : accord humain explicite pour la version ciblée.
 
-## Sécurité des branches et des actions
-Développement sur branche de travail lorsque possible ; changements circonscrits ; aucune élévation de privilèges ni partage d'identifiants. Ne jamais installer, activer, supprimer une extension ou modifier le site, l'hébergement, les DNS, les données d'élèves, un coût ou une publication sans validation explicite.
-
-## Critères d'arrêt
-Le cycle se termine quand le temps/la session/l'outil se termine, lorsqu'une validation humaine est obligatoire, quand une anomalie bloquante apparaît, ou quand les critères vérifiables sont atteints. Ne pas boucler indéfiniment sur des erreurs sans nouvelle information. Aucune promesse de disponibilité 24 h/24 sans déclencheurs configurés et traces d'exécution.
-
-## Suivi
-docs/STATUS.md : état général daté ; docs/BACKLOG.md si créé : tâches ; docs/DECISIONS.md si créé : arbitrages ; GitHub : commits et preuves d'exécution.
+## Contrôles essentiels
+Aucune API IA payante, aucun stockage externe obligatoire, aucun secret en dépôt, aucune donnée réelle de mineur transmise aux agents, aucun déploiement ni facturation sans autorisation. Statuts limités à PASS / FAIL / NON TESTÉ / BLOQUÉ. GitHub Actions est une CI déterministe, et son quota doit être respecté.
