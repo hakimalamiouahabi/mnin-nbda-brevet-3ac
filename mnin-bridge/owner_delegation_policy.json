@@ -1,6 +1,6 @@
 {
-  "schema_version": "1.0",
-  "profile": "MNIN Bridge / ChatGPT Pro personnel",
+  "schema_version": "1.1",
+  "profile": "MNIN Bridge Pro / ChatGPT Pro standard exclusivement",
   "status": "TEMPLATE_NOT_ACTIVATED",
   "scope": "owner-only",
   "standing_delegation": {
@@ -8,14 +8,25 @@
     "expires": "until_owner_revokes",
     "meaning": "Standing instructions for future authenticated, policy-limited requests. Not an OAuth grant, not permission to override platform protections or spend money.",
     "allow_without_reprompt": [
+      "accessibility.plan",
       "asset.list",
       "asset.verify",
+      "branch.create",
+      "design.propose",
+      "dev.branch_write",
+      "docs.update_branch",
+      "git.pr_draft",
       "mission.propose",
       "mission.read",
+      "performance.plan",
       "qa.preview",
       "qa.run_isolated",
-      "dev.branch_write",
-      "report.create"
+      "qa.static_review",
+      "report.create",
+      "requirements.analyze",
+      "skills.read",
+      "source.compare",
+      "source.read"
     ],
     "conditional_limits": {
       "qa.run_isolated": {
@@ -63,7 +74,13 @@
     ],
     "owner_intent_recorded_at": "2026-10-12",
     "owner_intent": "Maximum continuing task delegation requested in standard ChatGPT Pro for this MNIN NBDA project, subject to verifiable authentication, provider permissions, zero incremental cost, mandatory approvals and revocation.",
-    "authority_boundary": "This file encodes intent; it never replaces explicit account consent, OAuth, platform write confirmation or separate approval for sensitive actions."
+    "authority_boundary": "This file encodes intent; it never replaces explicit account consent, OAuth, platform write confirmation or separate approval for sensitive actions.",
+    "mode": "MAXIMUM_CONTINUING_DELEGATION_WITHIN_VERIFIED_PERMISSIONS",
+    "owner_instructions_permanent": true,
+    "revocable_by_owner": true,
+    "reconfirmation_preference": "DO_NOT_REPROMPT_FOR_APPROVED_LOW_RISK_TASKS",
+    "blanket_intent": "The owner explicitly asks to delegate every future permissible development and coordination task, indefinitely, in standard ChatGPT Pro. This is owner intent, not proof of technical authentication, entitlement or permission to suppress provider confirmations.",
+    "enforcement": "For authenticated allowed low-risk operations, prefer autonomous flow and record action/evidence. If plan, identity, scope, service controls, external authorization, reversibility, privacy, or cost cannot be verified, fail closed and request the required approval."
   },
   "identity_gate": {
     "required": true,
@@ -79,7 +96,9 @@
     ],
     "target_subscription": "Pro",
     "subscription_enforcement": "fail_closed_if_trusted_entitlement_proof_unavailable",
-    "note": "No public documentation presently guarantees that OAuth identity tokens include ChatGPT plan/surface claims. Never infer these from user/model input."
+    "note": "No public documentation presently guarantees that OAuth identity tokens include ChatGPT plan/surface claims. Never infer these from user/model input.",
+    "enforced_runtime": false,
+    "reason": "No trusted identity attestations for ChatGPT subscription or surface are implemented; a Pro-only flag in a prompt or config cannot establish identity."
   },
   "hosting": {
     "expected_incremental_cost_eur": 0,
@@ -91,6 +110,11 @@
     "pro_subscription_verified": false,
     "chatgpt_standard_client_verified": false,
     "code_executors_started": 0,
-    "wordpress_access": "DISABLED"
+    "wordpress_access": "DISABLED",
+    "chatgpt_pro_exclusive_enforcement": "NOT_VERIFIED_FAIL_CLOSED",
+    "independent_running_ai_agents": 0,
+    "custom_mcp_write_on_chatgpt_pro": "NOT_SUPPORTED_BY_CURRENT_DOCUMENTED_ENTITLEMENTS",
+    "wordpress_write_authorized_by_plugin": false,
+    "connected_chatgpt_plugin": false
   }
 }
