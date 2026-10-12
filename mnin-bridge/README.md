@@ -1,10 +1,15 @@
-# MNIN Bridge Pro — suite ChatGPT Pro v0.4 (PROTOTYPE)
+# MNIN Bridge Pro — v0.5 / ChatGPT Pro standard uniquement
 
-**Livraison :** dix modules de planification de site premium, routage des tâches en français, utilisation du référentiel existant des 43 rôles, explication de la délégation permanente du propriétaire. Les nouvelles fonctions sont strictement **lecture / planification** ; aucune exécution distante.
+**Code disponible dans GitHub, mais plugin personnalisé NON connecté, NON déployé et sans privilège d'écriture MCP.** Aucun agent autonome indépendant, aucune écriture WordPress. Work et Codex exclus des parcours ciblés.
 
-**Document principal :** [ChatGPT Pro Premium V0.4](docs/CHATGPT_PRO_PREMIUM_V04.md).
+- [Documentation 0.5 et périmètre Pro](docs/CHATGPT_PRO_PREMIUM_V05.md)
+- [Skill Directeur SI ChatGPT Pro](skills/chatgpt-pro/SKILL.md)
+- `agent_conductor.py` : 4 flux premium, chaîne réelle de 43 rôles, preuves et dépendances.
+- `premium_suite.py` : 10 modules spécialisés et délégation classifiée.
+- `owner_delegation_policy.json` : **consigne propriétaire permanente** et autonomie maximale dans les capacités réelles, révocable. Elle ne remplace ni OAuth, ni les droits des applications ou les confirmations obligatoires.
+- `tests/` et `.github/workflows/validation.yml` : syntaxe et tests unitaires lancés par GitHub Actions à chaque pull request (résultats à vérifier).
 
-**STATUT :** code uniquement dans la branche GitHub d'essai ; non déployé, non connecté à ChatGPT, pas de preuve d'abonnement Pro côté serveur, aucun WordPress modifié. Le fichier de délégation enregistre une consigne permanente, pas une autorisation technique globale ni une dérogation aux confirmations de la plateforme. Les tests V0.4 sont présents mais pas encore exécutés.
+**Vérification Pro exclusivement :** faute d'attestation fiable de forfait et de surface fournie au serveur, tout privilège réservé à Pro reste **BLOQUÉ**. Le serveur de planification ne prétend pas filtrer techniquement les utilisateurs par abonnement.
 
 ---
 
