@@ -8,6 +8,7 @@ from mcp.server.fastmcp import FastMCP
 from bridge_core import asset_info, dispatch_qa, github_repo, list_assets, qa_artifacts, qa_run
 from mission_control import MissionStore, capability_catalog, validate_request
 from premium_suite import module_catalog, propose_premium_plan, delegation_status
+from agent_conductor import workforce_status, plan_enterprise_mission, subscription_gate_readiness
 from access_policy import public_policy_summary
 
 mcp = FastMCP("MNIN Bridge", host="127.0.0.1", port=8000, stateless_http=True, json_response=True)
@@ -132,6 +133,24 @@ def bridge_plan_premium_task(task: str, selected_modules: list[str] | None = Non
 def bridge_explain_owner_delegation(action: str) -> dict:
     """Explain standing owner preferences. This tool does NOT approve or execute actions."""
     return delegation_status(action)
+
+@mcp.tool()
+def bridge_workforce_status() -> dict:
+    """Read the genuine 43-role responsibility manifest. Never claims active AI agents."""
+    return workforce_status()
+
+
+@mcp.tool()
+def bridge_design_delivery_mission(kind: str, objective: str) -> dict:
+    """Plan premium Home, WordPress, assets or education work using the real DSI hierarchy."""
+    return plan_enterprise_mission(kind, objective)
+
+
+@mcp.tool()
+def bridge_pro_only_gate_status() -> dict:
+    """Explain Pro-only readiness; do not accept model-supplied identity or plan claims."""
+    return subscription_gate_readiness()
+
 
 if __name__ == "__main__":
     if os.getenv("MNIN_ENABLE_DISPATCH") == "1":
