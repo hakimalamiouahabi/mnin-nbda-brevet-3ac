@@ -7,6 +7,14 @@ on:
         required: true
         default: site/index.html
         type: string
+      qa_mode:
+        description: "smoke (5 viewports) or full (21 viewports)"
+        required: true
+        default: smoke
+        type: choice
+        options:
+          - smoke
+          - full
 
 permissions:
   contents: read
@@ -43,6 +51,7 @@ jobs:
       - name: Test and capture full pages
         env:
           MNIN_HOME_PATH: ${{ inputs.home_path }}
+          MNIN_QA_MATRIX: ${{ inputs.qa_mode }}
         run: node mnin-bridge/runner/home-qa.mjs
       - name: Return QA artifact
         if: always()
