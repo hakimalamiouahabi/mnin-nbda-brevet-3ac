@@ -1,0 +1,49 @@
+name: MNIN OSS integration smoke (public fixtures)
+
+on:
+  pull_request:
+    paths:
+      - 'mnin-bridge/runner/oss-smoke.mjs'
+      - 'preview/oss-smoke.html'
+      - 'preview/oss-smoke.svg'
+      - '.github/workflows/mnin-oss-integration.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mnin-oss-integration-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  public-fixture-toolchain:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout read only
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install pinned public npm packages in ephemeral runner
+        working-directory: mnin-bridge/runner
+        run: |
+          npm install --no-save --no-package-lock --no-audit --no-fund \
+            html-validate@11.16.2 \
+            prettier@3.9.10 \
+            svgo@4.1.0 \
+            sharp@0.35.5
+      - name: Run offline integration against synthetic public data
+        run: node mnin-bridge/runner/oss-smoke.mjs
+      - name: Upload non-sensitive machine-readable report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mnin-oss-fixture-report
+          path: mnin-bridge-qa-results/oss-tools-report.json
+          retention-days: 3
+          if-no-files-found: warn
