@@ -7,6 +7,7 @@ import os
 from mcp.server.fastmcp import FastMCP
 from bridge_core import asset_info, dispatch_qa, github_repo, list_assets, qa_artifacts, qa_run
 from mission_control import MissionStore, capability_catalog, validate_request
+from premium_suite import module_catalog, propose_premium_plan, delegation_status
 from access_policy import public_policy_summary
 
 mcp = FastMCP("MNIN Bridge", host="127.0.0.1", port=8000, stateless_http=True, json_response=True)
@@ -112,6 +113,25 @@ def bridge_delegation_policy() -> dict:
     """Read non-sensitive scope of durable user delegation (never changes permissions)."""
     return public_policy_summary()
 
+
+
+
+@mcp.tool()
+def bridge_premium_modules() -> dict:
+    """List the ten MNIN premium website modules and evidence requirements (read-only)."""
+    return module_catalog()
+
+
+@mcp.tool()
+def bridge_plan_premium_task(task: str, selected_modules: list[str] | None = None) -> dict:
+    """Produce a scoped premium WordPress delivery plan. No agents or jobs are started."""
+    return propose_premium_plan(task, selected_modules)
+
+
+@mcp.tool()
+def bridge_explain_owner_delegation(action: str) -> dict:
+    """Explain standing owner preferences. This tool does NOT approve or execute actions."""
+    return delegation_status(action)
 
 if __name__ == "__main__":
     if os.getenv("MNIN_ENABLE_DISPATCH") == "1":
