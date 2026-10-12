@@ -33,10 +33,10 @@ jobs:
             sleep 1
           done
           exit 1
-      - name: Run 5 viewport screenshots and axe-core QA
+      - name: Run all 21 viewport screenshots and axe-core QA
         env:
           MNIN_HOME_PATH: preview/bridge-smoke.html
-          MNIN_QA_MATRIX: smoke
+          MNIN_QA_MATRIX: full
           MNIN_A11Y_MODE: 'on'
         run: node mnin-bridge/runner/home-qa.mjs
       - name: Check QA JSON and screenshot evidence
@@ -45,13 +45,13 @@ jobs:
           import json, pathlib
           root=pathlib.Path('mnin-bridge-qa-results')
           data=json.loads((root/'report.json').read_text())
-          assert data['mode']=='smoke'
-          assert data['total']==5
+          assert data['mode']=='full'
+          assert data['total']==21
           assert data['failures']==0, data
           assert all(row['accessibility']['status']=='PASS' for row in data['tests']), data
-          assert len(list(root.glob('*-viewport.png')))==5
-          assert len(list(root.glob('*-full-page.png')))==5
-          print('BROWSERLAB_E2E_PASS: five viewport + five full-page screenshots')
+          assert len(list(root.glob('*-viewport.png')))==21
+          assert len(list(root.glob('*-full-page.png')))==21
+          print('BROWSERLAB_E2E_PASS: 21 viewport + 21 full-page screenshots')
           PY
       - uses: actions/upload-artifact@v4
         if: always()
