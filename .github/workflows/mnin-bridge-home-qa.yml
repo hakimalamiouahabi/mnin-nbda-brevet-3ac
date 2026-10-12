@@ -42,8 +42,14 @@ jobs:
       - name: Install browser tooling (job-scoped)
         run: |
           cd mnin-bridge/runner
-          npm install --no-save --no-package-lock playwright@1.56.1
+          npm install --no-save --no-package-lock playwright@1.56.1 axe-core@4.11.0 html-validate@11.16.2
           npx playwright install --with-deps chromium
+      - name: Validate local HTML using upstream html-validate
+        env:
+          MNIN_HOME_PATH: ${{ inputs.home_path }}
+        shell: bash
+        run: |
+          ./mnin-bridge/runner/node_modules/.bin/html-validate "$MNIN_HOME_PATH"
       - name: Serve local static checkout
         run: |
           python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/mnin-http.log 2>&1 &
