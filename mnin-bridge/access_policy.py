@@ -26,6 +26,8 @@ SCOPES = {
     "dev.branch_write": "mnin:dev",
     "report.create": "mnin:plan",
     "site.audit_local": "mnin:read",
+    "open_source.catalog": "mnin:read",
+    "open_source.pipeline": "mnin:plan",
     "source.read": "mnin:read",
     "source.compare": "mnin:read",
     "branch.create": "mnin:dev",
