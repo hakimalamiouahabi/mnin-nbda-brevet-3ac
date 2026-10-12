@@ -1,0 +1,23 @@
+{
+  "name": "mnin-bridge-browserlab",
+  "private": true,
+  "version": "0.5.0",
+  "type": "module",
+  "description": "Isolated OSS QA toolchain for MNIN NBDA. No WordPress writes.",
+  "engines": {
+    "node": ">=20.9"
+  },
+  "scripts": {
+    "qa:home": "node home-qa.mjs",
+    "compare": "node compare-captures.mjs",
+    "oss:smoke": "node open-source-smoke.mjs"
+  },
+  "dependencies": {
+    "playwright": "1.56.1",
+    "axe-core": "4.10.3",
+    "pixelmatch": "7.2.0",
+    "pngjs": "7.0.0",
+    "sharp": "0.34.3",
+    "svgo": "4.1.0"
+  }
+}
