@@ -1,3 +1,13 @@
+# MNIN Bridge Pro — suite ChatGPT Pro v0.4 (PROTOTYPE)
+
+**Livraison :** dix modules de planification de site premium, routage des tâches en français, utilisation du référentiel existant des 43 rôles, explication de la délégation permanente du propriétaire. Les nouvelles fonctions sont strictement **lecture / planification** ; aucune exécution distante.
+
+**Document principal :** [ChatGPT Pro Premium V0.4](docs/CHATGPT_PRO_PREMIUM_V04.md).
+
+**STATUT :** code uniquement dans la branche GitHub d'essai ; non déployé, non connecté à ChatGPT, pas de preuve d'abonnement Pro côté serveur, aucun WordPress modifié. Le fichier de délégation enregistre une consigne permanente, pas une autorisation technique globale ni une dérogation aux confirmations de la plateforme. Les tests V0.4 sont présents mais pas encore exécutés.
+
+---
+
 # MNIN Bridge — plateforme MCP privée (prototype v0.2)
 
 **STATUT VÉRIFIÉ : code publié sur une branche d'essai, NON DÉPLOYÉ, NON CONNECTÉ, aucun worker ni sous-agent réellement lancé.**
