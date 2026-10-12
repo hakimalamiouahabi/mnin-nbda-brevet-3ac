@@ -8,6 +8,8 @@ from mcp.server.fastmcp import FastMCP
 from bridge_core import asset_info, dispatch_qa, github_repo, list_assets, qa_artifacts, qa_run
 from mission_control import MissionStore, capability_catalog, validate_request
 from access_policy import public_policy_summary
+from quality_lab import inspect_asset
+from open_source_registry import list_upstreams, readiness
 
 mcp = FastMCP("MNIN Bridge", host="127.0.0.1", port=8000, stateless_http=True, json_response=True)
 
@@ -21,7 +23,7 @@ def _require_verified_pro_standard_chat() -> None:
 def bridge_status() -> dict:
     """Read actual readiness. Does not claim agents are active."""
     return {
-        "version": "0.3.0-prototype",
+        "version": "0.5.0-prototype",
         "repository": github_repo(),
         "asset_directory_configured": bool(os.getenv("MNIN_ASSET_ROOT")),
         "github_credentials_configured": bool(os.getenv("MNIN_GITHUB_TOKEN")),
@@ -125,6 +127,25 @@ def bridge_mission_audit(mission_id: str) -> list[dict]:
 def bridge_delegation_policy() -> dict:
     """Read non-sensitive scope of durable user delegation (never changes permissions)."""
     return public_policy_summary()
+
+
+@mcp.tool()
+def bridge_inspect_production_asset(filename: str, displayed_css_width: int = 0, dpr: float = 2) -> dict:
+    """Inspect a private PNG/JPEG/WebP/SVG/GLB original without editing or uploading it."""
+    _require_verified_pro_standard_chat()
+    return inspect_asset(filename, displayed_css_width, dpr)
+
+
+@mcp.tool()
+def bridge_open_source_catalog(domain: str = "") -> dict:
+    """List 11 verified public free/open-source GitHub integrations; no cloning or execution."""
+    return list_upstreams(domain)
+
+
+@mcp.tool()
+def bridge_open_source_readiness() -> dict:
+    """Report registered vs actually connected OSS components without fabricating readiness."""
+    return readiness()
 
 
 if __name__ == "__main__":

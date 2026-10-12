@@ -1,5 +1,6 @@
 // MNIN Bridge BrowserLab v0.2: QA of checked-out HTML only; no live WordPress access.
 import { chromium } from 'playwright';
+import axe from 'axe-core';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -38,6 +39,22 @@ try {
   try{
    await page.goto('http://127.0.0.1:8765/'+route,{waitUntil:'networkidle',timeout:30000});
    await page.evaluate(async()=>{if(document.fonts)await document.fonts.ready;});
+   const checkA11y=process.env.MNIN_A11Y_MODE === 'on';
+   let accessibility={status:'NON_TESTE',violations:[],incompleteCount:0};
+   if(checkA11y){
+     await page.addScriptTag({content:axe.source});
+     const result=await page.evaluate(async()=>{
+       const report=await globalThis.axe.run(document,{
+         runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa']},
+         rules:{'color-contrast':{enabled:true}}
+       });
+       return {violations:report.violations.map(v=>({
+         id:v.id,impact:v.impact,description:v.description,
+         affectedNodes:v.nodes.length
+       })),incompleteCount:report.incomplete.length};
+     });
+     accessibility={status:result.violations.length?'FAIL':'PASS',...result};
+   }
    const metrics=await page.evaluate(()=>{
      const images=[...document.images].map(img=>({
        file:img.currentSrc.split('/').pop()?.split('?')[0]||'',
@@ -58,11 +75,11 @@ try {
      };
    });
    const overflow=metrics.contentWidth>metrics.viewportWidth+1;
-   const pass=!overflow&&!metrics.brokenImages.length&&!errors.length&&!!metrics.h1;
+   const pass=!overflow&&!metrics.brokenImages.length&&!errors.length&&!!metrics.h1&&accessibility.status!=='FAIL';
    if(!pass)failures++;
    await page.screenshot({path:path.join(folder,name+'-'+width+'x'+height+'-viewport.png')});
    await page.screenshot({path:path.join(folder,name+'-'+width+'-full-page.png'),fullPage:true});
-   tests.push({name,width,height,status:pass?'PASS':'FAIL',overflow,errors,...metrics,durationMs:Date.now()-start});
+   tests.push({name,width,height,status:pass?'PASS':'FAIL',overflow,errors,accessibility,...metrics,durationMs:Date.now()-start});
   }catch(e){failures++;tests.push({name,width,height,status:'FAIL',error:String(e.message)});}
   finally{await page.close();}
  }
@@ -70,6 +87,6 @@ try {
 fs.writeFileSync(path.join(folder,'report.json'),JSON.stringify({
  version:'0.2.0',mode,total:tests.length,failures,status:failures?'FAIL':'PASS',
  source:entry,tests,
- disclaimer:'Structural QA only; does not certify visual fidelity, accessibility or Core Web Vitals.'
+ disclaimer:'Structural QA plus optional axe-core automatic checks; does not certify full WCAG conformance, visual fidelity or Core Web Vitals.'
 },null,2));
 if(failures)process.exitCode=1;
