@@ -1,31 +1,44 @@
-# Instructions pour ChatGPT Work et Codex — MNIN NBDA
+# Consignes centrales — MNIN NBDA / Work / Codex
 
-## Autorité documentaire
-1. Dernières validations explicites du propriétaire sur la maquette et les fonctionnalités.
-2. docs/references/PROMPT_MASTER_HOME_DESKTOP_XL_2026-10-11.md pour les éléments de home qu'il précise.
-3. docs/references/PROMPT_MASTER_WORDPRESS_V4_2.md pour l'architecture générale.
-4. Le code vérifié sur le site WordPress existant, après audit en lecture seule.
-En cas de conflit, documenter le point dans docs/STATUS.md et ne jamais inventer une décision. La référence visuelle complète n'est pas stockée ici : ne pas prétendre reproduire pixel à pixel un visuel inaccessible.
+## Priorités de sources
+1. Dernières validations explicites du propriétaire : identité visuelle et fonctionnalités.
+2. docs/references/PROMPT_MASTER_HOME_DESKTOP_XL_2026-10-11.md : mise en page et contenus de la Home spécifiés à cette date.
+3. docs/references/PROMPT_MASTER_WORDPRESS_V4_2.md : exigences techniques et pédagogiques V4.2.
+4. État réel du WordPress existant, contrôlé sans modification.
+En cas de contradiction : consigner dans docs/STATUS.md et docs/DECISIONS.md si créé ; ne pas inventer une réponse. La dernière maquette graphique sous forme d'image n'a pas encore été ajoutée à ce dépôt.
 
-## Organisation des quatre rôles
-- Agent 01 Pilotage (agents/01-pilotage.md) : objectifs, planification et arbitrage des contradictions.
-- Agent 02 Développement (agents/02-developpement.md) : code WordPress maintenable et testé.
-- Agent 03 Qualité (agents/03-qualite.md) : contrôle indépendant UX/RTL/accessibilité/sécurité.
-- Agent 04 Intégration (agents/04-integration.md) : contrôle de version, CI, versions ZIP, déploiement après accord.
-Les rôles sont des instructions exploitables par Work et Codex, non quatre services IA hébergés en permanence.
+## Huit rôles organisés par le DSI
+| ID | Rôle | Instruction |
+|---|---|---|
+| DSI | Directeur SI (orchestrateur) | agents/01-directeur-si.md |
+| DATA_ENG | Data Engineering | agents/02-data-engineering.md |
+| DATA_SCI | Data Scientist | agents/03-data-science.md |
+| DATA_ANALYST | Data Analyst | agents/04-data-analyst.md |
+| AI_ENG | IA Engineering | agents/05-ia-engineering.md |
+| WEB_DEV | Développement web WordPress | agents/06-developpement-web.md |
+| DESIGN_CONTENT | Design & Content Creator | agents/07-design-content.md |
+| DEVOPS | DevOps / Intégration | agents/08-devops.md |
 
-## Méthode
-- Commencer par le P0 : inventorier WordPress actuel, thème MNIN NBDA V4 et limites des accès ; ne jamais écraser l'existant.
-- Priorité P1 : accueil haute fidélité desktop + mobile FR/AR, validation client avant autres pages.
-- Respecter la séparation mnin-nbda-theme / mnin-nbda-core.
-- Utiliser WordPress natif et bibliothèques open source, sans API payante.
-- Préférer une branche de travail par tâche, modifications petites, commits descriptifs, contrôle de risques.
-- Avant de coder : critères d'acceptation et fichiers concernés. Après : preuves, résultats tests, limites, statut.
-- CI n'est pas un agent IA ; elle n'écrit pas de code ni ne lance de déploiement automatique.
-- Les données réelles des élèves et parents sont sensibles : pas d'export, pas de faux accès, pas de données personnelles en logs.
-- Aucun déploiement WordPress, changement de plugin actif, paiement ni activation publique sans accord explicite.
-- Ne jamais affirmer 24h/24 autonome sans scheduler concret et vérification des exécutions.
-- Statuts de test autorisés : PASS, FAIL, NON TESTÉ, BLOQUÉ.
+Lire agents/manifest.json et docs/AGENT_OPERATING_MODEL.md. Les rôles sont des **instructions opérationnelles pour Work / Codex**, et ne garantissent pas huit agents exécutés séparément en continu.
 
-## Définition de terminé
-Livrable réellement construit, tests exécutés documentés, absence d'anomalie bloquante, conformité vérifiée, validation explicite du propriétaire pour déploiement.
+## Principes non négociables
+- Aucune API IA payante, aucun wallet, aucune clé dans le dépôt ni sur WordPress.
+- Coût obligatoire supplémentaire : zéro dans l'architecture cible ; vérifier les quotas Github Actions et le forfait existant.
+- Site WordPress existant : thème actif MNIN NBDA V4, aucune écriture, installation ni déploiement avant audit, sauvegarde et autorisation explicite.
+- Priorité accueil conforme à la dernière maquette approuvée, aucun bloc matières sur la Home ; responsive, français/arabe, RTL.
+- Architecture : thème mnin-nbda-theme + plugin métier séparé mnin-nbda-core ; Polylang Free facultatif ; pas de Tutor LMS/Elementor obligatoire.
+- Protection des mineurs : minimisation, séparation foyer, aucun export de données réelles ni publication dans Git.
+- Contrôles qualité réels ; seul résultat permis PASS, FAIL, NON TESTÉ ou BLOQUÉ.
+- Pour une fonction IA pédagogique, chemin déterministe sans IA obligatoire ; aucune IA distante exigée.
+- Changement de DNS, paiement, production, données réelles, thème et extensions actifs : autorisation humaine explicite.
+
+## Procédure commune
+1. DSI : vérifier état, contraintes, sources et tâche précise.
+2. Activer seulement les rôles pertinents pour cette tâche (pas les huit systématiquement).
+3. Chaque rôle fournit un livrable vérifiable avec son contexte, preuve et limites.
+4. Développement produit du code versionné ; DevOps contrôle les tests ; DSI valide les critères.
+5. Rapporter les blocages et la prochaine action dans docs/STATUS.md.
+6. GitHub Actions n'est pas un agent IA et n'installe rien automatiquement sur WordPress.
+
+## Terminé signifie
+Code réellement construit, tests réellement exécutés et documentés, absence d'anomalie bloquante, conformité au master + à la maquette vérifiée, validation expresse du propriétaire avant publication.
