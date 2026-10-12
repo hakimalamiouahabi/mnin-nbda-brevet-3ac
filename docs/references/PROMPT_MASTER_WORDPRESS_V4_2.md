@@ -997,7 +997,8 @@ Ne pas collecter :
 - adresse postale ;
 - téléphone enfant ;
 - date de naissance exacte ;
-- photo obligatoire ;- email enfant obligatoire ;
+- photo obligatoire ;
+- email enfant obligatoire ;
 - école exacte si non indispensable.
 
 Collecter uniquement ce qui sert au produit.
@@ -1996,7 +1997,8 @@ Le pilote est considéré validé seulement si un scénario complet fonctionne :
 Le parent possède un compte WordPress réel avec :
 
 - email ;
-- mot de passe ;- rôle/capabilities Parent.
+- mot de passe ;
+- rôle/capabilities Parent.
 
 ## L.2 Enfant
 
