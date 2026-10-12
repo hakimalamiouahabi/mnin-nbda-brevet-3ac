@@ -18,12 +18,15 @@
       "git.pr_draft",
       "mission.propose",
       "mission.read",
+      "open_source.catalog",
+      "open_source.pipeline",
       "performance.plan",
       "qa.preview",
       "qa.run_isolated",
       "qa.static_review",
       "report.create",
       "requirements.analyze",
+      "site.audit_local",
       "skills.read",
       "source.compare",
       "source.read"
@@ -46,6 +49,18 @@
       },
       "report.create": {
         "forbid_public_data_exposure": true
+      },
+      "site.audit_local": {
+        "local_confined_root_env": "MNIN_SITE_ROOT",
+        "max_html_megabytes": 2,
+        "requires_private_approved_copy": true,
+        "forbid_remote_fetch": true,
+        "max_incremental_cost_eur": 0
+      },
+      "open_source.pipeline": {
+        "installations_automatic": false,
+        "executions_automatic": false,
+        "max_incremental_cost_eur": 0
       }
     },
     "requires_per_action_approval": [

@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "mnin-bridge-pro",
-  "version": "0.5.0",
-  "description": "MNIN Bridge Pro: intelligent DSI blueprint for 43 documented roles and 10 premium WordPress/EdTech modules in standard ChatGPT. Standing owner intent; read-only MCP tool surface; no Work/Codex, no paid AI API, no autonomous agents or write access.",
+  "version": "0.7.0",
+  "description": "MNIN Bridge Pro: 43 expert role plans, ten premium WordPress modules, eight official OSS upstreams, local read-only HTML/DPR/accessibility audits and opt-in browser QA. Standard ChatGPT target Pro; no Work/Codex, no paid model APIs, no remote deployment or WordPress mutation.",
   "repository": "https://github.com/hakimalamiouahabi/mnin-nbda-brevet-3ac",
   "keywords": [
     "chatgpt",
@@ -16,7 +16,12 @@
     "premium-design",
     "fr-ar-rtl",
     "edtech",
-    "chatgpt-pro"
+    "chatgpt-pro",
+    "open-source",
+    "playwright",
+    "axe-core",
+    "html-validate",
+    "visual-qa"
   ],
   "extensions": {
     "com.openai": {
@@ -24,7 +29,7 @@
       "interface": {
         "displayName": "MNIN Bridge Pro",
         "shortDescription": "Direction SI et qualité premium pour WordPress dans le chat standard.",
-        "longDescription": "Orchestration documentaire des 43 rôles MNIN NBDA, dix modules premium et quatre parcours de livraison. Aucune API IA payante, aucune écriture WordPress et aucune instance autonome lancée par le plugin.",
+        "longDescription": "Coordination DSI des 43 profils documentés et dix modules premium ; catalogue de huit projets open source officiels, audits HTML/DPR/RTL hors réseau et flux de QA navigateur sur branche isolée. Plugin de développement non déployé et sans écriture WordPress.",
         "developerName": "Équipe MNIN NBDA",
         "category": "Productivity",
         "capabilities": [
@@ -34,7 +39,8 @@
         "defaultPrompt": [
           "Prépare une mission de refonte premium de ma Home WordPress en respectant la maquette validée.",
           "Audite les originaux et explique les risques de pixellisation sur écrans haute densité.",
-          "Coordonne les rôles nécessaires pour un module pédagogique bilingue FR/AR RTL sans modifier le site."
+          "Coordonne les rôles nécessaires pour un module pédagogique bilingue FR/AR RTL sans modifier le site.",
+          "Propose les outils GitHub open source pour auditer une copie HTML locale de la Home, avec preuves et sans dépense."
         ]
       }
     }

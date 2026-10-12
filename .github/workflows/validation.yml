@@ -23,3 +23,5 @@ jobs:
         run: python3 -m compileall -q mnin-bridge
       - name: Tests standard library du plugin Pro
         run: python3 -m unittest discover -s mnin-bridge/tests -v
+      - name: Syntaxe du runner navigateur
+        run: node --check mnin-bridge/runner/home-qa.mjs
