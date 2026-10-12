@@ -81,6 +81,7 @@ STANDING = frozenset({
     "source.read", "source.compare", "branch.create", "git.pr_draft",
     "qa.static_review", "design.propose", "docs.update_branch",
     "skills.read", "requirements.analyze", "performance.plan", "accessibility.plan",
+    "site.audit_local", "open_source.catalog", "open_source.pipeline",
 })
 PER_ACTION = frozenset({
     "wordpress.staging_write", "wordpress.production_write", "github.merge_to_main",
