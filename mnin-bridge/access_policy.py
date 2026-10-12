@@ -25,6 +25,18 @@ SCOPES = {
     "qa.run_isolated": "mnin:qa",
     "dev.branch_write": "mnin:dev",
     "report.create": "mnin:plan",
+    "site.audit_local": "mnin:read",
+    "source.read": "mnin:read",
+    "source.compare": "mnin:read",
+    "branch.create": "mnin:dev",
+    "git.pr_draft": "mnin:dev",
+    "qa.static_review": "mnin:read",
+    "design.propose": "mnin:plan",
+    "docs.update_branch": "mnin:dev",
+    "skills.read": "mnin:read",
+    "requirements.analyze": "mnin:plan",
+    "performance.plan": "mnin:plan",
+    "accessibility.plan": "mnin:plan",
 }
 
 
@@ -46,7 +58,7 @@ class VerifiedPrincipal:
 def _load_policy() -> dict:
     p = POLICY_FILE.resolve(strict=True)
     policy = json.loads(p.read_text(encoding="utf-8"))
-    if policy.get("schema_version") != "1.0":
+    if policy.get("schema_version") not in ("1.0", "1.1"):
         raise RuntimeError("Unsupported delegation policy schema")
     return policy
 
