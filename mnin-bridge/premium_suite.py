@@ -44,7 +44,7 @@ MODULES = {
     },
     "edtech_data": {
         "label": "Ingénierie pédagogique et données",
-        "roles": ["EDTECH", "DATA_ENG", "DATA_GOVERNANCE"],
+        "roles": ["EDTECH", "CURRICULUM_MA", "DATA_ENG", "DATA_GOVERNANCE"],
         "keywords": ["eleve", "élève", "parent", "exercice", "quiz", "progression", "cours", "data"],
         "proofs": ["Périmètre pédagogique explicite", "Données personnelles des mineurs exclues des tests"],
     },
@@ -78,6 +78,9 @@ ORDER = tuple(MODULES)
 STANDING = frozenset({
     "asset.list", "asset.verify", "mission.propose", "mission.read",
     "qa.preview", "qa.run_isolated", "dev.branch_write", "report.create",
+    "source.read", "source.compare", "branch.create", "git.pr_draft",
+    "qa.static_review", "design.propose", "docs.update_branch",
+    "skills.read", "requirements.analyze", "performance.plan", "accessibility.plan",
 })
 PER_ACTION = frozenset({
     "wordpress.staging_write", "wordpress.production_write", "github.merge_to_main",
