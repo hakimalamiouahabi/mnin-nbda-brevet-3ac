@@ -44,21 +44,21 @@ class _PageParser(HTMLParser):
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
         if tag == "html":
-            self.lang = attrs.get("lang", "")
-            self.direction = attrs.get("dir", "")
+            self.lang = attrs.get("lang") or ""
+            self.direction = attrs.get("dir") or ""
         if tag == "title":
             self.title_seen = True
             self.in_title = True
         if tag == "h1":
             self.h1 += 1
         if tag == "meta":
-            if attrs.get("name", "").lower() == "description" and attrs.get("content", "").strip():
+            if (attrs.get("name") or "").lower() == "description" and (attrs.get("content") or "").strip():
                 self.meta_description = True
             if attrs.get("name", "").lower() == "viewport":
                 self.viewport = True
         if tag == "img":
             self.images.append(attrs)
-        if tag == "a" and attrs.get("href", "").startswith("#") and len(attrs["href"]) > 1:
+        if tag == "a" and (attrs.get("href") or "").startswith("#") and len(attrs["href"]) > 1:
             self.fragment_links.append(unquote(attrs["href"][1:]))
         if "id" in attrs and attrs["id"]:
             if attrs["id"] in self.ids:
@@ -173,7 +173,7 @@ def _dimensions(path: Path) -> tuple[int, int] | None:
             if length < 2 or i + length > len(b):
                 break
             if marker in (0xc0, 0xc1, 0xc2, 0xc3, 0xc5, 0xc6, 0xc7, 0xc9, 0xca, 0xcb, 0xcd, 0xce, 0xcf) and length >= 7:
-                return int.from_bytes(b[i+3:i+5], "big"), int.from_bytes(b[i+5:i+7], "big")
+                return int.from_bytes(b[i+5:i+7], "big"), int.from_bytes(b[i+3:i+5], "big")
             i += length
     return None
 
@@ -216,7 +216,7 @@ def audit_local_home(relative_html: str, target_dpr: int = 2) -> dict:
 
     records = []
     for number, attrs in enumerate(parser.images[:MAX_IMAGES], start=1):
-        source = attrs.get("src", "")
+        source = attrs.get("src") or ""
         record = {"index": number, "source": source[:200], "alt_attribute_present": "alt" in attrs}
         if "alt" not in attrs:
             issue("IMG_ALT_MISSING", "warning", "Image " + str(number) + " lacks alt attribute")
