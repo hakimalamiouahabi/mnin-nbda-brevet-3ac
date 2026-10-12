@@ -1,31 +1,33 @@
-# Roadmap opérationnelle — MNIN NBDA
+# Roadmap opérationnelle — MNIN NBDA, orchestrée par huit experts
 
-## Phase P0 — Audit et sécurité de la reprise
-- [ ] Auditer le thème WordPress MNIN NBDA V4 et les pages actuelles sans modification.
-- [ ] Identifier fichiers sources, versions, dépendances et méthode de sauvegarde/restauration.
-- [ ] Comparer le site et le référentiel GitHub sans écraser le site.
-- [ ] Enregistrer la référence visuelle approuvée et les conflits de périmètre.
-- [ ] Définir tests d'installation sur WordPress propre.
+## P0 — Audit et reprise sécurisée (DSI + DevOps + Web + Design)
+- [ ] Auditer WordPress.com existant et thème actif MNIN NBDA V4 en lecture seule.
+- [ ] Identifier source, contenu, version, sauvegarde/restauration et accès autorisés.
+- [ ] Vérifier visuel original de la maquette Home et périmètre 3AC / 1AC–3AC.
+- [ ] DSI : produire backlog priorisé et registre de décisions.
+- [ ] DevOps : confirmer le fonctionnement de la CI et ses quotas ; ne déployer aucun code.
 
-## Phase P1 — Accueil validé d'abord
-- [ ] Intégrer la dernière maquette Home sans bloc matières.
-- [ ] Vérifier logo officiel, projection vers l'avenir, ton naturel et call-to-action validé.
-- [ ] Tester desktop XL en viewport CSS 1920 x 1080, responsive complémentaires après spécification.
-- [ ] Tester mobile, FR et AR RTL, clavier et accessibilité.
-- [ ] Soumettre au propriétaire puis figer le design system.
+## P1 — Home validée (Design + Web + DevOps + DSI)
+- [ ] Rassembler les assets officiels et la dernière maquette approuvée.
+- [ ] Développer une Home haute fidélité sans bloc de matières.
+- [ ] Tester Desktop XL au viewport CSS 1920 x 1080 ; compléter les tests responsive.
+- [ ] Contrôler FR/AR, RTL, clavier, contrastes, performances et contenu authentique.
+- [ ] Valider l'interface par le propriétaire avant création d'autres pages.
 
-## Phase P2 — Socle pédagogique
-- [ ] Développer plugin mnin-nbda-core indépendant du thème.
-- [ ] Tester diagnostic, prérequis, leçon, exercice, révisions et progrès sur matière pilote.
-- [ ] Tester comptes Parent/Élève et isolation entre foyers.
-- [ ] N'implémenter aucun service d'IA payante.
+## P2 — Socle de données et pédagogique (DSI + Data Engineering + Data Scientist + Web)
+- [ ] Schéma et dictionnaire de données vérifiés, migrations réversibles.
+- [ ] Définir règles transparentes de diagnostic, prérequis et progression avec évaluations sur données synthétiques.
+- [ ] Implémenter plugin indépendant mnin-nbda-core.
+- [ ] Valider comptes Parent/Élève et cloisonnement des foyers en tests.
+- [ ] Introduire le reporting analytique uniquement avec KPI définis et accès contrôlés (Data Analyst).
+- [ ] Conserver l'IA pédagogique facultative et non essentielle (AI Engineering).
 
-## Phase P3 — Élargissement et recette
-- [ ] Pages publiques / élève / parent / administration et contenus validés.
-- [ ] Intégrations optionnelles (Polylang Free si nécessaire, après audit).
-- [ ] Construire ZIP thème + core et rapport QA réels.
-- [ ] Tests d'installation sur WordPress propre, rollback, revue sécurité.
-- [ ] Déploiement seulement après validation explicite.
+## P3 — Tests et livraisons (tous selon besoin, DevOps référent)
+- [ ] Développer pages supplémentaires seulement après validation design system.
+- [ ] Tester sécurité, performance, accessibilité et langues sans chiffres inventés.
+- [ ] Construire les ZIP thème et core et les installer sur WordPress propre.
+- [ ] Produire rapports de tests factuels, changelog et plan de rollback.
+- [ ] Déployer uniquement après autorisation explicite.
 
-## Mesure de progression
-Ne pas cocher sans preuve et tests. Consigner dates, commits, statut et preuve dans docs/STATUS.md.
+## Mesure et responsabilités
+Chaque tâche doit préciser un rôle responsable, des preuves et un statut parmi PASS / FAIL / NON TESTÉ / BLOQUÉ. Conserver docs/STATUS.md factuel et daté. Aucune automatisation IA continue n'est garantie par GitHub Actions.
