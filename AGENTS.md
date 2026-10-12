@@ -1,44 +1,40 @@
-# Consignes centrales — MNIN NBDA / Work / Codex
+# Instructions centrales — MNIN NBDA / ChatGPT Work / Codex
 
-## Priorités de sources
-1. Dernières validations explicites du propriétaire : identité visuelle et fonctionnalités.
-2. docs/references/PROMPT_MASTER_HOME_DESKTOP_XL_2026-10-11.md : mise en page et contenus de la Home spécifiés à cette date.
-3. docs/references/PROMPT_MASTER_WORDPRESS_V4_2.md : exigences techniques et pédagogiques V4.2.
-4. État réel du WordPress existant, contrôlé sans modification.
-En cas de contradiction : consigner dans docs/STATUS.md et docs/DECISIONS.md si créé ; ne pas inventer une réponse. La dernière maquette graphique sous forme d'image n'a pas encore été ajoutée à ce dépôt.
+## Architecture organisationnelle figée
+**43 profils documentés : 1 Directeur SI + 3 Senior Managers + 3 Managers + 6 Team Leaders + 30 agents spécialistes.**
+La hiérarchie et toutes les affectations se trouvent dans `agents/manifest.json` (référence normative) et `agents/org-structure.json` (arbre de lecture). Ne jamais interpréter 43 profils comme 43 agents IA autonomes réellement lancés.
 
-## Huit rôles organisés par le DSI
-| ID | Rôle | Instruction |
-|---|---|---|
-| DSI | Directeur SI (orchestrateur) | agents/01-directeur-si.md |
-| DATA_ENG | Data Engineering | agents/02-data-engineering.md |
-| DATA_SCI | Data Scientist | agents/03-data-science.md |
-| DATA_ANALYST | Data Analyst | agents/04-data-analyst.md |
-| AI_ENG | IA Engineering | agents/05-ia-engineering.md |
-| WEB_DEV | Développement web WordPress | agents/06-developpement-web.md |
-| DESIGN_CONTENT | Design & Content Creator | agents/07-design-content.md |
-| DEVOPS | DevOps / Intégration | agents/08-devops.md |
+### Chaîne de responsabilité
+**Propriétaire → DSI → Senior Manager → Manager → Team Leader → Expert.**
+Le DSI arbitre les conflits et contrôle l'architecture, les coûts, les risques et les autorisations. Chaque Senior Manager supervise un Manager, chaque Manager deux Team Leaders, chaque Team Leader cinq spécialistes. Le Team Leader évite l'activation simultanée des cinq agents lorsqu'ils ne sont pas pertinents.
 
-Lire agents/manifest.json et docs/AGENT_OPERATING_MODEL.md. Les rôles sont des **instructions opérationnelles pour Work / Codex**, et ne garantissent pas huit agents exécutés séparément en continu.
+### Portefeuilles
+- Produit & pédagogie : `SM_PRODUCT` → `M_PRODUCT` → `TL_PRODUCT_EDTECH`, `TL_DESIGN_CONTENT`.
+- Ingénierie & données : `SM_ENGINEERING` → `M_ENGINEERING` → `TL_WEB_PLATFORM`, `TL_DATA_AI`.
+- Qualité & exploitation : `SM_TRUST` → `M_DELIVERY` → `TL_QA_SECURITY`, `TL_DEVOPS_RELEASE`.
 
-## Principes non négociables
-- Aucune API IA payante, aucun wallet, aucune clé dans le dépôt ni sur WordPress.
-- Coût obligatoire supplémentaire : zéro dans l'architecture cible ; vérifier les quotas Github Actions et le forfait existant.
-- Site WordPress existant : thème actif MNIN NBDA V4, aucune écriture, installation ni déploiement avant audit, sauvegarde et autorisation explicite.
-- Priorité accueil conforme à la dernière maquette approuvée, aucun bloc matières sur la Home ; responsive, français/arabe, RTL.
-- Architecture : thème mnin-nbda-theme + plugin métier séparé mnin-nbda-core ; Polylang Free facultatif ; pas de Tutor LMS/Elementor obligatoire.
-- Protection des mineurs : minimisation, séparation foyer, aucun export de données réelles ni publication dans Git.
-- Contrôles qualité réels ; seul résultat permis PASS, FAIL, NON TESTÉ ou BLOQUÉ.
-- Pour une fonction IA pédagogique, chemin déterministe sans IA obligatoire ; aucune IA distante exigée.
-- Changement de DNS, paiement, production, données réelles, thème et extensions actifs : autorisation humaine explicite.
+## Autorité documentaire
+1. Dernières décisions explicitement validées par le propriétaire.
+2. `docs/references/PROMPT_MASTER_HOME_DESKTOP_XL_2026-10-11.md` concernant la Home.
+3. `docs/references/PROMPT_MASTER_WORDPRESS_V4_2.md` concernant le socle produit et technique.
+4. Observation factuelle en lecture seule du site WordPress existant.
+Un conflit ne peut pas être résolu par supposition. La référence visuelle originale doit être disponible pour garantir une reproduction fidèle.
 
-## Procédure commune
-1. DSI : vérifier état, contraintes, sources et tâche précise.
-2. Activer seulement les rôles pertinents pour cette tâche (pas les huit systématiquement).
-3. Chaque rôle fournit un livrable vérifiable avec son contexte, preuve et limites.
-4. Développement produit du code versionné ; DevOps contrôle les tests ; DSI valide les critères.
-5. Rapporter les blocages et la prochaine action dans docs/STATUS.md.
-6. GitHub Actions n'est pas un agent IA et n'installe rien automatiquement sur WordPress.
+## Restrictions absolues
+- Aucune API IA payante ; aucune dépense ou abonnement ajouté sans accord.
+- Aucune installation d'extension WordPress, écriture sur le site, publication ou changement DNS sans autorisation explicite.
+- Le site WordPress MNIN NBDA V4 existant ne doit jamais être écrasé avant audit et sauvegarde vérifiables.
+- Design : Home d'abord, conforme à la maquette approuvée, sans bloc de matières ; puis déclinaisons responsive FR/AR RTL.
+- Architecture WordPress : thème indépendant `mnin-nbda-theme` + plugin métier `mnin-nbda-core`. Tutor LMS et Elementor non obligatoires ; Polylang Free optionnel.
+- Collecte minimale sur les mineurs : jamais de données réelles dans GitHub, jamais de transmission non autorisée à une IA.
+- Tests : statut `PASS`, `FAIL`, `NON TESTÉ` ou `BLOQUÉ` ; ne jamais déclarer testé ce qui ne l'est pas.
+- AI Engineering : optionnel pour l'usage du site ; aucun modèle distant nécessaire à son fonctionnement essentiel.
 
-## Terminé signifie
-Code réellement construit, tests réellement exécutés et documentés, absence d'anomalie bloquante, conformité au master + à la maquette vérifiée, validation expresse du propriétaire avant publication.
+## Protocole de travail
+Le DSI choisit une tâche du backlog, l'attribue à un Senior Manager, puis Manager et Team Leader concernés ; celui-ci mobilise le ou les spécialistes pertinents. Chaque transfert doit mentionner ID, propriétaire, entrées, critères d'acceptation, fichier/commit, résultats et blocages. Qualité & DevOps interviennent sur toute livraison sensible avant validation du DSI.
+
+## Autonomie effective
+Ces profils sont des **prompts spécialisés dans un dépôt privé**, et non des processus persistants. Work/Codex doivent être déclenchés/configurés séparément pour les exécuter, séquentiellement au besoin. GitHub Actions lance uniquement des tests déterministes : pas de 43 modèles IA ni de garantie 24 h/24.
+
+## Fin de tâche
+Un objectif n'est clos qu'après code livré lorsque requis, tests exécutés et documentés, contrôle des risques, conformité au master, et validation humaine avant tout déploiement.
