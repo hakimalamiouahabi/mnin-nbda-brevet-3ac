@@ -1,3 +1,33 @@
+# MNIN Bridge — plateforme MCP privée (prototype v0.2)
+
+**STATUT VÉRIFIÉ : code publié sur une branche d'essai, NON DÉPLOYÉ, NON CONNECTÉ, aucun worker ni sous-agent réellement lancé.**
+
+Le manifeste portable est dans `plugin.json` ; les instructions spécialisées sont dans `skills/`.
+Un paquet de fichiers ne donne **pas** de permissions nouvelles à ChatGPT : seules une connexion MCP authentifiée et des ressources d'exécution réelles le permettront.
+
+## Ajouts V0.2
+
+- Contrôle des missions dans `mission_control.py` : cinq types autorisés, paramètres validés, registre persistant SQLite, idempotence, plan d'intervention et événements auditables.
+- Sept nouveaux outils MCP (catalogue, validation, proposition, consultation, liste, aperçu, journal). Une proposition **ne déclenche aucune exécution**.
+- Tests supplémentaires dans `tests/test_mission_control.py` : présents dans GitHub, **non exécutés**.
+- BrowserLab : matrice « smoke » de 5 écrans ou matrice complète de **21 écrans**, captures viewport/pleine page, erreurs navigateur, images cassées et alertes de densité des images raster.
+- `docs/ARCHITECTURE_ENTERPRISE_V02.md` : architecture d'exécution par étapes, permissions, OAuth, workers isolés et intégration WordPress future.
+- Déclenchement de workflow en V0.2 : **refusé côté serveur même si le modèle envoie une approbation booléenne**. Une autorisation indépendante et authentifiée reste à développer.
+
+## Conséquences
+
+- Le serveur local n'a pas d'OAuth : **ne jamais l'exposer publiquement en l'état**.
+- La base SQLite locale ne persiste pas sur un hébergement à système de fichiers éphémère. Le choix d'une base durable privée précède tout déploiement.
+- Le dépôt GitHub est actuellement déclaré **PUBLIC** : aucune image originale non publique, donnée scolaire nominative ou clé secrète ne doit y être ajoutée.
+- L'installation et le lancement des workflows ne sont pas inclus.
+- Les 700 profils IA restent un organigramme cible documenté, pas 700 modèles lancés.
+
+## Étape suivante, à approuver séparément
+
+Exécuter les tests, procéder à la revue de sécurité, choisir OAuth 2.1, stockage privé, hébergement et plafonds de coût, puis seulement connecter un endpoint HTTPS authentifié dans ChatGPT.
+
+---
+
 # MNIN Bridge — plugin MCP privé (prototype v0.1)
 
 **STATUT : code créé, PAS connecté à ChatGPT, PAS déployé, PAS installé sur WordPress.**
