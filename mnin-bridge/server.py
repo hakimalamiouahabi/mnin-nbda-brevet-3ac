@@ -7,6 +7,7 @@ import os
 from mcp.server.fastmcp import FastMCP
 from bridge_core import asset_info, dispatch_qa, github_repo, list_assets, qa_artifacts, qa_run
 from mission_control import MissionStore, capability_catalog, validate_request
+from access_policy import public_policy_summary
 
 mcp = FastMCP("MNIN Bridge", host="127.0.0.1", port=8000, stateless_http=True, json_response=True)
 
@@ -15,7 +16,7 @@ mcp = FastMCP("MNIN Bridge", host="127.0.0.1", port=8000, stateless_http=True, j
 def bridge_status() -> dict:
     """Read actual readiness. Does not claim agents are active."""
     return {
-        "version": "0.2.0-prototype",
+        "version": "0.3.0-prototype",
         "repository": github_repo(),
         "asset_directory_configured": bool(os.getenv("MNIN_ASSET_ROOT")),
         "github_credentials_configured": bool(os.getenv("MNIN_GITHUB_TOKEN")),
@@ -104,6 +105,12 @@ def bridge_preview_mission(mission_id: str) -> dict:
 def bridge_mission_audit(mission_id: str) -> list[dict]:
     """Read recorded audit events from the local mission store."""
     return _local_store().audit(mission_id)
+
+
+@mcp.tool()
+def bridge_delegation_policy() -> dict:
+    """Read non-sensitive scope of durable user delegation (never changes permissions)."""
+    return public_policy_summary()
 
 
 if __name__ == "__main__":
