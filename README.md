@@ -1,27 +1,36 @@
-# MNIN NBDA — Référentiel des huit experts IA
+# MNIN NBDA — organisation de 43 profils IA spécialisés
 
-Dépôt de coordination ChatGPT Work / Codex / GitHub pour le projet WordPress MNIN NBDA. **Huit rôles sont configurés en Markdown, mais aucun service IA permanent n'est lancé par leur seule création.**
+Configuration GitHub de la structure demandée pour développer la plateforme WordPress MNIN NBDA **sans API IA payante**.
 
-## Commencer
-1. Lire docs/WORK_MASTER_START.md dans ChatGPT Work avec l'accès au dépôt GitHub.
-2. Confier la première mission au DSI : audit **sans écriture** du site WordPress MNIN NBDA V4 et préparation du backlog.
-3. Répartir les travaux uniquement entre les rôles pertinents.
-4. Versionner les changements, tester, documenter et obtenir l'accord avant déploiement.
+| Niveau | Effectif |
+|---|---:|
+| Directeur SI | 1 |
+| Senior Managers | 3 |
+| Managers | 3 |
+| Team Leaders | 6 |
+| Agents experts | 30 |
+| **Total** | **43** |
 
-## Fichiers centraux
-- AGENTS.md : règles communes.
-- agents/manifest.json : inventaire formel des huit rôles.
-- agents/01-directeur-si.md à agents/08-devops.md : prompts spécialisés.
-- docs/AGENT_OPERATING_MODEL.md : orchestration, handoffs, portes de validation.
-- docs/WORK_MASTER_START.md : prompt maître de démarrage dans Work.
-- docs/ROADMAP.md, docs/STATUS.md : phases et état vérifié.
-- docs/references/PROMPT_MASTER_WORDPRESS_V4_2.md : cahier directeur.
-- docs/references/PROMPT_MASTER_HOME_DESKTOP_XL_2026-10-11.md : référence textuelle de Home.
-- scripts/validate_workspace.py : contrôles déterministes locaux.
-- .github/workflows/validation.yml : CI sans clé API IA.
+## Référentiel
+- `agents/manifest.json` : identifiants, liens hiérarchiques et 43 instructions référencées.
+- `agents/org-structure.json` : organigramme imbriqué en trois portefeuilles et six équipes de cinq spécialistes.
+- `agents/01-directeur-si.md` : orchestration générale.
+- `agents/leadership/` : 12 profils d'encadrement.
+- `agents/02-*.md` à `agents/31-*.md` : 30 spécialistes.
+- `AGENTS.md`, `docs/AGENT_OPERATING_MODEL.md` : règles de travail.
+- `docs/WORK_MASTER_START.md` : instructions à donner dans ChatGPT Work.
+- `docs/ROADMAP.md`, `docs/STATUS.md` : étapes et preuves.
+- `docs/references/` : Prompt Master V4.2 et Home Desktop XL.
 
-## Architecture cible
-WordPress personnalisé : mnin-nbda-theme (design) + mnin-nbda-core (pédagogie). Éviter Tutor LMS / Elementor obligatoires, préserver FR/AR et RTL, aucune dépendance externe payante nécessaire aux fonctions essentielles.
+## Répartition
+**Produit :** Product/EdTech + Design/Contenus.
 
-## Sécurité et limites
-Le site WordPress existant est en staging. Aucun écrasement, installation, activation d'extension ou mise en production n'est autorisé automatiquement. Aucune API IA payante n'est configurée. Les quotas GitHub Actions et les fonctionnalités Work/Codex dépendent du compte et de l'offre accessibles ; **une exécution 24 h/24 non-stop n'est pas mise en place ici**.
+**Ingénierie :** Plateforme Web + Data/IA.
+
+**Exploitation :** QA/Sécurité + DevOps/Livraison.
+
+## Démarrage
+Ouvrir Work, connecter le dépôt GitHub autorisé et faire lire `docs/WORK_MASTER_START.md` au rôle DSI. Celui-ci commence par les tickets #1 à #3 en audit **sans écriture sur WordPress**.
+
+## Statut réel
+Les 43 **descriptions de rôles** sont enregistrées dans GitHub. Aucun déploiement de 43 instances IA parallèles, aucune planification permanente ni travail en arrière-plan Work n'a été activé par ces fichiers. Aucun code de WordPress n'est présumé développé ou testé sur cette seule base. Les comptes GitHub Actions et Work/Codex restent soumis à leurs limitations et droits.
