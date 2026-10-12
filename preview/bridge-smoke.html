@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>MNIN Bridge – Banc de test QA (pas le site officiel)</title>
+  <style>
+    :root {color-scheme:light; font-family:system-ui,sans-serif; color:#17243d;background:#fffaf0}
+    * {box-sizing:border-box}
+    body {margin:0;min-height:100vh}
+    a {color:#1045aa} a:focus-visible {outline:3px solid #1944a2;outline-offset:3px}
+    header,main,footer {padding:clamp(1rem,3vw,3rem)}
+    header {display:flex;gap:1rem;align-items:center;justify-content:space-between; flex-wrap:wrap;background:#fff}
+    header strong{font-size:1.25rem}
+    nav{display:flex;gap:1rem;flex-wrap:wrap}
+    main{max-width:1200px;margin:auto}
+    h1{font-size:clamp(2rem,4vw,3.5rem);line-height:1.1;max-width:24ch}
+    .notice {padding:1.1rem; background:#e9f0ff; border-inline-start:4px solid #174a9c; border-radius:0.5rem}
+    .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:2rem}
+    article{background:white;padding:1.5rem;border:1px solid #b9bfd0;border-radius:1rem}
+    article h2{margin-top:0} article p{overflow-wrap:anywhere}
+    footer{background:#17243d;color:white;text-align:center}
+    @media(max-width:720px){.cards{grid-template-columns:1fr}header{align-items:flex-start}}
+  </style>
+</head>
+<body>
+<header>
+  <strong>MNIN Bridge · Test</strong>
+  <nav aria-label="Navigation de test"><a href="#mission">Mission</a><a href="#controles">Contrôles</a></nav>
+</header>
+<main id="mission">
+  <h1>Banc de test des captures responsive</h1>
+  <p class="notice">Cette page est une fixture technique publique, sans données privées, et <strong>n'est pas</strong> la maquette approuvée du site MNIN NBDA.</p>
+  <section aria-labelledby="titre-qualite" id="controles">
+    <h2 id="titre-qualite">Contrôles navigateur</h2>
+    <div class="cards">
+      <article><h2>Responsive</h2><p>Mesurer les débordements horizontaux.</p></article>
+      <article><h2>Captures</h2><p>Enregistrer le viewport et la page complète.</p></article>
+      <article><h2>Accessibilité</h2><p>Vérifications automatisées partielles via axe-core.</p></article>
+    </div>
+  </section>
+</main>
+<footer><p>Environnement de test uniquement — aucun WordPress modifié.</p></footer>
+</body></html>
