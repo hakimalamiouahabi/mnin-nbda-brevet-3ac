@@ -42,7 +42,8 @@ jobs:
       - name: Install browser tooling (job-scoped)
         run: |
           cd mnin-bridge/runner
-          npm install --no-save --no-package-lock playwright@1.56.1
+          npm install --no-audit --no-fund --no-package-lock
+          npm run oss:smoke
           npx playwright install --with-deps chromium
       - name: Serve local static checkout
         run: |
@@ -52,6 +53,7 @@ jobs:
         env:
           MNIN_HOME_PATH: ${{ inputs.home_path }}
           MNIN_QA_MATRIX: ${{ inputs.qa_mode }}
+          MNIN_A11Y_MODE: 'on'
         run: node mnin-bridge/runner/home-qa.mjs
       - name: Return QA artifact
         if: always()
