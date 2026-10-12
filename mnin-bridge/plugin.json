@@ -1,0 +1,20 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "mnin-bridge",
+  "version": "0.2.0",
+  "description": "Private, approval-aware MNIN NBDA development mission planner and future browser QA bridge. No WordPress writes by default.",
+  "repository": "https://github.com/hakimalamiouahabi/mnin-nbda-brevet-3ac",
+  "keywords": [
+    "wordpress",
+    "responsive",
+    "education",
+    "quality-assurance",
+    "mcp",
+    "mission-control"
+  ],
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./skills/setup/SKILL.md"
+    }
+  }
+}
