@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "mnin-bridge-pro",
-  "version": "0.3.0",
-  "description": "Private owner-scoped ChatGPT Pro standard-chat plugin for MNIN NBDA: mission planning, assets QA, code and browser workflow extensions. Requires verified OAuth and platform permissions; no Work/Codex runtime dependency.",
+  "version": "0.4.0",
+  "description": "MNIN Bridge Pro: ten premium WordPress and EdTech planning modules for standard ChatGPT, with standing owner intent, proof-based QA and mandatory provider permission checks. No autonomous execution or WordPress writes.",
   "repository": "https://github.com/hakimalamiouahabi/mnin-nbda-brevet-3ac",
   "keywords": [
     "chatgpt",
@@ -12,7 +12,11 @@
     "education",
     "mcp",
     "quality-assurance",
-    "owner-delegation"
+    "owner-delegation",
+    "premium-design",
+    "fr-ar-rtl",
+    "edtech",
+    "chatgpt-pro"
   ],
   "extensions": {
     "com.openai": {
