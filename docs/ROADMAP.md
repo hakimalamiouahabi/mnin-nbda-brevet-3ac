@@ -1,33 +1,30 @@
-# Roadmap opérationnelle — MNIN NBDA, orchestrée par huit experts
+# Roadmap — MNIN NBDA / Organisation 43 profils
 
-## P0 — Audit et reprise sécurisée (DSI + DevOps + Web + Design)
-- [ ] Auditer WordPress.com existant et thème actif MNIN NBDA V4 en lecture seule.
-- [ ] Identifier source, contenu, version, sauvegarde/restauration et accès autorisés.
-- [ ] Vérifier visuel original de la maquette Home et périmètre 3AC / 1AC–3AC.
-- [ ] DSI : produire backlog priorisé et registre de décisions.
-- [ ] DevOps : confirmer le fonctionnement de la CI et ses quotas ; ne déployer aucun code.
+## Phase P0 — Audit, stratégie et reprise (DSI + senior managers)
+- [ ] DSI : ouvrir les trois missions GitHub déjà créées et confirmer responsables.
+- [ ] SM_ENGINEERING/M_ENGINEERING/TL_WEB_PLATFORM : audit en lecture seule du thème WordPress actuel et de ses dépendances.
+- [ ] SM_PRODUCT/M_PRODUCT/TL_DESIGN_CONTENT : enregistrer l'original de la dernière maquette approuvée, inventorier les éléments graphiques et les conflits de périmètre.
+- [ ] SM_TRUST/M_DELIVERY/TL_DEVOPS_RELEASE : contrôler la CI, les quotas et les garanties de sauvegarde/rollback.
+- [ ] Product Owner : mettre à jour backlog et critères d'acceptation, confirmer Brevet 3AC vs 1AC–3AC.
 
-## P1 — Home validée (Design + Web + DevOps + DSI)
-- [ ] Rassembler les assets officiels et la dernière maquette approuvée.
-- [ ] Développer une Home haute fidélité sans bloc de matières.
-- [ ] Tester Desktop XL au viewport CSS 1920 x 1080 ; compléter les tests responsive.
-- [ ] Contrôler FR/AR, RTL, clavier, contrastes, performances et contenu authentique.
-- [ ] Valider l'interface par le propriétaire avant création d'autres pages.
+## Phase P1 — Home validée (Produit + Web + Qualité)
+- [ ] Reproduire la Home sans bloc de matières selon l'original.
+- [ ] Contrôler desktop XL viewport 1920x1080 CSS, puis tailles mobiles réellement testées.
+- [ ] Tester FR/AR, RTL, clavier, contrastes, reduced motion et contenus validés.
+- [ ] Validation explicite du propriétaire pour figer le design system avant les autres pages.
 
-## P2 — Socle de données et pédagogique (DSI + Data Engineering + Data Scientist + Web)
-- [ ] Schéma et dictionnaire de données vérifiés, migrations réversibles.
-- [ ] Définir règles transparentes de diagnostic, prérequis et progression avec évaluations sur données synthétiques.
-- [ ] Implémenter plugin indépendant mnin-nbda-core.
-- [ ] Valider comptes Parent/Élève et cloisonnement des foyers en tests.
-- [ ] Introduire le reporting analytique uniquement avec KPI définis et accès contrôlés (Data Analyst).
-- [ ] Conserver l'IA pédagogique facultative et non essentielle (AI Engineering).
+## Phase P2 — Plateforme et données (Web + Data/IA + Pédagogie)
+- [ ] Contrat de données et modèle Parents/Élèves avec confidentialité validée.
+- [ ] Développement de mnin-nbda-core indépendant du thème.
+- [ ] Parcours pilote réel de diagnostic, prérequis, leçon, exercice, révision et progression.
+- [ ] Modèles pédagogiques explicables ; IA distante optionnelle et désactivée, sans coût.
+- [ ] KPI et reporting autorisés, tests sur données fictives.
 
-## P3 — Tests et livraisons (tous selon besoin, DevOps référent)
-- [ ] Développer pages supplémentaires seulement après validation design system.
-- [ ] Tester sécurité, performance, accessibilité et langues sans chiffres inventés.
-- [ ] Construire les ZIP thème et core et les installer sur WordPress propre.
-- [ ] Produire rapports de tests factuels, changelog et plan de rollback.
-- [ ] Déployer uniquement après autorisation explicite.
+## Phase P3 — Production maîtrisée (Qualité + Livraison)
+- [ ] Tests unitaires/integration/E2E, sécurité, RTL, responsive, performance.
+- [ ] ZIP thème/plugin construits, installés et activés sur WordPress propre.
+- [ ] Contrôles des droits d'accès, conformité et absence d'API payante obligatoire.
+- [ ] Changelog, preuves, rollback, validation avant déploiement.
 
-## Mesure et responsabilités
-Chaque tâche doit préciser un rôle responsable, des preuves et un statut parmi PASS / FAIL / NON TESTÉ / BLOQUÉ. Conserver docs/STATUS.md factuel et daté. Aucune automatisation IA continue n'est garantie par GitHub Actions.
+## Discipline de suivi
+Ne pas cocher sans trace vérifiée ; hiérarchie et responsables définis dans `agents/manifest.json`. Aucun des 43 profils n'est implicitement un process permanent.
