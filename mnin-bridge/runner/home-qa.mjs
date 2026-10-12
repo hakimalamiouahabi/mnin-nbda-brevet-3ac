@@ -2,6 +2,9 @@
 import { chromium } from 'playwright';
 import fs from 'node:fs';
 import path from 'node:path';
+import { createRequire } from 'node:module';
+const require = createRequire(import.meta.url);
+const axePath = require.resolve('axe-core/axe.min.js');
 
 const entry = process.env.MNIN_HOME_PATH || '';
 if (!/^(site|home|preview)\/[A-Za-z0-9._/-]+\.html$/.test(entry) || entry.includes('..') || entry.includes('//')) {
@@ -34,6 +37,16 @@ try {
   const page=await browser.newPage({viewport:{width,height},deviceScaleFactor:1,reducedMotion:'reduce'});
   const errors=[];
   page.on('pageerror',e=>errors.push(String(e.message)));
+  // Never allow a checked-out, potentially untrusted HTML page to fetch remote assets.
+  // This also keeps test data from being sent to third-party hosts.
+  await page.route('**/*', route => {
+    const resourceUrl = route.request().url();
+    if (resourceUrl.startsWith('http://127.0.0.1:8765/') ||
+        resourceUrl.startsWith('data:') || resourceUrl.startsWith('blob:')) {
+      return route.continue();
+    }
+    return route.abort('blockedbyclient');
+  });
   const start=Date.now();
   try{
    await page.goto('http://127.0.0.1:8765/'+route,{waitUntil:'networkidle',timeout:30000});
@@ -57,19 +70,33 @@ try {
          .map(i=>({file:i.file,nativeWidth:i.nativeWidth,displayWidth:Math.round(i.renderedWidth)}))
      };
    });
+   await page.addScriptTag({path:axePath});
+   const axe = await page.evaluate(async()=>{
+     const result = await window.axe.run(document, {
+       runOnly: {type: 'tag', values: ['wcag2a','wcag2aa','wcag21a','wcag21aa']}
+     });
+     return {
+       violations: result.violations.map(v=>({
+         ruleId:v.id,impact:v.impact,affectedNodes:v.nodes.length,
+         wcagTags:v.tags.filter(t=>t.startsWith('wcag')).slice(0,8)
+       })),
+       needsManualReview: result.incomplete.length,
+       passingRules: result.passes.length
+     };
+   });
    const overflow=metrics.contentWidth>metrics.viewportWidth+1;
-   const pass=!overflow&&!metrics.brokenImages.length&&!errors.length&&!!metrics.h1;
+   const pass=!overflow&&!metrics.brokenImages.length&&!errors.length&&!!metrics.h1&&axe.violations.length===0;
    if(!pass)failures++;
    await page.screenshot({path:path.join(folder,name+'-'+width+'x'+height+'-viewport.png')});
    await page.screenshot({path:path.join(folder,name+'-'+width+'-full-page.png'),fullPage:true});
-   tests.push({name,width,height,status:pass?'PASS':'FAIL',overflow,errors,...metrics,durationMs:Date.now()-start});
+   tests.push({name,width,height,status:pass?'PASS':'FAIL',overflow,errors,...metrics,axe,durationMs:Date.now()-start});
   }catch(e){failures++;tests.push({name,width,height,status:'FAIL',error:String(e.message)});}
   finally{await page.close();}
  }
 }finally{await browser.close();}
 fs.writeFileSync(path.join(folder,'report.json'),JSON.stringify({
- version:'0.2.0',mode,total:tests.length,failures,status:failures?'FAIL':'PASS',
+ version:'0.7.0',mode,total:tests.length,failures,status:failures?'FAIL':'PASS',
  source:entry,tests,
- disclaimer:'Structural QA only; does not certify visual fidelity, accessibility or Core Web Vitals.'
+ disclaimer:'Offline-hosted browser QA + axe-core WCAG rule checks. Does not certify visual fidelity, full accessibility, security or Core Web Vitals. External resources intentionally blocked.'
 },null,2));
 if(failures)process.exitCode=1;
