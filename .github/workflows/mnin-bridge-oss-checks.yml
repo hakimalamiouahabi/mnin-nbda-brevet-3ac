@@ -1,0 +1,44 @@
+name: MNIN Bridge - OSS integration checks
+on:
+  pull_request:
+    paths:
+      - 'mnin-bridge/**'
+      - '.github/workflows/mnin-bridge-oss-checks.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  registry-python:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate code and all security/registy/AssetLab tests
+        run: |
+          python -m compileall -q mnin-bridge
+          python -m unittest discover -s mnin-bridge/tests -v
+  npm-toolchain:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install open source libraries in isolated CI
+        working-directory: mnin-bridge/runner
+        run: npm install --no-audit --no-fund --no-package-lock
+      - name: Verify browser QA and screenshot diff code syntax
+        working-directory: mnin-bridge/runner
+        run: |
+          node --check home-qa.mjs
+          node --check compare-captures.mjs
+          node --check open-source-smoke.mjs
+      - name: Run real open-source interoperability smoke
+        working-directory: mnin-bridge/runner
+        run: npm run oss:smoke
+      - name: Never deploy or access WordPress
+        run: echo 'Dependency smoke only; no WordPress, deployment or paid AI API'
