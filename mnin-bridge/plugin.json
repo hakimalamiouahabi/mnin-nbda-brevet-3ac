@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "mnin-bridge-pro",
-  "version": "0.4.0",
-  "description": "MNIN Bridge Pro: ten premium WordPress and EdTech planning modules for standard ChatGPT, with standing owner intent, proof-based QA and mandatory provider permission checks. No autonomous execution or WordPress writes.",
+  "version": "0.5.0",
+  "description": "MNIN Bridge Pro: intelligent DSI blueprint for 43 documented roles and 10 premium WordPress/EdTech modules in standard ChatGPT. Standing owner intent; read-only MCP tool surface; no Work/Codex, no paid AI API, no autonomous agents or write access.",
   "repository": "https://github.com/hakimalamiouahabi/mnin-nbda-brevet-3ac",
   "keywords": [
     "chatgpt",
@@ -20,7 +20,7 @@
   ],
   "extensions": {
     "com.openai": {
-      "onboardingSkill": "./skills/setup/SKILL.md"
+      "onboardingSkill": "./skills/chatgpt-pro/SKILL.md"
     }
   }
 }
