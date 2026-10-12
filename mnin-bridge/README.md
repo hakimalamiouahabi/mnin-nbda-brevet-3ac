@@ -1,3 +1,44 @@
+# MNIN Bridge Pro — v0.3 (ChatGPT Pro, conversation classique)
+
+**ÉTAT : code préparé sur branche isolée ; plugin non installé, non déployé et sans serveur d'authentification. Les tests Python restent NON TESTÉS.**
+
+### Autorisation permanente demandée par le propriétaire
+
+La préférence de délégation durable est dans `owner_delegation_policy.json`. Elle couvre les opérations courantes **seulement après** authentification indépendante, confirmation du propriétaire et application des limites. Le fichier de politique constitue une **configuration de permissions projetée**, pas une autorisation OAuth ni une permission de contourner l'hôte ChatGPT.
+
+Le nouveau module `access_policy.py` impose : propriétaire vérifié, audience et émetteur OAuth, client autorisé, preuve indépendante de l'interface ChatGPT standard et preuve vérifiée d'abonnement Pro. Si la preuve Pro/surface n'est pas exposée au serveur par une source digne de confiance, la décision reste **DENY**, et aucune prétention de filtrage « Pro uniquement » n'est permise.
+
+### ChatGPT Pro uniquement, hors Work et Codex
+
+- Cible : conversations normales ChatGPT Pro, usage personnel de l'unique propriétaire autorisé.
+- Work et Codex ne sont **ni requis ni considérés comme moteur d'exécution**.
+- Le plugin n'autorise pas les appels identifiés de manière fiable comme Work/Codex. Sans identité client/source cryptographiquement fiable, il refuse les outils privés.
+- Les plugins OpenAI sont généralement disponibles sur plusieurs surfaces : **le packaging seul ne peut pas prouver ni imposer l'exclusivité Pro ou l'exclusion absolue de Work/Codex**. Une attestation fiable de plan/interface ou une limitation de disponibilité par la plateforme reste nécessaire.
+- L'accès externe exige un MCP distant HTTPS et OAuth 2.1, non encore installés.
+
+### Contrôles bloquants V0.3
+
+Tous les outils MCP privés ont une garde `_require_verified_pro_standard_chat()` qui **refuse l'accès à ce stade**, car le validateur OAuth du serveur n'existe pas encore. Ce garde ne peut pas être supprimé par une variable d'environnement ou un booléen fourni par le modèle.
+
+Le droit permanent de créer des missions et d'exécuter des tests isolés après connexion sécurisée n'inclut **pas** la suppression, le déploiement public, l'achat de services, les fusions sur `main`, les changements DNS, les exports de données sensibles ou les modifications WordPress sans autorisation spécifique.
+
+### Outils disponibles dans le code
+
+- `bridge_delegation_policy()` : description non sensible de la délégation (lecture seule).
+- `access_policy.evaluate_delegation(...)` : moteur de décision pur côté serveur ; son paramètre `VerifiedPrincipal` ne doit jamais être un paramètre d'outil MCP.
+- `skills/chatgpt-pro-operator/SKILL.md` : procédure d'utilisation par ChatGPT Pro standard.
+- `tests/test_access_policy.py` : scénarios de blocage Pro non vérifié, Work, Codex, client non reconnu, dépenses, WordPress et opérations destructrices (tests écrits, pas encore exécutés).
+
+### Reste à effectuer
+
+1. Vérifier le niveau d'accès réellement disponible de ChatGPT et la présence d'une attestation fiable de plan/surface ; faute de preuve, ne pas annoncer « Pro uniquement » comme garanti.
+2. Implémenter OAuth 2.1, identité serveur et révocation de délégation ; obtenir les identifiants client/audience via l'autorisation effective (ne pas les inventer).
+3. Configurer stockage privé et runner isolé dans une infrastructure autorisée, à coût additionnel nul vérifié.
+4. Exécuter les tests, audit sécurité, puis installer le plugin depuis ChatGPT standard.
+5. Faire un test réel : original Home → SHA256 → capturer 21 écrans → rapport QA ; aucune publication WordPress.
+
+---
+
 # MNIN Bridge — plateforme MCP privée (prototype v0.2)
 
 **STATUT VÉRIFIÉ : code publié sur une branche d'essai, NON DÉPLOYÉ, NON CONNECTÉ, aucun worker ni sous-agent réellement lancé.**
