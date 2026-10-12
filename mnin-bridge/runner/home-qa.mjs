@@ -34,9 +34,11 @@ const tests=[];
 let failures=0;
 try {
  for(const [name,width,height] of cases){
-  const page=await browser.newPage({viewport:{width,height},deviceScaleFactor:1,reducedMotion:'reduce'});
+  const page=await browser.newPage({viewport:{width,height},deviceScaleFactor:1,reducedMotion:'reduce',serviceWorkers:'block'});
   const errors=[];
   page.on('pageerror',e=>errors.push(String(e.message)));
+  // Prevent scripts from opening unreviewed WebSocket connections in browser QA.
+  await page.routeWebSocket('**/*', socket => socket.close());
   // Never allow a checked-out, potentially untrusted HTML page to fetch remote assets.
   // This also keeps test data from being sent to third-party hosts.
   await page.route('**/*', route => {
@@ -97,6 +99,6 @@ try {
 fs.writeFileSync(path.join(folder,'report.json'),JSON.stringify({
  version:'0.7.0',mode,total:tests.length,failures,status:failures?'FAIL':'PASS',
  source:entry,tests,
- disclaimer:'Offline-hosted browser QA + axe-core WCAG rule checks. Does not certify visual fidelity, full accessibility, security or Core Web Vitals. External resources intentionally blocked.'
+ disclaimer:'Browser QA runs on approved local HTML with HTTP/WebSocket interception. Network isolation is not guaranteed by routing alone; use a restricted CI environment. No WCAG certification or measured Core Web Vitals.'
 },null,2));
 if(failures)process.exitCode=1;
