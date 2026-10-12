@@ -60,7 +60,10 @@
       "disable_security_logging",
       "unrestricted_shell",
       "unbounded_agent_execution"
-    ]
+    ],
+    "owner_intent_recorded_at": "2026-10-12",
+    "owner_intent": "Maximum continuing task delegation requested in standard ChatGPT Pro for this MNIN NBDA project, subject to verifiable authentication, provider permissions, zero incremental cost, mandatory approvals and revocation.",
+    "authority_boundary": "This file encodes intent; it never replaces explicit account consent, OAuth, platform write confirmation or separate approval for sensitive actions."
   },
   "identity_gate": {
     "required": true,
