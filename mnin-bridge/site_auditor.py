@@ -186,6 +186,39 @@ def _hash(path: Path) -> str:
     return result.hexdigest()
 
 
+REMEDIATIONS = {
+    "BROKEN_LOCAL_IMAGE": ("P0", "FRONTEND_UI", "Restore or correct a missing local image"),
+    "IMAGE_OUT_OF_SCOPE": ("P0", "SECURITY_PRIVACY", "Inspect image path confinement and source provenance"),
+    "RTL_NOT_DECLARED": ("P1", "LOCALIZATION_FR_AR", "Align document direction with Arabic language"),
+    "IMG_ALT_MISSING": ("P1", "UX_ACCESSIBILITY", "Write functional or informative alt text; decorative images need alt empty"),
+    "RASTER_DPR_WARNING": ("P1", "ILLUSTRATION_MOTION", "Supply a verifiable high-density original or appropriate vector"),
+    "H1_COUNT": ("P1", "FRONTEND_UI", "Correct the single-main-heading hierarchy"),
+    "DUPLICATE_ID": ("P1", "FRONTEND_UI", "Ensure unique HTML identifiers"),
+    "BROKEN_FRAGMENT": ("P1", "FRONTEND_UI", "Repair local in-page anchor references"),
+    "VIEWPORT_MISSING": ("P1", "RESPONSIVE_MOBILE", "Add a valid responsive viewport meta tag"),
+    "LANG_MISSING_OR_UNSUPPORTED": ("P1", "LOCALIZATION_FR_AR", "Declare the correct HTML document language"),
+    "TITLE_MISSING": ("P1", "SEO_GROWTH", "Provide an accurate document title"),
+    "IMAGE_SCAN_TRUNCATED": ("P1", "QA_AUTOMATION", "Split audit into bounded page sections and inspect remaining images"),
+    "IMG_DIMENSIONS_NOT_DECLARED": ("P2", "PERFORMANCE_WP", "Define image dimensions or aspect-ratio for layout stability"),
+    "META_DESCRIPTION_MISSING": ("P2", "SEO_GROWTH", "Provide a verified human-friendly page description"),
+}
+
+def _triage(issues: list[dict]) -> list[dict]:
+    counts = {}
+    for issue in issues:
+        code = issue["code"]
+        counts[code] = counts.get(code, 0) + 1
+    steps = []
+    for code, count in counts.items():
+        priority, specialist, recommendation = REMEDIATIONS.get(
+            code, ("P2", "QA_AUTOMATION", "Review the warning with actual evidence")
+        )
+        steps.append({"priority": priority, "issue_code": code, "occurrences": count,
+                      "specialist": specialist, "recommendation": recommendation,
+                      "evidence_status": "NON TESTÉ", "changed_files": 0})
+    return sorted(steps, key=lambda item: (item["priority"], item["issue_code"]))
+
+
 def audit_local_home(relative_html: str, target_dpr: int = 2) -> dict:
     if type(target_dpr) is not int or target_dpr not in (1, 2, 3):
         raise ValueError("Target DPR must be 1, 2 or 3")
@@ -267,6 +300,7 @@ def audit_local_home(relative_html: str, target_dpr: int = 2) -> dict:
                     "notices": sum(i["severity"] == "notice" for i in issues)},
         "images": records,
         "issues": issues[:200],
+        "remediation_plan": _triage(issues),
         "evidence_quality": "Static heuristic only. No runtime browser, WCAG certification, Core Web Vitals or pixel-perfect comparison.",
         "execution": "NO_NETWORK_NO_WORDPRESS_WRITES",
     }
