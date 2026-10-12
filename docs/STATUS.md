@@ -26,3 +26,9 @@ DSI + Web + DevOps + Design : audit **non destructif** de WordPress et du thème
 - Aucun déploiement WordPress réalisé.
 - GitHub Actions n'exécute pas d'agents IA.
 - Ne pas considérer la finalisation acquise avant recette technique et validation explicite.
+
+## Tickets de démarrage ouverts
+- #1 — [DSI] Audit du thème et du site WordPress sans écriture.
+- #2 — [DESIGN_CONTENT] Contrôle de la dernière maquette Home.
+- #3 — [DEVOPS] Contrôle effectif de la CI et du manifest des huit agents.
+Le lancement dans Work reste une opération distincte, non encore réalisée.
