@@ -7,7 +7,7 @@ import os
 from mcp.server.fastmcp import FastMCP
 from bridge_core import asset_info, dispatch_qa, github_repo, list_assets, qa_artifacts, qa_run
 
-mcp = FastMCP("MNIN Bridge", stateless_http=True, json_response=True)
+mcp = FastMCP("MNIN Bridge", host="127.0.0.1", port=8000, stateless_http=True, json_response=True)
 
 
 @mcp.tool()
