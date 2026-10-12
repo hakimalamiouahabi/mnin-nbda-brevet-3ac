@@ -1,34 +1,31 @@
 # État vérifié — 12 octobre 2026
 
-## Réalisé
-- Site WordPress.com MNIN NBDA accessible par intégration : staging intellego718821273.wpcomstaging.com ; site non lancé publiquement.
-- Thème actif vérifié : **MNIN NBDA V4**, slug `mnin-nbda`.
-- Extensions actives constatées : WordPress Agent, Gutenberg, Jetpack, Page Optimize, Akismet, CoBlocks, Gravatar Enhanced, Layout Grid.
-- Dépôt privé GitHub **hakimalamiouahabi/mnin-nbda-brevet-3ac** accessible en écriture.
-- Deux prompts masters importés dans docs/references/ ; sauts de ligne du master V4.2 corrigés.
-- **Huit consignes de rôle créées** (DSI, Data Eng, Data Scientist, Data Analyst, AI Eng, Web, Design/Content, DevOps), manifest et protocole de coordination ajoutés.
-- GitHub Actions : script de validation documentaire et syntaxique prévu ; exécution effective du workflow NON TESTÉ.
+## Organisation GitHub désormais enregistrée
+- **43 profils définis** dans le dépôt privé `hakimalamiouahabi/mnin-nbda-brevet-3ac` : 1 DSI + 3 Senior Managers + 3 Managers + 6 Team Leaders + 30 spécialistes.
+- Arborescence et rattachements dans `agents/manifest.json` et `agents/org-structure.json` ; 6 équipes de 5 agents.
+- Tous les profils ont une fiche dédiée : DSI (`agents/01-directeur-si.md`), 12 encadrants (`agents/leadership/`), 30 experts (`agents/02-...` à `agents/31-...`).
+- Instructions communes, modèle de transfert, démarrage Work et roadmap mis à jour pour la structure à 43 rôles.
+- CI de vérification structurelle adaptée à l'organigramme ; workflow déclenchable manuellement ou via pull request. **Aucun résultat d'exécution de cette nouvelle CI n'a encore été vérifié**.
+- Deux prompts masters déjà enregistrés : V4.2 WordPress et Home Desktop XL.
 
-## Travail non encore exécuté
-- Aucun des huit rôles n'a été déployé comme processus IA permanent ou sous-agent simultané.
-- Aucune tâche Work récurrente n'a été configurée ni déclenchée.
-- Audit complet des sources du thème actif ; sauvegarde et comparaison visuelle avec la dernière maquette approuvée.
-- Implémentation réelle du code du site dans le dépôt ; tests WordPress sur installation propre ; création des ZIP livrables.
-- Précision de périmètre entre V4.2 (Brevet 3AC) et maquette (1AC/2AC/3AC).
-- Contrôle du coût/quota réel de GitHub Actions pour le compte connecté.
+## Existant WordPress vérifié précédemment
+- Site WordPress.com staging `intellego718821273.wpcomstaging.com` accessible ; pas encore lancé publiquement.
+- Thème actif : MNIN NBDA V4 (slug `mnin-nbda`).
+- Extensions actives observées : WordPress Agent, Gutenberg, Jetpack, Page Optimize, Akismet, CoBlocks, Gravatar Enhanced, Layout Grid.
+- **Aucune extension WordPress activée/désactivée par cette opération ; aucun déploiement WordPress**.
 
-## Première tâche P0
-DSI + Web + DevOps + Design : audit **non destructif** de WordPress et du thème actuel, plan de sauvegarde et liste d'écarts avec les maquettes validées.
+## Exécution à ne pas confondre avec la configuration
+- **0 / 43 instances autonomes indépendantes lancées ou vérifiées.** Le dépôt contient des définitions de rôles, pas un runtime IA permanent.
+- Aucune tâche Work récurrente n'a été créée dans cette opération.
+- Aucune clé API IA payante, aucun wallet ou service payant ajouté.
+- Les limites de plan Work/Codex et les quotas GitHub Actions n'ont pas été certifiés.
+- Aucun test d'installation des ZIP thème/core ni essai de fonctionnement sur une WordPress propre n'a été exécuté.
 
-## Points de contrôle
-- Aucune API IA payante ajoutée.
-- Aucune extension WordPress installée/activée/désactivée par ces travaux.
-- Aucun déploiement WordPress réalisé.
-- GitHub Actions n'exécute pas d'agents IA.
-- Ne pas considérer la finalisation acquise avant recette technique et validation explicite.
+## Backlog immédiat
+- [#1](https://github.com/hakimalamiouahabi/mnin-nbda-brevet-3ac/issues/1) DSI : audit **en lecture seule** du thème/site existant.
+- [#2](https://github.com/hakimalamiouahabi/mnin-nbda-brevet-3ac/issues/2) Design : contrôler la disponibilité de la maquette Home approuvée et ses écarts.
+- [#3](https://github.com/hakimalamiouahabi/mnin-nbda-brevet-3ac/issues/3) DevOps : confirmer l'exécution effective des contrôles GitHub.
+- Décision ouverte : V4.2 cible Brevet 3AC, la Home Desktop XL mentionne aussi 1AC et 2AC ; ne pas trancher sans validation.
 
-## Tickets de démarrage ouverts
-- #1 — [DSI] Audit du thème et du site WordPress sans écriture.
-- #2 — [DESIGN_CONTENT] Contrôle de la dernière maquette Home.
-- #3 — [DEVOPS] Contrôle effectif de la CI et du manifest des huit agents.
-Le lancement dans Work reste une opération distincte, non encore réalisée.
+## Action de démarrage
+Dans ChatGPT Work, donner `docs/WORK_MASTER_START.md` comme instruction au DSI avec accès au dépôt privé. Work peut exécuter les rôles selon les outils disponibles ; leur lancement parallèle et programmation automatique restent à activer/vérifier.
