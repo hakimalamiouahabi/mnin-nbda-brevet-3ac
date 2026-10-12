@@ -10,6 +10,8 @@ from mission_control import MissionStore, capability_catalog, validate_request
 from premium_suite import module_catalog, propose_premium_plan, delegation_status
 from agent_conductor import workforce_status, plan_enterprise_mission, subscription_gate_readiness
 from access_policy import public_policy_summary
+from site_auditor import audit_local_home
+from open_source_hub import catalog_open_source_tools, open_source_pipeline
 
 mcp = FastMCP("MNIN Bridge", host="127.0.0.1", port=8000, stateless_http=True, json_response=True)
 
@@ -18,7 +20,7 @@ mcp = FastMCP("MNIN Bridge", host="127.0.0.1", port=8000, stateless_http=True, j
 def bridge_status() -> dict:
     """Read actual readiness. Does not claim agents are active."""
     return {
-        "version": "0.3.0-prototype",
+        "version": "0.7.0-prototype",
         "repository": github_repo(),
         "asset_directory_configured": bool(os.getenv("MNIN_ASSET_ROOT")),
         "github_credentials_configured": bool(os.getenv("MNIN_GITHUB_TOKEN")),
@@ -150,6 +152,24 @@ def bridge_design_delivery_mission(kind: str, objective: str) -> dict:
 def bridge_pro_only_gate_status() -> dict:
     """Explain Pro-only readiness; do not accept model-supplied identity or plan claims."""
     return subscription_gate_readiness()
+
+
+@mcp.tool()
+def bridge_audit_local_home(html_path: str, target_dpr: int = 2) -> dict:
+    """Static QA on an explicitly mounted local HTML copy, read-only, no network."""
+    return audit_local_home(html_path, target_dpr)
+
+
+@mcp.tool()
+def bridge_open_source_catalog(domain: str = "") -> dict:
+    """List official public OSS tool repositories, licenses and real integration status."""
+    return catalog_open_source_tools(domain)
+
+
+@mcp.tool()
+def bridge_open_source_pipeline(mission: str) -> dict:
+    """Create an evidence-first QA/asset/WordPress OSS pipeline; does not install or execute."""
+    return open_source_pipeline(mission)
 
 
 if __name__ == "__main__":
