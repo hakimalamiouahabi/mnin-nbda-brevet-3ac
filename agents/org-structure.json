@@ -1,0 +1,240 @@
+{
+  "schema_version": 1,
+  "project": "MNIN NBDA",
+  "counts": {
+    "director": 1,
+    "senior_managers": 3,
+    "managers": 3,
+    "team_leaders": 6,
+    "specialist_agents": 30,
+    "total_profiles": 43
+  },
+  "director": {
+    "id": "DSI",
+    "name": "Directeur SI",
+    "senior_managers": [
+      {
+        "id": "SM_PRODUCT",
+        "name": "Senior Manager Produit & Pédagogie",
+        "manager": [
+          {
+            "id": "M_PRODUCT",
+            "name": "Manager Produit et expérience",
+            "team_leaders": [
+              {
+                "id": "TL_PRODUCT_EDTECH",
+                "name": "Team Leader Produit & EdTech",
+                "agents": [
+                  {
+                    "id": "PRODUCT_OWNER",
+                    "name": "Product Owner",
+                    "file": "agents/09-product-owner.md"
+                  },
+                  {
+                    "id": "EDTECH",
+                    "name": "Ingénieur pédagogique EdTech",
+                    "file": "agents/10-ingenierie-pedagogique.md"
+                  },
+                  {
+                    "id": "CURRICULUM_MA",
+                    "name": "Expert programmes scolaires marocains",
+                    "file": "agents/11-programmes-maroc.md"
+                  },
+                  {
+                    "id": "UX_ACCESSIBILITY",
+                    "name": "UX Researcher & Accessibility Expert",
+                    "file": "agents/14-ux-accessibility.md"
+                  },
+                  {
+                    "id": "LOCALIZATION_FR_AR",
+                    "name": "Expert localisation FR/AR RTL",
+                    "file": "agents/15-localisation-fr-ar.md"
+                  }
+                ]
+              },
+              {
+                "id": "TL_DESIGN_CONTENT",
+                "name": "Team Leader Design & Contenus",
+                "agents": [
+                  {
+                    "id": "DESIGN_CONTENT",
+                    "name": "Design & Content Creator",
+                    "file": "agents/07-design-content.md"
+                  },
+                  {
+                    "id": "GAME_DESIGN",
+                    "name": "Game Designer",
+                    "file": "agents/17-game-design.md"
+                  },
+                  {
+                    "id": "SEO_GROWTH",
+                    "name": "SEO & Growth Expert",
+                    "file": "agents/18-seo-growth.md"
+                  },
+                  {
+                    "id": "EDITOR_FR_AR",
+                    "name": "Rédacteur pédagogique FR/AR",
+                    "file": "agents/21-redacteur-pedagogique.md"
+                  },
+                  {
+                    "id": "ILLUSTRATION_MOTION",
+                    "name": "Illustration & Motion Design",
+                    "file": "agents/22-illustration-motion.md"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "SM_ENGINEERING",
+        "name": "Senior Manager Ingénierie & Data",
+        "manager": [
+          {
+            "id": "M_ENGINEERING",
+            "name": "Manager Ingénierie & plateforme",
+            "team_leaders": [
+              {
+                "id": "TL_WEB_PLATFORM",
+                "name": "Team Leader WordPress",
+                "agents": [
+                  {
+                    "id": "WEB_DEV",
+                    "name": "Web Developer",
+                    "file": "agents/06-developpement-web.md"
+                  },
+                  {
+                    "id": "WP_ARCHITECT",
+                    "name": "Architecte WordPress",
+                    "file": "agents/23-architecture-wordpress.md"
+                  },
+                  {
+                    "id": "PHP_BACKEND",
+                    "name": "Développeur Backend PHP",
+                    "file": "agents/24-backend-php.md"
+                  },
+                  {
+                    "id": "FRONTEND_UI",
+                    "name": "Frontend & composants UI",
+                    "file": "agents/25-frontend-composants.md"
+                  },
+                  {
+                    "id": "RESPONSIVE_MOBILE",
+                    "name": "Responsive Mobile Engineer",
+                    "file": "agents/26-responsive-mobile.md"
+                  }
+                ]
+              },
+              {
+                "id": "TL_DATA_AI",
+                "name": "Team Leader Data & IA",
+                "agents": [
+                  {
+                    "id": "DATA_ENG",
+                    "name": "Data Engineer",
+                    "file": "agents/02-data-engineering.md"
+                  },
+                  {
+                    "id": "DATA_SCI",
+                    "name": "Data Scientist",
+                    "file": "agents/03-data-science.md"
+                  },
+                  {
+                    "id": "DATA_ANALYST",
+                    "name": "Data Analyst",
+                    "file": "agents/04-data-analyst.md"
+                  },
+                  {
+                    "id": "AI_ENG",
+                    "name": "IA Engineer",
+                    "file": "agents/05-ia-engineering.md"
+                  },
+                  {
+                    "id": "DATA_GOVERNANCE",
+                    "name": "Data Quality & Governance",
+                    "file": "agents/27-data-quality.md"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "SM_TRUST",
+        "name": "Senior Manager Qualité & Exploitation",
+        "manager": [
+          {
+            "id": "M_DELIVERY",
+            "name": "Manager Qualité & Livraison",
+            "team_leaders": [
+              {
+                "id": "TL_QA_SECURITY",
+                "name": "Team Leader QA & Sécurité",
+                "agents": [
+                  {
+                    "id": "QA_AUTOMATION",
+                    "name": "QA Automation Engineer",
+                    "file": "agents/12-qa-automation.md"
+                  },
+                  {
+                    "id": "SECURITY_PRIVACY",
+                    "name": "Cybersecurity & Privacy Engineer",
+                    "file": "agents/13-cybersecurite.md"
+                  },
+                  {
+                    "id": "LEGAL_EDTECH",
+                    "name": "Conformité juridique EdTech",
+                    "file": "agents/19-conformite-edtech.md"
+                  },
+                  {
+                    "id": "QA_LOCALIZATION",
+                    "name": "QA FR/AR RTL",
+                    "file": "agents/28-qa-localisation.md"
+                  },
+                  {
+                    "id": "QA_EDTECH_E2E",
+                    "name": "QA parcours pédagogiques E2E",
+                    "file": "agents/29-qa-parcours-pedagogiques.md"
+                  }
+                ]
+              },
+              {
+                "id": "TL_DEVOPS_RELEASE",
+                "name": "Team Leader DevOps & Release",
+                "agents": [
+                  {
+                    "id": "DEVOPS",
+                    "name": "DevOps Engineer",
+                    "file": "agents/08-devops.md"
+                  },
+                  {
+                    "id": "PERFORMANCE_WP",
+                    "name": "Performance WordPress Engineer",
+                    "file": "agents/16-performance-wordpress.md"
+                  },
+                  {
+                    "id": "PAYMENTS",
+                    "name": "Payment & Subscription Engineer",
+                    "file": "agents/20-paiements-abonnements.md"
+                  },
+                  {
+                    "id": "OBSERVABILITY",
+                    "name": "Observability & Incident Response",
+                    "file": "agents/30-observabilite-incidents.md"
+                  },
+                  {
+                    "id": "RELEASE_ENGINEERING",
+                    "name": "Release & Staging Engineer",
+                    "file": "agents/31-release-staging.md"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
