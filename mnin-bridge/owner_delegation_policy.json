@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.0",
+  "profile": "MNIN Bridge / ChatGPT Pro personnel",
+  "status": "TEMPLATE_NOT_ACTIVATED",
+  "scope": "owner-only",
+  "standing_delegation": {
+    "enabled": true,
+    "expires": "until_owner_revokes",
+    "meaning": "Standing instructions for future authenticated, policy-limited requests. Not an OAuth grant, not permission to override platform protections or spend money.",
+    "allow_without_reprompt": [
+      "asset.list",
+      "asset.verify",
+      "mission.propose",
+      "mission.read",
+      "qa.preview",
+      "qa.run_isolated",
+      "dev.branch_write",
+      "report.create"
+    ],
+    "conditional_limits": {
+      "qa.run_isolated": {
+        "max_parallel": 2,
+        "max_runtime_seconds": 900,
+        "max_incremental_cost_eur": 0,
+        "requires_approved_source": true
+      },
+      "dev.branch_write": {
+        "branch_prefixes": [
+          "feature/",
+          "proposal/"
+        ],
+        "requires_diff_and_tests": true,
+        "forbid_default_branch": true,
+        "max_incremental_cost_eur": 0
+      },
+      "report.create": {
+        "forbid_public_data_exposure": true
+      }
+    },
+    "requires_per_action_approval": [
+      "wordpress.staging_write",
+      "wordpress.production_write",
+      "github.merge_to_main",
+      "github.repo_settings",
+      "hosting.deploy_public",
+      "hosting.change_plan",
+      "billing.create_resource",
+      "billing.charge",
+      "data.export_private",
+      "secrets.create_or_rotate",
+      "secrets.export",
+      "domain.dns_change",
+      "permissions.change",
+      "mass_delete",
+      "workflow.activate_recurring"
+    ],
+    "always_block_without_distinct_explicit_capability": [
+      "secrets.export",
+      "child_data.export",
+      "disable_security_logging",
+      "unrestricted_shell",
+      "unbounded_agent_execution"
+    ]
+  },
+  "identity_gate": {
+    "required": true,
+    "owner_subject_from_server_secret": "MNIN_OWNER_SUB",
+    "oauth_issuer_from_server_secret": "MNIN_OAUTH_ISSUER",
+    "resource_audience_from_server_secret": "MNIN_OAUTH_AUDIENCE",
+    "allowed_oauth_client_from_server_secret": "MNIN_CHATGPT_STANDARD_CLIENT_ID",
+    "target_product": "ChatGPT",
+    "target_surface": "standard_chat_only",
+    "excluded_surfaces": [
+      "work",
+      "codex"
+    ],
+    "target_subscription": "Pro",
+    "subscription_enforcement": "fail_closed_if_trusted_entitlement_proof_unavailable",
+    "note": "No public documentation presently guarantees that OAuth identity tokens include ChatGPT plan/surface claims. Never infer these from user/model input."
+  },
+  "hosting": {
+    "expected_incremental_cost_eur": 0,
+    "provisioning_without_estimate": "DENY"
+  },
+  "operational_state": {
+    "mcp_server_deployed": false,
+    "oauth_verified": false,
+    "pro_subscription_verified": false,
+    "chatgpt_standard_client_verified": false,
+    "code_executors_started": 0,
+    "wordpress_access": "DISABLED"
+  }
+}
