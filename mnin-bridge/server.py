@@ -11,6 +11,8 @@ from access_policy import public_policy_summary
 from quality_lab import inspect_asset
 from open_source_registry import list_upstreams, readiness
 from db_guardian import (audit_sqlite_snapshot, preview_cleanup, wordpress_readonly_plan, github_readonly_plan, cloudflare_readonly_plan, maintenance_guardrails)
+from agentgrid import AgentGrid, roster_status
+from role_briefs import role_brief
 
 mcp = FastMCP("MNIN Bridge", host="127.0.0.1", port=8000, stateless_http=True, json_response=True)
 
@@ -24,7 +26,7 @@ def _require_verified_pro_standard_chat() -> None:
 def bridge_status() -> dict:
     """Read actual readiness. Does not claim agents are active."""
     return {
-        "version": "0.7.0-prototype",
+        "version": "0.8.0-prototype",
         "repository": github_repo(),
         "asset_directory_configured": bool(os.getenv("MNIN_ASSET_ROOT")),
         "github_credentials_configured": bool(os.getenv("MNIN_GITHUB_TOKEN")),
@@ -184,6 +186,36 @@ def bridge_cloudflare_cleanup_plan(database: str) -> dict:
 def bridge_maintenance_safety_limits() -> dict:
     """Read fail-closed D1, GitHub and WordPress cleanup safety ceilings."""
     return maintenance_guardrails()
+
+
+@mcp.tool()
+def bridge_agentgrid_700_status() -> dict:
+    """Verified distribution of the original 700 MNIN roles; no agents are running."""
+    return roster_status()
+
+
+@mcp.tool()
+def bridge_agentgrid_search_roles(term: str, limit: int = 12) -> list[dict]:
+    """Search the original 700 role titles and competency groups (read only)."""
+    return AgentGrid().search(term, limit)
+
+
+@mcp.tool()
+def bridge_agentgrid_plan_mission(mission_kind: str, expert_limit: int = 9) -> dict:
+    """Select existing DSI/managers/team leaders/experts; planning, NOT AI execution."""
+    return AgentGrid().route(mission_kind, expert_limit)
+
+
+@mcp.tool()
+def bridge_agentgrid_plan_portfolio(mission_kinds: list[str], expert_limit: int = 6, max_concurrent_jobs: int = 2) -> dict:
+    """Plan up to five controlled jobs with existing roles; never spawn 700 LLMs."""
+    return AgentGrid().portfolio(mission_kinds, expert_limit, max_concurrent_jobs)
+
+
+@mcp.tool()
+def bridge_agentgrid_role_brief(profile_id: str, mission_kind: str = "") -> dict:
+    """Retrieve an approved existing professional role contract. Not a new AI session."""
+    return role_brief(profile_id, mission_kind)
 
 
 if __name__ == "__main__":

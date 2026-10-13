@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "mnin-bridge-pro",
-  "version": "0.3.0",
-  "description": "Private owner-scoped ChatGPT Pro standard-chat plugin for MNIN NBDA: mission planning, assets QA, code and browser workflow extensions. Requires verified OAuth and platform permissions; no Work/Codex runtime dependency.",
+  "version": "0.8.0",
+  "description": "MNIN Bridge Pro — 700 original MNIN role definitions, read-only MCP AgentGrid planning, audited open-source BrowserLab and DBGuardian, with execution using pre-authorized GitHub Actions/connectors. No Codex/Work dependency, no paid AI API and no claim of 700 active AI agents.",
   "repository": "https://github.com/hakimalamiouahabi/mnin-nbda-brevet-3ac",
   "keywords": [
     "chatgpt",
@@ -12,7 +12,12 @@
     "education",
     "mcp",
     "quality-assurance",
-    "owner-delegation"
+    "owner-delegation",
+    "agentgrid",
+    "700-original-roles",
+    "github-actions",
+    "db-guardian",
+    "read-only"
   ],
   "extensions": {
     "com.openai": {
