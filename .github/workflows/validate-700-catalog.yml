@@ -7,6 +7,9 @@ on:
       - scripts/validate_700_catalog.py
       - scripts/route_700_catalog.py
       - scripts/test_route_700_catalog.py
+      - scripts/test_chat700_config.py
+      - config/chat700_operating_mode.json
+      - docs/CHATGPT_700_PROJET_INSTRUCTIONS.md
       - .github/workflows/validate-700-catalog.yml
 permissions:
   contents: read
@@ -24,4 +27,6 @@ jobs:
           python3 scripts/route_700_catalog.py --mission "WordPress" --count 3
           python3 scripts/route_700_catalog.py --mission "Équipe 700 : ton outil ne fonctionne plus" --count 5
       - name: Tester les formulations françaises et le routage sûr
-        run: python3 -m unittest discover -s scripts -p "test_route_700_catalog.py" -v
+        run: |
+          python3 -m unittest discover -s scripts -p "test_route_700_catalog.py" -v
+          python3 -m unittest discover -s scripts -p "test_chat700_config.py" -v
