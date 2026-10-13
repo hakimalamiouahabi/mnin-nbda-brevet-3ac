@@ -1,0 +1,19 @@
+name: Verification non destructive des 700 profils
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - agents/manifest-700-target.json
+      - scripts/validate_700_catalog.py
+      - .github/workflows/validate-700-catalog.yml
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Recuperer les sources
+        uses: actions/checkout@v4
+      - name: Verifier les 700 profils sans API ni ecriture
+        run: python3 scripts/validate_700_catalog.py
