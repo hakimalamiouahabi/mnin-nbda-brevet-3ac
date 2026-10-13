@@ -20,7 +20,7 @@ mcp = FastMCP("MNIN Bridge", host="127.0.0.1", port=8000, stateless_http=True, j
 def bridge_status() -> dict:
     """Read actual readiness. Does not claim agents are active."""
     return {
-        "version": "0.7.0-prototype",
+        "version": "0.8.0-prototype",
         "repository": github_repo(),
         "asset_directory_configured": bool(os.getenv("MNIN_ASSET_ROOT")),
         "github_credentials_configured": bool(os.getenv("MNIN_GITHUB_TOKEN")),
