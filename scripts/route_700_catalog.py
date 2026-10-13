@@ -133,7 +133,7 @@ def route(catalog, mission, count=5, role_id=None):
                     break
                 if p["id"] in selected_ids:
                     continue
-                title_key = tokens(p["title"])
+                title_key = frozenset(tokens(p["title"]))
                 if pass_number == 0 and p.get("competency_group") in selected_groups:
                     continue
                 if pass_number == 1 and title_key in selected_titles:
