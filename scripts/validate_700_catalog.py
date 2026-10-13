@@ -2,7 +2,8 @@
 """Lecture seule : cohérence du catalogue existant de 700 profils. Aucune API."""
 from collections import Counter, defaultdict
 from pathlib import Path
-import json, sys
+import json
+import sys
 
 EXPECTED = {"dsi": 5, "senior_manager": 30, "manager": 60, "team_leader": 60, "expert": 545}
 PARENT = {"dsi": None, "senior_manager": "dsi", "manager": "senior_manager",
