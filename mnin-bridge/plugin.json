@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "mnin-bridge-pro",
-  "version": "0.8.0",
-  "description": "MNIN Bridge Pro: standard ChatGPT Pro target; OSS projects run in GitHub Actions via the connected GitHub app, plus read-only local HTML/RTL/image audits and DSI mission plans. No custom MCP write bypass, no paid AI APIs, no Work/Codex.",
+  "version": "0.9.0",
+  "description": "MNIN Bridge Pro v0.9: full EXISTING 700-profile organization indexed into 10 WordPress/EdTech competency modules, role search and read-only DSI planning. Uses authorized GitHub app and free OSS QA runners, not 700 running models. No new AI APIs, Work or Codex.",
   "repository": "https://github.com/hakimalamiouahabi/mnin-nbda-brevet-3ac",
   "keywords": [
     "chatgpt",
@@ -29,7 +29,7 @@
       "interface": {
         "displayName": "MNIN Bridge Pro",
         "shortDescription": "Direction SI et qualité premium pour WordPress dans le chat standard.",
-        "longDescription": "Suite d'audits WordPress premium, coordination DSI, six outils open source exécutés sur des fixtures publiques via GitHub Actions et deux projets en catalogue. Écriture GitHub uniquement selon les permissions de l'application connectée ; le serveur MCP propre n'est pas déployé.",
+        "longDescription": "Coordination des 700 profils existants (5 DSI, 30 senior managers, 60 managers, 60 team leaders, 545 experts), contrôle des missions, GitHub Actions open source et audit technique. Le registre n'exécute pas 700 modèles. Serveur MCP personnalisé non déployé.",
         "developerName": "Équipe MNIN NBDA",
         "category": "Productivity",
         "capabilities": [
@@ -40,7 +40,8 @@
           "Prépare une mission de refonte premium de ma Home WordPress en respectant la maquette validée.",
           "Audite les originaux et explique les risques de pixellisation sur écrans haute densité.",
           "Coordonne les rôles nécessaires pour un module pédagogique bilingue FR/AR RTL sans modifier le site.",
-          "Propose les outils GitHub open source pour auditer une copie HTML locale de la Home, avec preuves et sans dépense."
+          "Propose les outils GitHub open source pour auditer une copie HTML locale de la Home, avec preuves et sans dépense.",
+          "Recherche parmi les 700 profils EXISTANTS les expertises nécessaires pour auditer la Home, sans ajouter d'agents ni modifier WordPress."
         ]
       }
     }
