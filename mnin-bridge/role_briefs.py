@@ -27,8 +27,8 @@ SAFETY = [
 ]
 
 
-def role_brief(profile_id: str, mission_kind: str = "") -> dict:
-    grid = AgentGrid()
+def role_brief(profile_id: str, mission_kind: str = "", _grid: AgentGrid | None = None) -> dict:
+    grid = _grid if _grid is not None else AgentGrid()
     if not isinstance(profile_id, str) or profile_id not in grid.by_id:
         raise ValueError("Only original profile identifiers are supported")
     if mission_kind and mission_kind not in MISSION_SPECS:
@@ -62,7 +62,7 @@ def role_brief(profile_id: str, mission_kind: str = "") -> dict:
 
 def full_contract_inventory() -> dict:
     grid = AgentGrid()
-    contracts = [role_brief(p["id"]) for p in grid.profiles]
+    contracts = [role_brief(p["id"], _grid=grid) for p in grid.profiles]
     if len(contracts) != 700 or len({c["role_id"] for c in contracts}) != 700:
         raise RuntimeError("Generated role contracts must match the exact original roster")
     return {
