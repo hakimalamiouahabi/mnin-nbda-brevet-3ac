@@ -69,19 +69,49 @@ def domains(text):
     normalized = normalize(text)
     return [name for name, spec in RULES.items() if any(pattern in normalized for pattern in spec["patterns"])]
 
+def validate_catalog(catalog):
+    expected = {"dsi": 5, "senior_manager": 30, "manager": 60,
+                "team_leader": 60, "expert": 545}
+    if not isinstance(catalog, dict) or catalog.get("status") != "TARGET_NOT_DEPLOYED":
+        raise ValueError("Statut de déploiement incohérent")
+    profiles = catalog.get("profiles")
+    if not isinstance(profiles, list) or len(profiles) != 700:
+        raise ValueError("Le catalogue doit comporter exactement 700 profils")
+    if catalog.get("counts") != expected:
+        raise ValueError("La répartition du catalogue a changé")
+    if any(not isinstance(p, dict) or not p.get("id") or not p.get("title") for p in profiles):
+        raise ValueError("Fiche de profil incomplète")
+    by_id = {p["id"]: p for p in profiles}
+    if len(by_id) != 700:
+        raise ValueError("Identifiant dupliqué")
+    counts = {level: sum(p.get("level") == level for p in profiles) for level in expected}
+    if counts != expected:
+        raise ValueError("Niveaux hiérarchiques invalides")
+    parent_levels = {"dsi": None, "senior_manager": "dsi", "manager": "senior_manager",
+                     "team_leader": "manager", "expert": "team_leader"}
+    for p in profiles:
+        level, parent = p["level"], p.get("parent_id")
+        if level == "dsi" and parent != "OWNER":
+            raise ValueError("DSI sans propriétaire")
+        if level != "dsi" and (parent not in by_id or
+                               by_id[parent]["level"] != parent_levels[level]):
+            raise ValueError("Rattachement hiérarchique invalide")
+        if p.get("state") not in (None, "catalogued_not_running"):
+            raise ValueError("Un profil ne peut pas être déclaré exécuté")
+    return profiles, by_id
+
 def route(catalog, mission, count=5, role_id=None):
-    profiles = catalog["profiles"]
-    index = {p["id"]: p for p in profiles}
-    if len(profiles) != 700 or len(index) != 700:
-        raise ValueError("Le registre source ne contient pas 700 identifiants uniques")
+    profiles, index = validate_catalog(catalog)
     if not isinstance(mission, str) or not mission.strip():
         raise ValueError("Mission vide")
-    if not 1 <= count <= 30:
-        raise ValueError("count doit être compris entre 1 et 30")
+    if type(count) is not int or not 1 <= count <= 30:
+        raise ValueError("count doit être un entier de 1 à 30")
 
     recognized = domains(mission)
     requested = tokens(mission)
     out_of_scope = any(p in normalize(mission) for p in OUT_OF_SCOPE)
+    if not requested and not recognized and not role_id:
+        raise ValueError("Mission insuffisamment explicite")
 
     if role_id:
         if role_id not in index:
@@ -109,11 +139,14 @@ def route(catalog, mission, count=5, role_id=None):
         ranked.sort(key=lambda x: (x[0], x[1]))
         chosen = []
         seen_titles = set()
+        seen_groups = set()
         for _, _, p in ranked:
             normalized_title = normalize(p["title"])
-            if normalized_title in seen_titles:
+            group = p.get("competency_group", "")
+            if normalized_title in seen_titles or group in seen_groups:
                 continue
             seen_titles.add(normalized_title)
+            seen_groups.add(group)
             chosen.append(p)
             if len(chosen) >= count:
                 break
@@ -129,13 +162,15 @@ def route(catalog, mission, count=5, role_id=None):
             visited.add(parent_id)
             current = index[parent_id]
             chain.insert(0, {"id": current["id"], "title": current["title"]})
-        assignments.append({"id": p["id"], "title": p["title"], "chain": chain,
-                            "status": "ROLE_SELECTIONNE_NON_EXECUTE"})
+        assignments.append({"id": p["id"], "title": p["title"],
+                            "competency_group": p.get("competency_group", ""),
+                            "chain": chain, "status": "ROLE_ASSIGNE_NON_EXECUTE"})
     return {
-        "status": "MATCHED" if assignments else "NO_DIRECT_MATCH",
+        "status": "ROUTAGE_PRET" if assignments else "AUCUN_PROFIL_IDENTIFIE",
         "mission": mission, "recognized_domains": recognized,
         "selected": len(assignments), "source_profiles": 700,
-        "inference_started": False, "no_new_agents": True,
+        "inference_started": False, "autonomous_agents_started": 0,
+        "no_new_agents": True,
         "warning": ("Aucun expert direct dans les 700 profils catalogués; "
                     "ChatGPT peut répondre avec ses compétences générales sans inventer de rôle."
                     if not assignments else None),
