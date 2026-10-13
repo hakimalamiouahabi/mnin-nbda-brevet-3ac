@@ -49,3 +49,13 @@ P2 : rapport détaillé read-only de la base D1 MNIN et de l'installation WordPr
 P3 : proposer à l'utilisateur une liste précise et justifiée d'opérations ; exécuter uniquement les opérations approuvées, compatibles avec les capacités réelles des connecteurs. Aucun contournement des limitations MCP Pro.
 
 Références : https://help.openai.com/en/articles/12584461-developer-mode-and-full-mcp-connectors-in-chatgpt ; https://developers.cloudflare.com/d1/reference/time-travel/ ; https://developer.wordpress.org/cli/commands/transient/delete/ .
+
+## Tests d'intégration effectivement vérifiés
+
+- GitHub Actions : [MNIN Bridge - DBGuardian dry-run assurance](https://github.com/hakimalamiouahabi/mnin-nbda-brevet-3ac/actions/runs/38325809188)
+- **90 tests Python PASS** (`Ran 90 tests ... OK`)
+- **DBGUARDIAN_SYNTHETIC_AUDIT_PASS** sur copie SQLite fictive avec `sqlite-utils` réellement installé dans le runner
+- **DBGUARDIAN_REGISTRY_PASS** pour le registre open source
+- Paramètres supplémentaires : `maintenance/guardrails.json` impose `READ_ONLY`, 0 worker d'écriture, sauvegarde/restauration indépendante, périmètre staging et arrêt sur présence de données sensibles.
+- Aucune capture d'une base Cloudflare réelle ni fichier privé dans les artefacts CI.
+- Les audits réels effectués dans la conversation se limitent à l'inventaire des bases D1, à la liste structurelle des tables sur la seule D1 MNIN, à la disponibilité de WordPress et aux métadonnées des plugins/sauvegardes.
