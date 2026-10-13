@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0.0",
+  "name": "MNIN NBDA — Équipe 700, uniquement dans le chat",
+  "config_status": "REPO_CONFIGURED_NOT_NATIVE_CONNECTED",
+  "source_user_instruction": "utilisez l'équipe 700 agents IA connecté à chatgpt pro et execute stp paramétrez les agents IA avec cette consigne",
+  "interpretation": "Utiliser les 700 profils métier existants comme répertoire de compétences dans la conversation ChatGPT standard; sélectionner les plus pertinents pour la mission et réaliser immédiatement le travail réalisable avec les outils effectivement autorisés, plutôt que simuler l'exécution de 700 IA autonomes.",
+  "manifest": {
+    "path": "agents/manifest-700-target.json",
+    "reference_branch": "proposal/organization-700",
+    "expected_count": 700,
+    "expected_levels": {
+      "dsi": 5,
+      "senior_manager": 30,
+      "manager": 60,
+      "team_leader": 60,
+      "expert": 545
+    },
+    "write_protected": true,
+    "allow_new_roles": false,
+    "retain_43_role_legacy_separately": true
+  },
+  "channel": {
+    "product": "ChatGPT",
+    "subscription_target": "Pro",
+    "verify_plan_from_prompt": false,
+    "mode": "standard_chat_only",
+    "requires_work": false,
+    "requires_codex": false,
+    "model_api_cost_eur": 0,
+    "extra_server_required": false,
+    "auto_enable_all_chats": false
+  },
+  "reasoning": {
+    "engine": "CURRENT_CHATGPT_CONVERSATION_SINGLE_MODEL",
+    "independent_running_ai_agents": 0,
+    "can_impersonate_many_independent_models": false,
+    "parallel_inference_claims_forbidden": true
+  },
+  "task_assignment": {
+    "require_explicit_700_ids": true,
+    "default_specialist_count": 5,
+    "minimum_specialist_count": 2,
+    "maximum_specialist_count": 8,
+    "expand_scope_on_demonstrated_need": true,
+    "diversify_relevant_professions": true,
+    "include_responsibility_chain": true,
+    "coordinator": "OWNER_ARBITRATES_FIVE_EXISTING_DSI",
+    "routing_code": "scripts/route_700_catalog.py",
+    "phases": [
+      "comprendre_la_mission",
+      "rechercher_les_profils_originaux",
+      "analyser_par_specialite",
+      "controle_contradictoire_qa_securite",
+      "executer_actions_reellement_autorisees",
+      "rendre_un_resultat_verifiable"
+    ]
+  },
+  "authorized_integrations": {
+    "github": "USE_ALREADY_CONNECTED_APP_WITH_ITS_ACTUAL_PERMISSIONS",
+    "wordpress": "USE_CONNECTED_APP_READ_ONLY_UNLESS_EXPLICIT_APPROVAL",
+    "cloudflare": "USE_CONNECTED_APP_READ_ONLY_UNLESS_EXPLICIT_APPROVAL",
+    "other_apps": "ONLY_IF_INSTALLED_AND_AUTHORIZED",
+    "custom_mcp_server_status": "NOT_CONNECTED"
+  },
+  "safety": {
+    "no_paid_ai_apis": true,
+    "no_incremental_paid_services": true,
+    "no_work_or_codex": true,
+    "no_private_data_in_public_repo": true,
+    "no_automatic_cleanup_or_mass_deletion": true,
+    "no_wordpress_write_without_explicit_approval": true,
+    "no_cloudflare_mutation_without_explicit_approval": true,
+    "no_merge_to_main_without_explicit_approval": true,
+    "no_fabricated_test_results": true
+  },
+  "response": {
+    "language": "fr",
+    "tone": "simple_et_professionnel",
+    "avoid_it_jargon": true,
+    "include": [
+      "travail_effectivement_realise",
+      "profils_verifies_si_utile",
+      "preuves_des_tests",
+      "limites_et_etat_reel"
+    ]
+  },
+  "execution_truth": {
+    "role_catalog_ready": true,
+    "agent_models_deployed": 0,
+    "chatgpt_project_instructions_applied_by_this_file": false,
+    "installed_native_plugin_by_this_file": false,
+    "github_actions_can_run_offline_scripts": true
+  }
+}
