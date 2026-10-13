@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "mnin-bridge-pro",
-  "version": "0.7.0",
-  "description": "MNIN Bridge Pro: 43 expert role plans, ten premium WordPress modules, eight official OSS upstreams, local read-only HTML/DPR/accessibility audits and opt-in browser QA. Standard ChatGPT target Pro; no Work/Codex, no paid model APIs, no remote deployment or WordPress mutation.",
+  "version": "0.8.0",
+  "description": "MNIN Bridge Pro: standard ChatGPT Pro target; OSS projects run in GitHub Actions via the connected GitHub app, plus read-only local HTML/RTL/image audits and DSI mission plans. No custom MCP write bypass, no paid AI APIs, no Work/Codex.",
   "repository": "https://github.com/hakimalamiouahabi/mnin-nbda-brevet-3ac",
   "keywords": [
     "chatgpt",
@@ -29,7 +29,7 @@
       "interface": {
         "displayName": "MNIN Bridge Pro",
         "shortDescription": "Direction SI et qualité premium pour WordPress dans le chat standard.",
-        "longDescription": "Coordination DSI des 43 profils documentés et dix modules premium ; catalogue de huit projets open source officiels, audits HTML/DPR/RTL hors réseau et flux de QA navigateur sur branche isolée. Plugin de développement non déployé et sans écriture WordPress.",
+        "longDescription": "Suite d'audits WordPress premium, coordination DSI, six outils open source exécutés sur des fixtures publiques via GitHub Actions et deux projets en catalogue. Écriture GitHub uniquement selon les permissions de l'application connectée ; le serveur MCP propre n'est pas déployé.",
         "developerName": "Équipe MNIN NBDA",
         "category": "Productivity",
         "capabilities": [

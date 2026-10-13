@@ -1,14 +1,14 @@
-# MNIN Bridge Pro v0.7 — développement premium assisté par open source
+# MNIN Bridge Pro v0.8 — six outils open source réellement exécutés
 
-**Livré dans une branche GitHub, non connecté comme plugin MCP personnalisé à ChatGPT.** Chat standard cible Pro, hors Work/Codex. Aucune API IA payante, aucun site WordPress modifié, aucun agent autonome lancé.
+**Statut :** chaîne GitHub Actions vérifiée sur **fixtures publiques fictives**, mais aucun MCP personnalisé déployé ni connecté à ChatGPT Pro, et aucun WordPress modifié. Travail exclusivement dans le chat standard, hors Work et Codex.
 
-**Intégrations à partir des dépôts officiels :** [huit projets open source](docs/OPEN_SOURCE_INTEGRATIONS_V07.md). Le runner GitHub QA manuel combine désormais Playwright, axe-core et HTML-Validate (code présent, exécution non vérifiée). Lighthouse, SVGO, Sharp, WordPress Coding Standards et Prettier sont catalogués comme pistes futures, et non installés.
+**Preuves :** [rapport de développement v0.8](docs/OPEN_SOURCE_EXECUTION_V08.md) et [exécution GitHub Actions #4](https://github.com/hakimalamiouahabi/mnin-nbda-brevet-3ac/actions/runs/38325215110). Six outils ont réellement fonctionné sur les fixtures : HTML-Validate, Prettier, SVGO, Sharp, Playwright et axe-core. Les cinq viewports du mode rapide ont été exécutés dans le navigateur ; les deux jobs sont PASS. **Il ne s'agit PAS d'un audit du site réel.**
 
-**Outils MCP ajoutés :** `bridge_open_source_catalog`, `bridge_open_source_pipeline`, `bridge_audit_local_home`. Le dernier analyse une copie HTML locale approuvée hors réseau, inspecte le SHA-256 et les dimensions d'images, relève des anomalies HTML/RTL, et produit des priorités de correction sans écriture.
+[Catalogue des huit projets](docs/OPEN_SOURCE_INTEGRATIONS_V07.md) : Lighthouse et WordPress Coding Standards sont simplement référencés, pas encore exécutés.
 
-**Délégation permanente** : volonté du propriétaire intégrée à `owner_delegation_policy.json`, dans le cadre des permissions authentifiées et validations imposées. La restriction technique « Pro uniquement » reste **NON VÉRIFIÉE** sans preuve fiable de forfait/surface. Aucun accès privilégié implicite.
+**Depuis ChatGPT Pro :** l'application GitHub déjà autorisée permet les écritures permises (branches, fichiers, PR) ; GitHub Actions exécute le code libre sur des commits. Ceci ne contourne pas les limites de modification MCP personnalisée. L'autorisation propriétaire permanente est enregistrée comme préférence dans `owner_delegation_policy.json`, dans le respect des permissions et confirmations du fournisseur.
 
-**Tests :** nouveaux fichiers unitaires et CI déclarative ; ne pas indiquer PASS sans exécution observée.
+**Conditions inchangées :** aucune API IA payante, aucun budget ajouté, aucun déploiement WordPress, aucun agent autonome en fonctionnement, aucun secret ni donnée de mineur dans le dépôt public. La preuve d'abonnement Pro côté serveur n'est pas implémentée.
 
 ---
 

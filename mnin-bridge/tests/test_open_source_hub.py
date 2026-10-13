@@ -24,6 +24,18 @@ class OpenSourceHubTests(unittest.TestCase):
         self.assertEqual(info["upstream_chatgpt_plugins_connected_by_this_catalog"], 0)
         self.assertEqual(info["remote_installations_performed"], 0)
 
+    def test_six_executable_projects_and_two_planned_upstreams(self):
+        selected = catalog_open_source_tools()
+        self.assertEqual(selected["version"], "0.8.0")
+        proven = {tool["id"] for tool in selected["upstreams"]
+                  if tool["execution"].startswith("TESTED_PUBLIC_SYNTHETIC")}
+        self.assertEqual(proven, {
+            "playwright", "axe_core", "html_validate", "svgo", "sharp", "prettier"
+        })
+        planned = {tool["id"] for tool in selected["upstreams"]
+                   if tool["execution"].startswith("PLANNED")}
+        self.assertEqual(planned, {"lighthouse", "wordpress_cs"})
+
     def test_domain_filter(self):
         tools = catalog_open_source_tools("accessibility")
         self.assertEqual({x["id"] for x in tools["upstreams"]},
