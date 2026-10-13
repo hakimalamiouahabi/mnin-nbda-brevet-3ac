@@ -1,0 +1,81 @@
+{
+  "schema_version": "2026-10-13.1",
+  "source_profiles": {
+    "repo": "hakimalamiouahabi/mnin-nbda-brevet-3ac",
+    "ref": "proposal/organization-700",
+    "file": "agents/manifest-700-target.json",
+    "count": 700,
+    "state": "TARGET_NOT_DEPLOYED",
+    "new_profiles_allowed": false
+  },
+  "chatgpt_surface": "PRO_STANDARD_CHAT_ONLY_NO_WORK_NO_CODEX",
+  "model_inference": "CHATGPT_PRO_INTERACTIVE_ONLY_NO_700_PARALLEL_LLM_SESSIONS",
+  "existing_authorized_app_connections": [
+    "github",
+    "cloudflare",
+    "wordpress_com"
+  ],
+  "integration_policy": "OSS code may be read, reviewed and executed as specifically approved CI jobs. It is not connected as a native ChatGPT plugin by appearing in this registry; no custom MCP write bypass.",
+  "repositories": [
+    {
+      "repo": "github/github-mcp-server",
+      "status": "verified_public_reference_only",
+      "role": "GitHub MCP"
+    },
+    {
+      "repo": "cloudflare/mcp",
+      "status": "verified_public_reference_only",
+      "role": "Cloudflare MCP"
+    },
+    {
+      "repo": "WordPress/mcp-adapter",
+      "status": "verified_public_reference_only",
+      "role": "WordPress abilities to MCP"
+    },
+    {
+      "repo": "cloudflare/workers-sdk",
+      "status": "verified_public_in_DBGuardian_PR15_registry",
+      "role": "D1 Wrangler audit"
+    },
+    {
+      "repo": "simonw/sqlite-utils",
+      "status": "verified_public_synthetic_ci_in_PR15",
+      "role": "Read-only SQLite snapshot"
+    },
+    {
+      "repo": "github/git-sizer",
+      "status": "verified_public_in_DBGuardian_PR15_registry",
+      "role": "Git repository object size"
+    },
+    {
+      "repo": "gitleaks/gitleaks",
+      "status": "verified_public_in_DBGuardian_PR15_registry",
+      "role": "Secret scan; redact findings"
+    },
+    {
+      "repo": "wp-cli/wp-cli",
+      "status": "verified_public_reference_only",
+      "role": "WordPress diagnostics"
+    },
+    {
+      "repo": "modelcontextprotocol/python-sdk",
+      "status": "verified_public_reference_only",
+      "role": "Build compliant MCP implementations"
+    }
+  ],
+  "existing_implementations": {
+    "DBGuardian": "PR #15 (read-only, synthetic tests)",
+    "AgentGrid700": "PR #17 (700-role validation and planning)",
+    "BridgePro": "PR #18 (registry, coordination and GitHub CI tests)"
+  },
+  "protections": {
+    "no_new_agents": true,
+    "no_paid_ai_api": true,
+    "no_dedicated_server": true,
+    "no_production_changes": true,
+    "no_d1_purges": true,
+    "no_wordpress_changes": true,
+    "no_git_force_push": true,
+    "no_public_data_exports": true
+  }
+}

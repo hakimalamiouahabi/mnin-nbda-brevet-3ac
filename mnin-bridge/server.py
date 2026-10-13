@@ -9,6 +9,7 @@ from bridge_core import asset_info, dispatch_qa, github_repo, list_assets, qa_ar
 from mission_control import MissionStore, capability_catalog, validate_request
 from premium_suite import module_catalog, propose_premium_plan, delegation_status
 from agent_conductor import workforce_status, plan_enterprise_mission, subscription_gate_readiness
+from agents_700 import registry_700_status, search_agent_700, plan_700_mission
 from access_policy import public_policy_summary
 from site_auditor import audit_local_home
 from open_source_hub import catalog_open_source_tools, open_source_pipeline
@@ -20,7 +21,7 @@ mcp = FastMCP("MNIN Bridge", host="127.0.0.1", port=8000, stateless_http=True, j
 def bridge_status() -> dict:
     """Read actual readiness. Does not claim agents are active."""
     return {
-        "version": "0.8.0-prototype",
+        "version": "0.9.0-prototype",
         "repository": github_repo(),
         "asset_directory_configured": bool(os.getenv("MNIN_ASSET_ROOT")),
         "github_credentials_configured": bool(os.getenv("MNIN_GITHUB_TOKEN")),
@@ -170,6 +171,24 @@ def bridge_open_source_catalog(domain: str = "") -> dict:
 def bridge_open_source_pipeline(mission: str) -> dict:
     """Create an evidence-first QA/asset/WordPress OSS pipeline; does not install or execute."""
     return open_source_pipeline(mission)
+
+
+@mcp.tool()
+def bridge_700_registry() -> dict:
+    """Validated 700-role catalog (545 expert roles), NOT 700 running AI instances."""
+    return registry_700_status()
+
+
+@mcp.tool()
+def bridge_700_find_experts(objective: str, module: str = "", limit: int = 8) -> dict:
+    """Find mapped experts, their 5-DSI responsibility chain and documented skills."""
+    return search_agent_700(objective, module, limit)
+
+
+@mcp.tool()
+def bridge_700_plan_mission(objective: str, modules: list[str]) -> dict:
+    """Draft a multi-specialty mission from 700 role definitions; no model execution."""
+    return plan_700_mission(objective, modules)
 
 
 if __name__ == "__main__":

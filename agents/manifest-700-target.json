@@ -1,0 +1,5312 @@
+{
+  "schema_version": "proposal-1",
+  "status": "TARGET_NOT_DEPLOYED",
+  "governance": "Owner arbitrates the 5 DSIs; no autonomous execution asserted",
+  "existing_operational_reference": "agents/manifest.json",
+  "branch": "proposal/organization-700",
+  "restrictions": [
+    "No WordPress writes without explicit approval",
+    "No paid AI APIs or service subscriptions",
+    "Never mark an agent as running without a session ID and logs",
+    "No user or child data in repo"
+  ],
+  "counts": {
+    "dsi": 5,
+    "senior_manager": 30,
+    "manager": 60,
+    "team_leader": 60,
+    "expert": 545
+  },
+  "profiles": [
+    {
+      "id": "DSI_01",
+      "level": "dsi",
+      "title": "DSI — Design, marque et expérience",
+      "parent_id": "OWNER"
+    },
+    {
+      "id": "SM_1_01",
+      "level": "senior_manager",
+      "title": "Senior Manager — Direction artistique, marque et design premium",
+      "parent_id": "DSI_01"
+    },
+    {
+      "id": "MGR_1_01_1",
+      "level": "manager",
+      "title": "Manager — Direction artistique, marque et design premium — conception et production",
+      "parent_id": "SM_1_01"
+    },
+    {
+      "id": "TL_1_01_1",
+      "level": "team_leader",
+      "title": "Team Leader — Direction artistique, marque et design premium — production",
+      "parent_id": "MGR_1_01_1"
+    },
+    {
+      "id": "EX_1_01_1_01",
+      "level": "expert",
+      "title": "Directeur artistique web",
+      "parent_id": "TL_1_01_1",
+      "competency_group": "Direction artistique, marque et design premium",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_01_1_02",
+      "level": "expert",
+      "title": "Brand designer",
+      "parent_id": "TL_1_01_1",
+      "competency_group": "Direction artistique, marque et design premium",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_01_1_03",
+      "level": "expert",
+      "title": "Designer typographique",
+      "parent_id": "TL_1_01_1",
+      "competency_group": "Direction artistique, marque et design premium",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_01_1_04",
+      "level": "expert",
+      "title": "Expert design tokens",
+      "parent_id": "TL_1_01_1",
+      "competency_group": "Direction artistique, marque et design premium",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_01_1_05",
+      "level": "expert",
+      "title": "Designer de systèmes graphiques",
+      "parent_id": "TL_1_01_1",
+      "competency_group": "Direction artistique, marque et design premium",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_01_1_06",
+      "level": "expert",
+      "title": "Expert identité culturelle marocaine",
+      "parent_id": "TL_1_01_1",
+      "competency_group": "Direction artistique, marque et design premium",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_01_1_07",
+      "level": "expert",
+      "title": "Designer de composants",
+      "parent_id": "TL_1_01_1",
+      "competency_group": "Direction artistique, marque et design premium",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_01_1_08",
+      "level": "expert",
+      "title": "Expert direction photo",
+      "parent_id": "TL_1_01_1",
+      "competency_group": "Direction artistique, marque et design premium",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_01_1_09",
+      "level": "expert",
+      "title": "Auditeur cohérence visuelle",
+      "parent_id": "TL_1_01_1",
+      "competency_group": "Direction artistique, marque et design premium",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_01_1_10",
+      "level": "expert",
+      "title": "Directeur artistique web",
+      "parent_id": "TL_1_01_1",
+      "competency_group": "Direction artistique, marque et design premium",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "MGR_1_01_2",
+      "level": "manager",
+      "title": "Manager — Direction artistique, marque et design premium — vérification et intégration",
+      "parent_id": "SM_1_01"
+    },
+    {
+      "id": "TL_1_01_2",
+      "level": "team_leader",
+      "title": "Team Leader — Direction artistique, marque et design premium — QA et mise en cohérence",
+      "parent_id": "MGR_1_01_2"
+    },
+    {
+      "id": "EX_1_01_2_01",
+      "level": "expert",
+      "title": "Directeur artistique web",
+      "parent_id": "TL_1_01_2",
+      "competency_group": "Direction artistique, marque et design premium",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_01_2_02",
+      "level": "expert",
+      "title": "Brand designer",
+      "parent_id": "TL_1_01_2",
+      "competency_group": "Direction artistique, marque et design premium",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_01_2_03",
+      "level": "expert",
+      "title": "Designer typographique",
+      "parent_id": "TL_1_01_2",
+      "competency_group": "Direction artistique, marque et design premium",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_01_2_04",
+      "level": "expert",
+      "title": "Expert design tokens",
+      "parent_id": "TL_1_01_2",
+      "competency_group": "Direction artistique, marque et design premium",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_01_2_05",
+      "level": "expert",
+      "title": "Designer de systèmes graphiques",
+      "parent_id": "TL_1_01_2",
+      "competency_group": "Direction artistique, marque et design premium",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_01_2_06",
+      "level": "expert",
+      "title": "Expert identité culturelle marocaine",
+      "parent_id": "TL_1_01_2",
+      "competency_group": "Direction artistique, marque et design premium",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_01_2_07",
+      "level": "expert",
+      "title": "Designer de composants",
+      "parent_id": "TL_1_01_2",
+      "competency_group": "Direction artistique, marque et design premium",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_01_2_08",
+      "level": "expert",
+      "title": "Expert direction photo",
+      "parent_id": "TL_1_01_2",
+      "competency_group": "Direction artistique, marque et design premium",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_01_2_09",
+      "level": "expert",
+      "title": "Auditeur cohérence visuelle",
+      "parent_id": "TL_1_01_2",
+      "competency_group": "Direction artistique, marque et design premium",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "SM_1_02",
+      "level": "senior_manager",
+      "title": "Senior Manager — Recherche UX et tests utilisateurs",
+      "parent_id": "DSI_01"
+    },
+    {
+      "id": "MGR_1_02_1",
+      "level": "manager",
+      "title": "Manager — Recherche UX et tests utilisateurs — conception et production",
+      "parent_id": "SM_1_02"
+    },
+    {
+      "id": "TL_1_02_1",
+      "level": "team_leader",
+      "title": "Team Leader — Recherche UX et tests utilisateurs — production",
+      "parent_id": "MGR_1_02_1"
+    },
+    {
+      "id": "EX_1_02_1_01",
+      "level": "expert",
+      "title": "UX researcher",
+      "parent_id": "TL_1_02_1",
+      "competency_group": "Recherche UX et tests utilisateurs",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_02_1_02",
+      "level": "expert",
+      "title": "Expert entretiens utilisateurs",
+      "parent_id": "TL_1_02_1",
+      "competency_group": "Recherche UX et tests utilisateurs",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_02_1_03",
+      "level": "expert",
+      "title": "Expert tests utilisateurs",
+      "parent_id": "TL_1_02_1",
+      "competency_group": "Recherche UX et tests utilisateurs",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_02_1_04",
+      "level": "expert",
+      "title": "Expert parcours clients",
+      "parent_id": "TL_1_02_1",
+      "competency_group": "Recherche UX et tests utilisateurs",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_02_1_05",
+      "level": "expert",
+      "title": "Expert ergonomie cognitive",
+      "parent_id": "TL_1_02_1",
+      "competency_group": "Recherche UX et tests utilisateurs",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_02_1_06",
+      "level": "expert",
+      "title": "UX writer",
+      "parent_id": "TL_1_02_1",
+      "competency_group": "Recherche UX et tests utilisateurs",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_02_1_07",
+      "level": "expert",
+      "title": "Expert prototypage",
+      "parent_id": "TL_1_02_1",
+      "competency_group": "Recherche UX et tests utilisateurs",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_02_1_08",
+      "level": "expert",
+      "title": "Analyste comportement UX",
+      "parent_id": "TL_1_02_1",
+      "competency_group": "Recherche UX et tests utilisateurs",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_02_1_09",
+      "level": "expert",
+      "title": "Expert tests d'utilisabilité",
+      "parent_id": "TL_1_02_1",
+      "competency_group": "Recherche UX et tests utilisateurs",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "MGR_1_02_2",
+      "level": "manager",
+      "title": "Manager — Recherche UX et tests utilisateurs — vérification et intégration",
+      "parent_id": "SM_1_02"
+    },
+    {
+      "id": "TL_1_02_2",
+      "level": "team_leader",
+      "title": "Team Leader — Recherche UX et tests utilisateurs — QA et mise en cohérence",
+      "parent_id": "MGR_1_02_2"
+    },
+    {
+      "id": "EX_1_02_2_01",
+      "level": "expert",
+      "title": "UX researcher",
+      "parent_id": "TL_1_02_2",
+      "competency_group": "Recherche UX et tests utilisateurs",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_02_2_02",
+      "level": "expert",
+      "title": "Expert entretiens utilisateurs",
+      "parent_id": "TL_1_02_2",
+      "competency_group": "Recherche UX et tests utilisateurs",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_02_2_03",
+      "level": "expert",
+      "title": "Expert tests utilisateurs",
+      "parent_id": "TL_1_02_2",
+      "competency_group": "Recherche UX et tests utilisateurs",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_02_2_04",
+      "level": "expert",
+      "title": "Expert parcours clients",
+      "parent_id": "TL_1_02_2",
+      "competency_group": "Recherche UX et tests utilisateurs",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_02_2_05",
+      "level": "expert",
+      "title": "Expert ergonomie cognitive",
+      "parent_id": "TL_1_02_2",
+      "competency_group": "Recherche UX et tests utilisateurs",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_02_2_06",
+      "level": "expert",
+      "title": "UX writer",
+      "parent_id": "TL_1_02_2",
+      "competency_group": "Recherche UX et tests utilisateurs",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_02_2_07",
+      "level": "expert",
+      "title": "Expert prototypage",
+      "parent_id": "TL_1_02_2",
+      "competency_group": "Recherche UX et tests utilisateurs",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_02_2_08",
+      "level": "expert",
+      "title": "Analyste comportement UX",
+      "parent_id": "TL_1_02_2",
+      "competency_group": "Recherche UX et tests utilisateurs",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_02_2_09",
+      "level": "expert",
+      "title": "Expert tests d'utilisabilité",
+      "parent_id": "TL_1_02_2",
+      "competency_group": "Recherche UX et tests utilisateurs",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "SM_1_03",
+      "level": "senior_manager",
+      "title": "Senior Manager — Accessibilité et design inclusif",
+      "parent_id": "DSI_01"
+    },
+    {
+      "id": "MGR_1_03_1",
+      "level": "manager",
+      "title": "Manager — Accessibilité et design inclusif — conception et production",
+      "parent_id": "SM_1_03"
+    },
+    {
+      "id": "TL_1_03_1",
+      "level": "team_leader",
+      "title": "Team Leader — Accessibilité et design inclusif — production",
+      "parent_id": "MGR_1_03_1"
+    },
+    {
+      "id": "EX_1_03_1_01",
+      "level": "expert",
+      "title": "Expert WCAG",
+      "parent_id": "TL_1_03_1",
+      "competency_group": "Accessibilité et design inclusif",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_03_1_02",
+      "level": "expert",
+      "title": "Designer inclusif",
+      "parent_id": "TL_1_03_1",
+      "competency_group": "Accessibilité et design inclusif",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_03_1_03",
+      "level": "expert",
+      "title": "Expert lecteur d’écran",
+      "parent_id": "TL_1_03_1",
+      "competency_group": "Accessibilité et design inclusif",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_03_1_04",
+      "level": "expert",
+      "title": "Expert navigation clavier",
+      "parent_id": "TL_1_03_1",
+      "competency_group": "Accessibilité et design inclusif",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_03_1_05",
+      "level": "expert",
+      "title": "Expert réduction du mouvement",
+      "parent_id": "TL_1_03_1",
+      "competency_group": "Accessibilité et design inclusif",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_03_1_06",
+      "level": "expert",
+      "title": "Expert contraste",
+      "parent_id": "TL_1_03_1",
+      "competency_group": "Accessibilité et design inclusif",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_03_1_07",
+      "level": "expert",
+      "title": "Expert ergonomie mobile",
+      "parent_id": "TL_1_03_1",
+      "competency_group": "Accessibilité et design inclusif",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_03_1_08",
+      "level": "expert",
+      "title": "Expert accessibilité RTL",
+      "parent_id": "TL_1_03_1",
+      "competency_group": "Accessibilité et design inclusif",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_03_1_09",
+      "level": "expert",
+      "title": "QA accessibilité",
+      "parent_id": "TL_1_03_1",
+      "competency_group": "Accessibilité et design inclusif",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "MGR_1_03_2",
+      "level": "manager",
+      "title": "Manager — Accessibilité et design inclusif — vérification et intégration",
+      "parent_id": "SM_1_03"
+    },
+    {
+      "id": "TL_1_03_2",
+      "level": "team_leader",
+      "title": "Team Leader — Accessibilité et design inclusif — QA et mise en cohérence",
+      "parent_id": "MGR_1_03_2"
+    },
+    {
+      "id": "EX_1_03_2_01",
+      "level": "expert",
+      "title": "Expert WCAG",
+      "parent_id": "TL_1_03_2",
+      "competency_group": "Accessibilité et design inclusif",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_03_2_02",
+      "level": "expert",
+      "title": "Designer inclusif",
+      "parent_id": "TL_1_03_2",
+      "competency_group": "Accessibilité et design inclusif",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_03_2_03",
+      "level": "expert",
+      "title": "Expert lecteur d’écran",
+      "parent_id": "TL_1_03_2",
+      "competency_group": "Accessibilité et design inclusif",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_03_2_04",
+      "level": "expert",
+      "title": "Expert navigation clavier",
+      "parent_id": "TL_1_03_2",
+      "competency_group": "Accessibilité et design inclusif",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_03_2_05",
+      "level": "expert",
+      "title": "Expert réduction du mouvement",
+      "parent_id": "TL_1_03_2",
+      "competency_group": "Accessibilité et design inclusif",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_03_2_06",
+      "level": "expert",
+      "title": "Expert contraste",
+      "parent_id": "TL_1_03_2",
+      "competency_group": "Accessibilité et design inclusif",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_03_2_07",
+      "level": "expert",
+      "title": "Expert ergonomie mobile",
+      "parent_id": "TL_1_03_2",
+      "competency_group": "Accessibilité et design inclusif",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_03_2_08",
+      "level": "expert",
+      "title": "Expert accessibilité RTL",
+      "parent_id": "TL_1_03_2",
+      "competency_group": "Accessibilité et design inclusif",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_03_2_09",
+      "level": "expert",
+      "title": "QA accessibilité",
+      "parent_id": "TL_1_03_2",
+      "competency_group": "Accessibilité et design inclusif",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "SM_1_04",
+      "level": "senior_manager",
+      "title": "Senior Manager — Illustration 2D et assets vectoriels",
+      "parent_id": "DSI_01"
+    },
+    {
+      "id": "MGR_1_04_1",
+      "level": "manager",
+      "title": "Manager — Illustration 2D et assets vectoriels — conception et production",
+      "parent_id": "SM_1_04"
+    },
+    {
+      "id": "TL_1_04_1",
+      "level": "team_leader",
+      "title": "Team Leader — Illustration 2D et assets vectoriels — production",
+      "parent_id": "MGR_1_04_1"
+    },
+    {
+      "id": "EX_1_04_1_01",
+      "level": "expert",
+      "title": "Illustrateur jeunesse",
+      "parent_id": "TL_1_04_1",
+      "competency_group": "Illustration 2D et assets vectoriels",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_04_1_02",
+      "level": "expert",
+      "title": "Artiste vectoriel SVG",
+      "parent_id": "TL_1_04_1",
+      "competency_group": "Illustration 2D et assets vectoriels",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_04_1_03",
+      "level": "expert",
+      "title": "Expert détourage",
+      "parent_id": "TL_1_04_1",
+      "competency_group": "Illustration 2D et assets vectoriels",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_04_1_04",
+      "level": "expert",
+      "title": "Expert dessin de personnages",
+      "parent_id": "TL_1_04_1",
+      "competency_group": "Illustration 2D et assets vectoriels",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_04_1_05",
+      "level": "expert",
+      "title": "Expert textures",
+      "parent_id": "TL_1_04_1",
+      "competency_group": "Illustration 2D et assets vectoriels",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_04_1_06",
+      "level": "expert",
+      "title": "Expert assets 8K",
+      "parent_id": "TL_1_04_1",
+      "competency_group": "Illustration 2D et assets vectoriels",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_04_1_07",
+      "level": "expert",
+      "title": "Coloriste",
+      "parent_id": "TL_1_04_1",
+      "competency_group": "Illustration 2D et assets vectoriels",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_04_1_08",
+      "level": "expert",
+      "title": "Expert iconographie",
+      "parent_id": "TL_1_04_1",
+      "competency_group": "Illustration 2D et assets vectoriels",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_04_1_09",
+      "level": "expert",
+      "title": "Expert export web",
+      "parent_id": "TL_1_04_1",
+      "competency_group": "Illustration 2D et assets vectoriels",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "MGR_1_04_2",
+      "level": "manager",
+      "title": "Manager — Illustration 2D et assets vectoriels — vérification et intégration",
+      "parent_id": "SM_1_04"
+    },
+    {
+      "id": "TL_1_04_2",
+      "level": "team_leader",
+      "title": "Team Leader — Illustration 2D et assets vectoriels — QA et mise en cohérence",
+      "parent_id": "MGR_1_04_2"
+    },
+    {
+      "id": "EX_1_04_2_01",
+      "level": "expert",
+      "title": "Illustrateur jeunesse",
+      "parent_id": "TL_1_04_2",
+      "competency_group": "Illustration 2D et assets vectoriels",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_04_2_02",
+      "level": "expert",
+      "title": "Artiste vectoriel SVG",
+      "parent_id": "TL_1_04_2",
+      "competency_group": "Illustration 2D et assets vectoriels",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_04_2_03",
+      "level": "expert",
+      "title": "Expert détourage",
+      "parent_id": "TL_1_04_2",
+      "competency_group": "Illustration 2D et assets vectoriels",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_04_2_04",
+      "level": "expert",
+      "title": "Expert dessin de personnages",
+      "parent_id": "TL_1_04_2",
+      "competency_group": "Illustration 2D et assets vectoriels",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_04_2_05",
+      "level": "expert",
+      "title": "Expert textures",
+      "parent_id": "TL_1_04_2",
+      "competency_group": "Illustration 2D et assets vectoriels",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_04_2_06",
+      "level": "expert",
+      "title": "Expert assets 8K",
+      "parent_id": "TL_1_04_2",
+      "competency_group": "Illustration 2D et assets vectoriels",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_04_2_07",
+      "level": "expert",
+      "title": "Coloriste",
+      "parent_id": "TL_1_04_2",
+      "competency_group": "Illustration 2D et assets vectoriels",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_04_2_08",
+      "level": "expert",
+      "title": "Expert iconographie",
+      "parent_id": "TL_1_04_2",
+      "competency_group": "Illustration 2D et assets vectoriels",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_04_2_09",
+      "level": "expert",
+      "title": "Expert export web",
+      "parent_id": "TL_1_04_2",
+      "competency_group": "Illustration 2D et assets vectoriels",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "SM_1_05",
+      "level": "senior_manager",
+      "title": "Senior Manager — 3D, animation et expérience WebGL",
+      "parent_id": "DSI_01"
+    },
+    {
+      "id": "MGR_1_05_1",
+      "level": "manager",
+      "title": "Manager — 3D, animation et expérience WebGL — conception et production",
+      "parent_id": "SM_1_05"
+    },
+    {
+      "id": "TL_1_05_1",
+      "level": "team_leader",
+      "title": "Team Leader — 3D, animation et expérience WebGL — production",
+      "parent_id": "MGR_1_05_1"
+    },
+    {
+      "id": "EX_1_05_1_01",
+      "level": "expert",
+      "title": "Character artist 3D",
+      "parent_id": "TL_1_05_1",
+      "competency_group": "3D, animation et expérience WebGL",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_05_1_02",
+      "level": "expert",
+      "title": "Rigger",
+      "parent_id": "TL_1_05_1",
+      "competency_group": "3D, animation et expérience WebGL",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_05_1_03",
+      "level": "expert",
+      "title": "Animateur facial",
+      "parent_id": "TL_1_05_1",
+      "competency_group": "3D, animation et expérience WebGL",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_05_1_04",
+      "level": "expert",
+      "title": "Animateur procédural",
+      "parent_id": "TL_1_05_1",
+      "competency_group": "3D, animation et expérience WebGL",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_05_1_05",
+      "level": "expert",
+      "title": "Expert Three.js",
+      "parent_id": "TL_1_05_1",
+      "competency_group": "3D, animation et expérience WebGL",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_05_1_06",
+      "level": "expert",
+      "title": "Shader artist",
+      "parent_id": "TL_1_05_1",
+      "competency_group": "3D, animation et expérience WebGL",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_05_1_07",
+      "level": "expert",
+      "title": "Lighting artist",
+      "parent_id": "TL_1_05_1",
+      "competency_group": "3D, animation et expérience WebGL",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_05_1_08",
+      "level": "expert",
+      "title": "Expert optimisation GLB",
+      "parent_id": "TL_1_05_1",
+      "competency_group": "3D, animation et expérience WebGL",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_05_1_09",
+      "level": "expert",
+      "title": "QA 3D performance",
+      "parent_id": "TL_1_05_1",
+      "competency_group": "3D, animation et expérience WebGL",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "MGR_1_05_2",
+      "level": "manager",
+      "title": "Manager — 3D, animation et expérience WebGL — vérification et intégration",
+      "parent_id": "SM_1_05"
+    },
+    {
+      "id": "TL_1_05_2",
+      "level": "team_leader",
+      "title": "Team Leader — 3D, animation et expérience WebGL — QA et mise en cohérence",
+      "parent_id": "MGR_1_05_2"
+    },
+    {
+      "id": "EX_1_05_2_01",
+      "level": "expert",
+      "title": "Character artist 3D",
+      "parent_id": "TL_1_05_2",
+      "competency_group": "3D, animation et expérience WebGL",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_05_2_02",
+      "level": "expert",
+      "title": "Rigger",
+      "parent_id": "TL_1_05_2",
+      "competency_group": "3D, animation et expérience WebGL",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_05_2_03",
+      "level": "expert",
+      "title": "Animateur facial",
+      "parent_id": "TL_1_05_2",
+      "competency_group": "3D, animation et expérience WebGL",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_05_2_04",
+      "level": "expert",
+      "title": "Animateur procédural",
+      "parent_id": "TL_1_05_2",
+      "competency_group": "3D, animation et expérience WebGL",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_05_2_05",
+      "level": "expert",
+      "title": "Expert Three.js",
+      "parent_id": "TL_1_05_2",
+      "competency_group": "3D, animation et expérience WebGL",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_05_2_06",
+      "level": "expert",
+      "title": "Shader artist",
+      "parent_id": "TL_1_05_2",
+      "competency_group": "3D, animation et expérience WebGL",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_05_2_07",
+      "level": "expert",
+      "title": "Lighting artist",
+      "parent_id": "TL_1_05_2",
+      "competency_group": "3D, animation et expérience WebGL",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_05_2_08",
+      "level": "expert",
+      "title": "Expert optimisation GLB",
+      "parent_id": "TL_1_05_2",
+      "competency_group": "3D, animation et expérience WebGL",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_05_2_09",
+      "level": "expert",
+      "title": "QA 3D performance",
+      "parent_id": "TL_1_05_2",
+      "competency_group": "3D, animation et expérience WebGL",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "SM_1_06",
+      "level": "senior_manager",
+      "title": "Senior Manager — Interface responsive et localisation visuelle",
+      "parent_id": "DSI_01"
+    },
+    {
+      "id": "MGR_1_06_1",
+      "level": "manager",
+      "title": "Manager — Interface responsive et localisation visuelle — conception et production",
+      "parent_id": "SM_1_06"
+    },
+    {
+      "id": "TL_1_06_1",
+      "level": "team_leader",
+      "title": "Team Leader — Interface responsive et localisation visuelle — production",
+      "parent_id": "MGR_1_06_1"
+    },
+    {
+      "id": "EX_1_06_1_01",
+      "level": "expert",
+      "title": "Designer responsive",
+      "parent_id": "TL_1_06_1",
+      "competency_group": "Interface responsive et localisation visuelle",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_06_1_02",
+      "level": "expert",
+      "title": "Expert tablette",
+      "parent_id": "TL_1_06_1",
+      "competency_group": "Interface responsive et localisation visuelle",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_06_1_03",
+      "level": "expert",
+      "title": "Expert smartphone",
+      "parent_id": "TL_1_06_1",
+      "competency_group": "Interface responsive et localisation visuelle",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_06_1_04",
+      "level": "expert",
+      "title": "Motion designer UI",
+      "parent_id": "TL_1_06_1",
+      "competency_group": "Interface responsive et localisation visuelle",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_06_1_05",
+      "level": "expert",
+      "title": "Expert micro-interactions",
+      "parent_id": "TL_1_06_1",
+      "competency_group": "Interface responsive et localisation visuelle",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_06_1_06",
+      "level": "expert",
+      "title": "Expert orientation paysage",
+      "parent_id": "TL_1_06_1",
+      "competency_group": "Interface responsive et localisation visuelle",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_06_1_07",
+      "level": "expert",
+      "title": "Expert arabe RTL",
+      "parent_id": "TL_1_06_1",
+      "competency_group": "Interface responsive et localisation visuelle",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_06_1_08",
+      "level": "expert",
+      "title": "Expert adaptation FR/AR",
+      "parent_id": "TL_1_06_1",
+      "competency_group": "Interface responsive et localisation visuelle",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_06_1_09",
+      "level": "expert",
+      "title": "Expert régression visuelle",
+      "parent_id": "TL_1_06_1",
+      "competency_group": "Interface responsive et localisation visuelle",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "MGR_1_06_2",
+      "level": "manager",
+      "title": "Manager — Interface responsive et localisation visuelle — vérification et intégration",
+      "parent_id": "SM_1_06"
+    },
+    {
+      "id": "TL_1_06_2",
+      "level": "team_leader",
+      "title": "Team Leader — Interface responsive et localisation visuelle — QA et mise en cohérence",
+      "parent_id": "MGR_1_06_2"
+    },
+    {
+      "id": "EX_1_06_2_01",
+      "level": "expert",
+      "title": "Designer responsive",
+      "parent_id": "TL_1_06_2",
+      "competency_group": "Interface responsive et localisation visuelle",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_06_2_02",
+      "level": "expert",
+      "title": "Expert tablette",
+      "parent_id": "TL_1_06_2",
+      "competency_group": "Interface responsive et localisation visuelle",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_06_2_03",
+      "level": "expert",
+      "title": "Expert smartphone",
+      "parent_id": "TL_1_06_2",
+      "competency_group": "Interface responsive et localisation visuelle",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_06_2_04",
+      "level": "expert",
+      "title": "Motion designer UI",
+      "parent_id": "TL_1_06_2",
+      "competency_group": "Interface responsive et localisation visuelle",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_06_2_05",
+      "level": "expert",
+      "title": "Expert micro-interactions",
+      "parent_id": "TL_1_06_2",
+      "competency_group": "Interface responsive et localisation visuelle",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_06_2_06",
+      "level": "expert",
+      "title": "Expert orientation paysage",
+      "parent_id": "TL_1_06_2",
+      "competency_group": "Interface responsive et localisation visuelle",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_06_2_07",
+      "level": "expert",
+      "title": "Expert arabe RTL",
+      "parent_id": "TL_1_06_2",
+      "competency_group": "Interface responsive et localisation visuelle",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_06_2_08",
+      "level": "expert",
+      "title": "Expert adaptation FR/AR",
+      "parent_id": "TL_1_06_2",
+      "competency_group": "Interface responsive et localisation visuelle",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_1_06_2_09",
+      "level": "expert",
+      "title": "Expert régression visuelle",
+      "parent_id": "TL_1_06_2",
+      "competency_group": "Interface responsive et localisation visuelle",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "DSI_02",
+      "level": "dsi",
+      "title": "DSI — Architecture WordPress et logiciel",
+      "parent_id": "OWNER"
+    },
+    {
+      "id": "SM_2_01",
+      "level": "senior_manager",
+      "title": "Senior Manager — Architecture WordPress et ingénierie PHP",
+      "parent_id": "DSI_02"
+    },
+    {
+      "id": "MGR_2_01_1",
+      "level": "manager",
+      "title": "Manager — Architecture WordPress et ingénierie PHP — conception et production",
+      "parent_id": "SM_2_01"
+    },
+    {
+      "id": "TL_2_01_1",
+      "level": "team_leader",
+      "title": "Team Leader — Architecture WordPress et ingénierie PHP — production",
+      "parent_id": "MGR_2_01_1"
+    },
+    {
+      "id": "EX_2_01_1_01",
+      "level": "expert",
+      "title": "Architecte WordPress",
+      "parent_id": "TL_2_01_1",
+      "competency_group": "Architecture WordPress et ingénierie PHP",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_01_1_02",
+      "level": "expert",
+      "title": "Expert thème",
+      "parent_id": "TL_2_01_1",
+      "competency_group": "Architecture WordPress et ingénierie PHP",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_01_1_03",
+      "level": "expert",
+      "title": "Expert plugin",
+      "parent_id": "TL_2_01_1",
+      "competency_group": "Architecture WordPress et ingénierie PHP",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_01_1_04",
+      "level": "expert",
+      "title": "Architecte PHP",
+      "parent_id": "TL_2_01_1",
+      "competency_group": "Architecture WordPress et ingénierie PHP",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_01_1_05",
+      "level": "expert",
+      "title": "Expert Gutenberg",
+      "parent_id": "TL_2_01_1",
+      "competency_group": "Architecture WordPress et ingénierie PHP",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_01_1_06",
+      "level": "expert",
+      "title": "Expert migration",
+      "parent_id": "TL_2_01_1",
+      "competency_group": "Architecture WordPress et ingénierie PHP",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_01_1_07",
+      "level": "expert",
+      "title": "Expert hooks WP",
+      "parent_id": "TL_2_01_1",
+      "competency_group": "Architecture WordPress et ingénierie PHP",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_01_1_08",
+      "level": "expert",
+      "title": "Expert compatibilité",
+      "parent_id": "TL_2_01_1",
+      "competency_group": "Architecture WordPress et ingénierie PHP",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_01_1_09",
+      "level": "expert",
+      "title": "Reviewer architecture",
+      "parent_id": "TL_2_01_1",
+      "competency_group": "Architecture WordPress et ingénierie PHP",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_01_1_10",
+      "level": "expert",
+      "title": "Architecte WordPress",
+      "parent_id": "TL_2_01_1",
+      "competency_group": "Architecture WordPress et ingénierie PHP",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "MGR_2_01_2",
+      "level": "manager",
+      "title": "Manager — Architecture WordPress et ingénierie PHP — vérification et intégration",
+      "parent_id": "SM_2_01"
+    },
+    {
+      "id": "TL_2_01_2",
+      "level": "team_leader",
+      "title": "Team Leader — Architecture WordPress et ingénierie PHP — QA et mise en cohérence",
+      "parent_id": "MGR_2_01_2"
+    },
+    {
+      "id": "EX_2_01_2_01",
+      "level": "expert",
+      "title": "Architecte WordPress",
+      "parent_id": "TL_2_01_2",
+      "competency_group": "Architecture WordPress et ingénierie PHP",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_01_2_02",
+      "level": "expert",
+      "title": "Expert thème",
+      "parent_id": "TL_2_01_2",
+      "competency_group": "Architecture WordPress et ingénierie PHP",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_01_2_03",
+      "level": "expert",
+      "title": "Expert plugin",
+      "parent_id": "TL_2_01_2",
+      "competency_group": "Architecture WordPress et ingénierie PHP",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_01_2_04",
+      "level": "expert",
+      "title": "Architecte PHP",
+      "parent_id": "TL_2_01_2",
+      "competency_group": "Architecture WordPress et ingénierie PHP",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_01_2_05",
+      "level": "expert",
+      "title": "Expert Gutenberg",
+      "parent_id": "TL_2_01_2",
+      "competency_group": "Architecture WordPress et ingénierie PHP",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_01_2_06",
+      "level": "expert",
+      "title": "Expert migration",
+      "parent_id": "TL_2_01_2",
+      "competency_group": "Architecture WordPress et ingénierie PHP",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_01_2_07",
+      "level": "expert",
+      "title": "Expert hooks WP",
+      "parent_id": "TL_2_01_2",
+      "competency_group": "Architecture WordPress et ingénierie PHP",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_01_2_08",
+      "level": "expert",
+      "title": "Expert compatibilité",
+      "parent_id": "TL_2_01_2",
+      "competency_group": "Architecture WordPress et ingénierie PHP",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_01_2_09",
+      "level": "expert",
+      "title": "Reviewer architecture",
+      "parent_id": "TL_2_01_2",
+      "competency_group": "Architecture WordPress et ingénierie PHP",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "SM_2_02",
+      "level": "senior_manager",
+      "title": "Senior Manager — Backend et API métier",
+      "parent_id": "DSI_02"
+    },
+    {
+      "id": "MGR_2_02_1",
+      "level": "manager",
+      "title": "Manager — Backend et API métier — conception et production",
+      "parent_id": "SM_2_02"
+    },
+    {
+      "id": "TL_2_02_1",
+      "level": "team_leader",
+      "title": "Team Leader — Backend et API métier — production",
+      "parent_id": "MGR_2_02_1"
+    },
+    {
+      "id": "EX_2_02_1_01",
+      "level": "expert",
+      "title": "Ingénieur REST API",
+      "parent_id": "TL_2_02_1",
+      "competency_group": "Backend et API métier",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_02_1_02",
+      "level": "expert",
+      "title": "Développeur PHP",
+      "parent_id": "TL_2_02_1",
+      "competency_group": "Backend et API métier",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_02_1_03",
+      "level": "expert",
+      "title": "Ingénieur base de données",
+      "parent_id": "TL_2_02_1",
+      "competency_group": "Backend et API métier",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_02_1_04",
+      "level": "expert",
+      "title": "Expert permissions",
+      "parent_id": "TL_2_02_1",
+      "competency_group": "Backend et API métier",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_02_1_05",
+      "level": "expert",
+      "title": "Expert authentification",
+      "parent_id": "TL_2_02_1",
+      "competency_group": "Backend et API métier",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_02_1_06",
+      "level": "expert",
+      "title": "Expert transactions",
+      "parent_id": "TL_2_02_1",
+      "competency_group": "Backend et API métier",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_02_1_07",
+      "level": "expert",
+      "title": "Expert tests API",
+      "parent_id": "TL_2_02_1",
+      "competency_group": "Backend et API métier",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_02_1_08",
+      "level": "expert",
+      "title": "Expert intégrations",
+      "parent_id": "TL_2_02_1",
+      "competency_group": "Backend et API métier",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_02_1_09",
+      "level": "expert",
+      "title": "Expert sécurité backend",
+      "parent_id": "TL_2_02_1",
+      "competency_group": "Backend et API métier",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "MGR_2_02_2",
+      "level": "manager",
+      "title": "Manager — Backend et API métier — vérification et intégration",
+      "parent_id": "SM_2_02"
+    },
+    {
+      "id": "TL_2_02_2",
+      "level": "team_leader",
+      "title": "Team Leader — Backend et API métier — QA et mise en cohérence",
+      "parent_id": "MGR_2_02_2"
+    },
+    {
+      "id": "EX_2_02_2_01",
+      "level": "expert",
+      "title": "Ingénieur REST API",
+      "parent_id": "TL_2_02_2",
+      "competency_group": "Backend et API métier",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_02_2_02",
+      "level": "expert",
+      "title": "Développeur PHP",
+      "parent_id": "TL_2_02_2",
+      "competency_group": "Backend et API métier",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_02_2_03",
+      "level": "expert",
+      "title": "Ingénieur base de données",
+      "parent_id": "TL_2_02_2",
+      "competency_group": "Backend et API métier",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_02_2_04",
+      "level": "expert",
+      "title": "Expert permissions",
+      "parent_id": "TL_2_02_2",
+      "competency_group": "Backend et API métier",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_02_2_05",
+      "level": "expert",
+      "title": "Expert authentification",
+      "parent_id": "TL_2_02_2",
+      "competency_group": "Backend et API métier",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_02_2_06",
+      "level": "expert",
+      "title": "Expert transactions",
+      "parent_id": "TL_2_02_2",
+      "competency_group": "Backend et API métier",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_02_2_07",
+      "level": "expert",
+      "title": "Expert tests API",
+      "parent_id": "TL_2_02_2",
+      "competency_group": "Backend et API métier",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_02_2_08",
+      "level": "expert",
+      "title": "Expert intégrations",
+      "parent_id": "TL_2_02_2",
+      "competency_group": "Backend et API métier",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_02_2_09",
+      "level": "expert",
+      "title": "Expert sécurité backend",
+      "parent_id": "TL_2_02_2",
+      "competency_group": "Backend et API métier",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "SM_2_03",
+      "level": "senior_manager",
+      "title": "Senior Manager — Frontend HTML, CSS et JavaScript",
+      "parent_id": "DSI_02"
+    },
+    {
+      "id": "MGR_2_03_1",
+      "level": "manager",
+      "title": "Manager — Frontend HTML, CSS et JavaScript — conception et production",
+      "parent_id": "SM_2_03"
+    },
+    {
+      "id": "TL_2_03_1",
+      "level": "team_leader",
+      "title": "Team Leader — Frontend HTML, CSS et JavaScript — production",
+      "parent_id": "MGR_2_03_1"
+    },
+    {
+      "id": "EX_2_03_1_01",
+      "level": "expert",
+      "title": "Ingénieur frontend",
+      "parent_id": "TL_2_03_1",
+      "competency_group": "Frontend HTML, CSS et JavaScript",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_03_1_02",
+      "level": "expert",
+      "title": "Expert HTML sémantique",
+      "parent_id": "TL_2_03_1",
+      "competency_group": "Frontend HTML, CSS et JavaScript",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_03_1_03",
+      "level": "expert",
+      "title": "Expert CSS moderne",
+      "parent_id": "TL_2_03_1",
+      "competency_group": "Frontend HTML, CSS et JavaScript",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_03_1_04",
+      "level": "expert",
+      "title": "Expert TypeScript",
+      "parent_id": "TL_2_03_1",
+      "competency_group": "Frontend HTML, CSS et JavaScript",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_03_1_05",
+      "level": "expert",
+      "title": "Expert composants",
+      "parent_id": "TL_2_03_1",
+      "competency_group": "Frontend HTML, CSS et JavaScript",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_03_1_06",
+      "level": "expert",
+      "title": "Expert états UI",
+      "parent_id": "TL_2_03_1",
+      "competency_group": "Frontend HTML, CSS et JavaScript",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_03_1_07",
+      "level": "expert",
+      "title": "Expert navigation",
+      "parent_id": "TL_2_03_1",
+      "competency_group": "Frontend HTML, CSS et JavaScript",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_03_1_08",
+      "level": "expert",
+      "title": "Expert progressive enhancement",
+      "parent_id": "TL_2_03_1",
+      "competency_group": "Frontend HTML, CSS et JavaScript",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_03_1_09",
+      "level": "expert",
+      "title": "Expert compatibilité navigateurs",
+      "parent_id": "TL_2_03_1",
+      "competency_group": "Frontend HTML, CSS et JavaScript",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "MGR_2_03_2",
+      "level": "manager",
+      "title": "Manager — Frontend HTML, CSS et JavaScript — vérification et intégration",
+      "parent_id": "SM_2_03"
+    },
+    {
+      "id": "TL_2_03_2",
+      "level": "team_leader",
+      "title": "Team Leader — Frontend HTML, CSS et JavaScript — QA et mise en cohérence",
+      "parent_id": "MGR_2_03_2"
+    },
+    {
+      "id": "EX_2_03_2_01",
+      "level": "expert",
+      "title": "Ingénieur frontend",
+      "parent_id": "TL_2_03_2",
+      "competency_group": "Frontend HTML, CSS et JavaScript",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_03_2_02",
+      "level": "expert",
+      "title": "Expert HTML sémantique",
+      "parent_id": "TL_2_03_2",
+      "competency_group": "Frontend HTML, CSS et JavaScript",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_03_2_03",
+      "level": "expert",
+      "title": "Expert CSS moderne",
+      "parent_id": "TL_2_03_2",
+      "competency_group": "Frontend HTML, CSS et JavaScript",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_03_2_04",
+      "level": "expert",
+      "title": "Expert TypeScript",
+      "parent_id": "TL_2_03_2",
+      "competency_group": "Frontend HTML, CSS et JavaScript",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_03_2_05",
+      "level": "expert",
+      "title": "Expert composants",
+      "parent_id": "TL_2_03_2",
+      "competency_group": "Frontend HTML, CSS et JavaScript",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_03_2_06",
+      "level": "expert",
+      "title": "Expert états UI",
+      "parent_id": "TL_2_03_2",
+      "competency_group": "Frontend HTML, CSS et JavaScript",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_03_2_07",
+      "level": "expert",
+      "title": "Expert navigation",
+      "parent_id": "TL_2_03_2",
+      "competency_group": "Frontend HTML, CSS et JavaScript",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_03_2_08",
+      "level": "expert",
+      "title": "Expert progressive enhancement",
+      "parent_id": "TL_2_03_2",
+      "competency_group": "Frontend HTML, CSS et JavaScript",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_03_2_09",
+      "level": "expert",
+      "title": "Expert compatibilité navigateurs",
+      "parent_id": "TL_2_03_2",
+      "competency_group": "Frontend HTML, CSS et JavaScript",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "SM_2_04",
+      "level": "senior_manager",
+      "title": "Senior Manager — Gestion des contenus et outils éditoriaux",
+      "parent_id": "DSI_02"
+    },
+    {
+      "id": "MGR_2_04_1",
+      "level": "manager",
+      "title": "Manager — Gestion des contenus et outils éditoriaux — conception et production",
+      "parent_id": "SM_2_04"
+    },
+    {
+      "id": "TL_2_04_1",
+      "level": "team_leader",
+      "title": "Team Leader — Gestion des contenus et outils éditoriaux — production",
+      "parent_id": "MGR_2_04_1"
+    },
+    {
+      "id": "EX_2_04_1_01",
+      "level": "expert",
+      "title": "Architecte CMS",
+      "parent_id": "TL_2_04_1",
+      "competency_group": "Gestion des contenus et outils éditoriaux",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_04_1_02",
+      "level": "expert",
+      "title": "Expert modèles de contenu",
+      "parent_id": "TL_2_04_1",
+      "competency_group": "Gestion des contenus et outils éditoriaux",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_04_1_03",
+      "level": "expert",
+      "title": "Expert back-office",
+      "parent_id": "TL_2_04_1",
+      "competency_group": "Gestion des contenus et outils éditoriaux",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_04_1_04",
+      "level": "expert",
+      "title": "Expert workflow éditorial",
+      "parent_id": "TL_2_04_1",
+      "competency_group": "Gestion des contenus et outils éditoriaux",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_04_1_05",
+      "level": "expert",
+      "title": "Expert médias",
+      "parent_id": "TL_2_04_1",
+      "competency_group": "Gestion des contenus et outils éditoriaux",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_04_1_06",
+      "level": "expert",
+      "title": "Expert gestion de versions",
+      "parent_id": "TL_2_04_1",
+      "competency_group": "Gestion des contenus et outils éditoriaux",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_04_1_07",
+      "level": "expert",
+      "title": "Expert taxonomie",
+      "parent_id": "TL_2_04_1",
+      "competency_group": "Gestion des contenus et outils éditoriaux",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_04_1_08",
+      "level": "expert",
+      "title": "Expert import responsable",
+      "parent_id": "TL_2_04_1",
+      "competency_group": "Gestion des contenus et outils éditoriaux",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_04_1_09",
+      "level": "expert",
+      "title": "Expert révisions pédagogiques",
+      "parent_id": "TL_2_04_1",
+      "competency_group": "Gestion des contenus et outils éditoriaux",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "MGR_2_04_2",
+      "level": "manager",
+      "title": "Manager — Gestion des contenus et outils éditoriaux — vérification et intégration",
+      "parent_id": "SM_2_04"
+    },
+    {
+      "id": "TL_2_04_2",
+      "level": "team_leader",
+      "title": "Team Leader — Gestion des contenus et outils éditoriaux — QA et mise en cohérence",
+      "parent_id": "MGR_2_04_2"
+    },
+    {
+      "id": "EX_2_04_2_01",
+      "level": "expert",
+      "title": "Architecte CMS",
+      "parent_id": "TL_2_04_2",
+      "competency_group": "Gestion des contenus et outils éditoriaux",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_04_2_02",
+      "level": "expert",
+      "title": "Expert modèles de contenu",
+      "parent_id": "TL_2_04_2",
+      "competency_group": "Gestion des contenus et outils éditoriaux",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_04_2_03",
+      "level": "expert",
+      "title": "Expert back-office",
+      "parent_id": "TL_2_04_2",
+      "competency_group": "Gestion des contenus et outils éditoriaux",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_04_2_04",
+      "level": "expert",
+      "title": "Expert workflow éditorial",
+      "parent_id": "TL_2_04_2",
+      "competency_group": "Gestion des contenus et outils éditoriaux",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_04_2_05",
+      "level": "expert",
+      "title": "Expert médias",
+      "parent_id": "TL_2_04_2",
+      "competency_group": "Gestion des contenus et outils éditoriaux",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_04_2_06",
+      "level": "expert",
+      "title": "Expert gestion de versions",
+      "parent_id": "TL_2_04_2",
+      "competency_group": "Gestion des contenus et outils éditoriaux",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_04_2_07",
+      "level": "expert",
+      "title": "Expert taxonomie",
+      "parent_id": "TL_2_04_2",
+      "competency_group": "Gestion des contenus et outils éditoriaux",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_04_2_08",
+      "level": "expert",
+      "title": "Expert import responsable",
+      "parent_id": "TL_2_04_2",
+      "competency_group": "Gestion des contenus et outils éditoriaux",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_04_2_09",
+      "level": "expert",
+      "title": "Expert révisions pédagogiques",
+      "parent_id": "TL_2_04_2",
+      "competency_group": "Gestion des contenus et outils éditoriaux",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "SM_2_05",
+      "level": "senior_manager",
+      "title": "Senior Manager — Performance Web et optimisation",
+      "parent_id": "DSI_02"
+    },
+    {
+      "id": "MGR_2_05_1",
+      "level": "manager",
+      "title": "Manager — Performance Web et optimisation — conception et production",
+      "parent_id": "SM_2_05"
+    },
+    {
+      "id": "TL_2_05_1",
+      "level": "team_leader",
+      "title": "Team Leader — Performance Web et optimisation — production",
+      "parent_id": "MGR_2_05_1"
+    },
+    {
+      "id": "EX_2_05_1_01",
+      "level": "expert",
+      "title": "Expert Core Web Vitals",
+      "parent_id": "TL_2_05_1",
+      "competency_group": "Performance Web et optimisation",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_05_1_02",
+      "level": "expert",
+      "title": "Expert LCP",
+      "parent_id": "TL_2_05_1",
+      "competency_group": "Performance Web et optimisation",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_05_1_03",
+      "level": "expert",
+      "title": "Expert INP",
+      "parent_id": "TL_2_05_1",
+      "competency_group": "Performance Web et optimisation",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_05_1_04",
+      "level": "expert",
+      "title": "Expert CLS",
+      "parent_id": "TL_2_05_1",
+      "competency_group": "Performance Web et optimisation",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_05_1_05",
+      "level": "expert",
+      "title": "Expert images responsives",
+      "parent_id": "TL_2_05_1",
+      "competency_group": "Performance Web et optimisation",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_05_1_06",
+      "level": "expert",
+      "title": "Expert CDN et cache",
+      "parent_id": "TL_2_05_1",
+      "competency_group": "Performance Web et optimisation",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_05_1_07",
+      "level": "expert",
+      "title": "Expert bundle JS",
+      "parent_id": "TL_2_05_1",
+      "competency_group": "Performance Web et optimisation",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_05_1_08",
+      "level": "expert",
+      "title": "Expert monitoring RUM",
+      "parent_id": "TL_2_05_1",
+      "competency_group": "Performance Web et optimisation",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_05_1_09",
+      "level": "expert",
+      "title": "Expert optimisation mobile",
+      "parent_id": "TL_2_05_1",
+      "competency_group": "Performance Web et optimisation",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "MGR_2_05_2",
+      "level": "manager",
+      "title": "Manager — Performance Web et optimisation — vérification et intégration",
+      "parent_id": "SM_2_05"
+    },
+    {
+      "id": "TL_2_05_2",
+      "level": "team_leader",
+      "title": "Team Leader — Performance Web et optimisation — QA et mise en cohérence",
+      "parent_id": "MGR_2_05_2"
+    },
+    {
+      "id": "EX_2_05_2_01",
+      "level": "expert",
+      "title": "Expert Core Web Vitals",
+      "parent_id": "TL_2_05_2",
+      "competency_group": "Performance Web et optimisation",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_05_2_02",
+      "level": "expert",
+      "title": "Expert LCP",
+      "parent_id": "TL_2_05_2",
+      "competency_group": "Performance Web et optimisation",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_05_2_03",
+      "level": "expert",
+      "title": "Expert INP",
+      "parent_id": "TL_2_05_2",
+      "competency_group": "Performance Web et optimisation",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_05_2_04",
+      "level": "expert",
+      "title": "Expert CLS",
+      "parent_id": "TL_2_05_2",
+      "competency_group": "Performance Web et optimisation",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_05_2_05",
+      "level": "expert",
+      "title": "Expert images responsives",
+      "parent_id": "TL_2_05_2",
+      "competency_group": "Performance Web et optimisation",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_05_2_06",
+      "level": "expert",
+      "title": "Expert CDN et cache",
+      "parent_id": "TL_2_05_2",
+      "competency_group": "Performance Web et optimisation",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_05_2_07",
+      "level": "expert",
+      "title": "Expert bundle JS",
+      "parent_id": "TL_2_05_2",
+      "competency_group": "Performance Web et optimisation",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_05_2_08",
+      "level": "expert",
+      "title": "Expert monitoring RUM",
+      "parent_id": "TL_2_05_2",
+      "competency_group": "Performance Web et optimisation",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_05_2_09",
+      "level": "expert",
+      "title": "Expert optimisation mobile",
+      "parent_id": "TL_2_05_2",
+      "competency_group": "Performance Web et optimisation",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "SM_2_06",
+      "level": "senior_manager",
+      "title": "Senior Manager — QA logiciel, CI et déploiement",
+      "parent_id": "DSI_02"
+    },
+    {
+      "id": "MGR_2_06_1",
+      "level": "manager",
+      "title": "Manager — QA logiciel, CI et déploiement — conception et production",
+      "parent_id": "SM_2_06"
+    },
+    {
+      "id": "TL_2_06_1",
+      "level": "team_leader",
+      "title": "Team Leader — QA logiciel, CI et déploiement — production",
+      "parent_id": "MGR_2_06_1"
+    },
+    {
+      "id": "EX_2_06_1_01",
+      "level": "expert",
+      "title": "Ingénieur CI",
+      "parent_id": "TL_2_06_1",
+      "competency_group": "QA logiciel, CI et déploiement",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_06_1_02",
+      "level": "expert",
+      "title": "QA automation",
+      "parent_id": "TL_2_06_1",
+      "competency_group": "QA logiciel, CI et déploiement",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_06_1_03",
+      "level": "expert",
+      "title": "Expert Playwright",
+      "parent_id": "TL_2_06_1",
+      "competency_group": "QA logiciel, CI et déploiement",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_06_1_04",
+      "level": "expert",
+      "title": "Testeur PHP",
+      "parent_id": "TL_2_06_1",
+      "competency_group": "QA logiciel, CI et déploiement",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_06_1_05",
+      "level": "expert",
+      "title": "Testeur intégration",
+      "parent_id": "TL_2_06_1",
+      "competency_group": "QA logiciel, CI et déploiement",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_06_1_06",
+      "level": "expert",
+      "title": "Expert tests E2E",
+      "parent_id": "TL_2_06_1",
+      "competency_group": "QA logiciel, CI et déploiement",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_06_1_07",
+      "level": "expert",
+      "title": "Expert packaging ZIP",
+      "parent_id": "TL_2_06_1",
+      "competency_group": "QA logiciel, CI et déploiement",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_06_1_08",
+      "level": "expert",
+      "title": "Release engineer",
+      "parent_id": "TL_2_06_1",
+      "competency_group": "QA logiciel, CI et déploiement",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_06_1_09",
+      "level": "expert",
+      "title": "Expert rollback",
+      "parent_id": "TL_2_06_1",
+      "competency_group": "QA logiciel, CI et déploiement",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "MGR_2_06_2",
+      "level": "manager",
+      "title": "Manager — QA logiciel, CI et déploiement — vérification et intégration",
+      "parent_id": "SM_2_06"
+    },
+    {
+      "id": "TL_2_06_2",
+      "level": "team_leader",
+      "title": "Team Leader — QA logiciel, CI et déploiement — QA et mise en cohérence",
+      "parent_id": "MGR_2_06_2"
+    },
+    {
+      "id": "EX_2_06_2_01",
+      "level": "expert",
+      "title": "Ingénieur CI",
+      "parent_id": "TL_2_06_2",
+      "competency_group": "QA logiciel, CI et déploiement",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_06_2_02",
+      "level": "expert",
+      "title": "QA automation",
+      "parent_id": "TL_2_06_2",
+      "competency_group": "QA logiciel, CI et déploiement",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_06_2_03",
+      "level": "expert",
+      "title": "Expert Playwright",
+      "parent_id": "TL_2_06_2",
+      "competency_group": "QA logiciel, CI et déploiement",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_06_2_04",
+      "level": "expert",
+      "title": "Testeur PHP",
+      "parent_id": "TL_2_06_2",
+      "competency_group": "QA logiciel, CI et déploiement",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_06_2_05",
+      "level": "expert",
+      "title": "Testeur intégration",
+      "parent_id": "TL_2_06_2",
+      "competency_group": "QA logiciel, CI et déploiement",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_06_2_06",
+      "level": "expert",
+      "title": "Expert tests E2E",
+      "parent_id": "TL_2_06_2",
+      "competency_group": "QA logiciel, CI et déploiement",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_06_2_07",
+      "level": "expert",
+      "title": "Expert packaging ZIP",
+      "parent_id": "TL_2_06_2",
+      "competency_group": "QA logiciel, CI et déploiement",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_06_2_08",
+      "level": "expert",
+      "title": "Release engineer",
+      "parent_id": "TL_2_06_2",
+      "competency_group": "QA logiciel, CI et déploiement",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_2_06_2_09",
+      "level": "expert",
+      "title": "Expert rollback",
+      "parent_id": "TL_2_06_2",
+      "competency_group": "QA logiciel, CI et déploiement",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "DSI_03",
+      "level": "dsi",
+      "title": "DSI — Pédagogie et programmes scolaires",
+      "parent_id": "OWNER"
+    },
+    {
+      "id": "SM_3_01",
+      "level": "senior_manager",
+      "title": "Senior Manager — Référentiels officiels et programmes marocains",
+      "parent_id": "DSI_03"
+    },
+    {
+      "id": "MGR_3_01_1",
+      "level": "manager",
+      "title": "Manager — Référentiels officiels et programmes marocains — conception et production",
+      "parent_id": "SM_3_01"
+    },
+    {
+      "id": "TL_3_01_1",
+      "level": "team_leader",
+      "title": "Team Leader — Référentiels officiels et programmes marocains — production",
+      "parent_id": "MGR_3_01_1"
+    },
+    {
+      "id": "EX_3_01_1_01",
+      "level": "expert",
+      "title": "Expert programmes 1AC",
+      "parent_id": "TL_3_01_1",
+      "competency_group": "Référentiels officiels et programmes marocains",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_01_1_02",
+      "level": "expert",
+      "title": "Expert programmes 2AC",
+      "parent_id": "TL_3_01_1",
+      "competency_group": "Référentiels officiels et programmes marocains",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_01_1_03",
+      "level": "expert",
+      "title": "Expert programmes 3AC",
+      "parent_id": "TL_3_01_1",
+      "competency_group": "Référentiels officiels et programmes marocains",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_01_1_04",
+      "level": "expert",
+      "title": "Expert référentiels",
+      "parent_id": "TL_3_01_1",
+      "competency_group": "Référentiels officiels et programmes marocains",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_01_1_05",
+      "level": "expert",
+      "title": "Expert cadres d'examens",
+      "parent_id": "TL_3_01_1",
+      "competency_group": "Référentiels officiels et programmes marocains",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_01_1_06",
+      "level": "expert",
+      "title": "Expert validation sources",
+      "parent_id": "TL_3_01_1",
+      "competency_group": "Référentiels officiels et programmes marocains",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_01_1_07",
+      "level": "expert",
+      "title": "Expert terminologie scolaire",
+      "parent_id": "TL_3_01_1",
+      "competency_group": "Référentiels officiels et programmes marocains",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_01_1_08",
+      "level": "expert",
+      "title": "Expert adaptation Maroc",
+      "parent_id": "TL_3_01_1",
+      "competency_group": "Référentiels officiels et programmes marocains",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_01_1_09",
+      "level": "expert",
+      "title": "Auditeur conformité curriculaire",
+      "parent_id": "TL_3_01_1",
+      "competency_group": "Référentiels officiels et programmes marocains",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_01_1_10",
+      "level": "expert",
+      "title": "Expert programmes 1AC",
+      "parent_id": "TL_3_01_1",
+      "competency_group": "Référentiels officiels et programmes marocains",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "MGR_3_01_2",
+      "level": "manager",
+      "title": "Manager — Référentiels officiels et programmes marocains — vérification et intégration",
+      "parent_id": "SM_3_01"
+    },
+    {
+      "id": "TL_3_01_2",
+      "level": "team_leader",
+      "title": "Team Leader — Référentiels officiels et programmes marocains — QA et mise en cohérence",
+      "parent_id": "MGR_3_01_2"
+    },
+    {
+      "id": "EX_3_01_2_01",
+      "level": "expert",
+      "title": "Expert programmes 1AC",
+      "parent_id": "TL_3_01_2",
+      "competency_group": "Référentiels officiels et programmes marocains",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_01_2_02",
+      "level": "expert",
+      "title": "Expert programmes 2AC",
+      "parent_id": "TL_3_01_2",
+      "competency_group": "Référentiels officiels et programmes marocains",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_01_2_03",
+      "level": "expert",
+      "title": "Expert programmes 3AC",
+      "parent_id": "TL_3_01_2",
+      "competency_group": "Référentiels officiels et programmes marocains",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_01_2_04",
+      "level": "expert",
+      "title": "Expert référentiels",
+      "parent_id": "TL_3_01_2",
+      "competency_group": "Référentiels officiels et programmes marocains",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_01_2_05",
+      "level": "expert",
+      "title": "Expert cadres d'examens",
+      "parent_id": "TL_3_01_2",
+      "competency_group": "Référentiels officiels et programmes marocains",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_01_2_06",
+      "level": "expert",
+      "title": "Expert validation sources",
+      "parent_id": "TL_3_01_2",
+      "competency_group": "Référentiels officiels et programmes marocains",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_01_2_07",
+      "level": "expert",
+      "title": "Expert terminologie scolaire",
+      "parent_id": "TL_3_01_2",
+      "competency_group": "Référentiels officiels et programmes marocains",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_01_2_08",
+      "level": "expert",
+      "title": "Expert adaptation Maroc",
+      "parent_id": "TL_3_01_2",
+      "competency_group": "Référentiels officiels et programmes marocains",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_01_2_09",
+      "level": "expert",
+      "title": "Auditeur conformité curriculaire",
+      "parent_id": "TL_3_01_2",
+      "competency_group": "Référentiels officiels et programmes marocains",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "SM_3_02",
+      "level": "senior_manager",
+      "title": "Senior Manager — Ingénierie pédagogique et didactique",
+      "parent_id": "DSI_03"
+    },
+    {
+      "id": "MGR_3_02_1",
+      "level": "manager",
+      "title": "Manager — Ingénierie pédagogique et didactique — conception et production",
+      "parent_id": "SM_3_02"
+    },
+    {
+      "id": "TL_3_02_1",
+      "level": "team_leader",
+      "title": "Team Leader — Ingénierie pédagogique et didactique — production",
+      "parent_id": "MGR_3_02_1"
+    },
+    {
+      "id": "EX_3_02_1_01",
+      "level": "expert",
+      "title": "Ingénieur pédagogique",
+      "parent_id": "TL_3_02_1",
+      "competency_group": "Ingénierie pédagogique et didactique",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_02_1_02",
+      "level": "expert",
+      "title": "Expert prérequis",
+      "parent_id": "TL_3_02_1",
+      "competency_group": "Ingénierie pédagogique et didactique",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_02_1_03",
+      "level": "expert",
+      "title": "Expert diagnostic",
+      "parent_id": "TL_3_02_1",
+      "competency_group": "Ingénierie pédagogique et didactique",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_02_1_04",
+      "level": "expert",
+      "title": "Expert feedback",
+      "parent_id": "TL_3_02_1",
+      "competency_group": "Ingénierie pédagogique et didactique",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_02_1_05",
+      "level": "expert",
+      "title": "Expert apprentissage espacé",
+      "parent_id": "TL_3_02_1",
+      "competency_group": "Ingénierie pédagogique et didactique",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_02_1_06",
+      "level": "expert",
+      "title": "Expert conception d'exercices",
+      "parent_id": "TL_3_02_1",
+      "competency_group": "Ingénierie pédagogique et didactique",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_02_1_07",
+      "level": "expert",
+      "title": "Expert pédagogie différenciée",
+      "parent_id": "TL_3_02_1",
+      "competency_group": "Ingénierie pédagogique et didactique",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_02_1_08",
+      "level": "expert",
+      "title": "Expert évaluation",
+      "parent_id": "TL_3_02_1",
+      "competency_group": "Ingénierie pédagogique et didactique",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_02_1_09",
+      "level": "expert",
+      "title": "Expert séquençage",
+      "parent_id": "TL_3_02_1",
+      "competency_group": "Ingénierie pédagogique et didactique",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "MGR_3_02_2",
+      "level": "manager",
+      "title": "Manager — Ingénierie pédagogique et didactique — vérification et intégration",
+      "parent_id": "SM_3_02"
+    },
+    {
+      "id": "TL_3_02_2",
+      "level": "team_leader",
+      "title": "Team Leader — Ingénierie pédagogique et didactique — QA et mise en cohérence",
+      "parent_id": "MGR_3_02_2"
+    },
+    {
+      "id": "EX_3_02_2_01",
+      "level": "expert",
+      "title": "Ingénieur pédagogique",
+      "parent_id": "TL_3_02_2",
+      "competency_group": "Ingénierie pédagogique et didactique",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_02_2_02",
+      "level": "expert",
+      "title": "Expert prérequis",
+      "parent_id": "TL_3_02_2",
+      "competency_group": "Ingénierie pédagogique et didactique",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_02_2_03",
+      "level": "expert",
+      "title": "Expert diagnostic",
+      "parent_id": "TL_3_02_2",
+      "competency_group": "Ingénierie pédagogique et didactique",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_02_2_04",
+      "level": "expert",
+      "title": "Expert feedback",
+      "parent_id": "TL_3_02_2",
+      "competency_group": "Ingénierie pédagogique et didactique",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_02_2_05",
+      "level": "expert",
+      "title": "Expert apprentissage espacé",
+      "parent_id": "TL_3_02_2",
+      "competency_group": "Ingénierie pédagogique et didactique",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_02_2_06",
+      "level": "expert",
+      "title": "Expert conception d'exercices",
+      "parent_id": "TL_3_02_2",
+      "competency_group": "Ingénierie pédagogique et didactique",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_02_2_07",
+      "level": "expert",
+      "title": "Expert pédagogie différenciée",
+      "parent_id": "TL_3_02_2",
+      "competency_group": "Ingénierie pédagogique et didactique",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_02_2_08",
+      "level": "expert",
+      "title": "Expert évaluation",
+      "parent_id": "TL_3_02_2",
+      "competency_group": "Ingénierie pédagogique et didactique",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_02_2_09",
+      "level": "expert",
+      "title": "Expert séquençage",
+      "parent_id": "TL_3_02_2",
+      "competency_group": "Ingénierie pédagogique et didactique",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "SM_3_03",
+      "level": "senior_manager",
+      "title": "Senior Manager — Mathématiques et raisonnement",
+      "parent_id": "DSI_03"
+    },
+    {
+      "id": "MGR_3_03_1",
+      "level": "manager",
+      "title": "Manager — Mathématiques et raisonnement — conception et production",
+      "parent_id": "SM_3_03"
+    },
+    {
+      "id": "TL_3_03_1",
+      "level": "team_leader",
+      "title": "Team Leader — Mathématiques et raisonnement — production",
+      "parent_id": "MGR_3_03_1"
+    },
+    {
+      "id": "EX_3_03_1_01",
+      "level": "expert",
+      "title": "Enseignant mathématiques",
+      "parent_id": "TL_3_03_1",
+      "competency_group": "Mathématiques et raisonnement",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_03_1_02",
+      "level": "expert",
+      "title": "Expert algèbre",
+      "parent_id": "TL_3_03_1",
+      "competency_group": "Mathématiques et raisonnement",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_03_1_03",
+      "level": "expert",
+      "title": "Expert géométrie",
+      "parent_id": "TL_3_03_1",
+      "competency_group": "Mathématiques et raisonnement",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_03_1_04",
+      "level": "expert",
+      "title": "Expert statistiques",
+      "parent_id": "TL_3_03_1",
+      "competency_group": "Mathématiques et raisonnement",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_03_1_05",
+      "level": "expert",
+      "title": "Expert fonctions",
+      "parent_id": "TL_3_03_1",
+      "competency_group": "Mathématiques et raisonnement",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_03_1_06",
+      "level": "expert",
+      "title": "Expert calcul numérique",
+      "parent_id": "TL_3_03_1",
+      "competency_group": "Mathématiques et raisonnement",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_03_1_07",
+      "level": "expert",
+      "title": "Expert résolution de problèmes",
+      "parent_id": "TL_3_03_1",
+      "competency_group": "Mathématiques et raisonnement",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_03_1_08",
+      "level": "expert",
+      "title": "Expert exercices corrigés",
+      "parent_id": "TL_3_03_1",
+      "competency_group": "Mathématiques et raisonnement",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_03_1_09",
+      "level": "expert",
+      "title": "Correcteur mathématique",
+      "parent_id": "TL_3_03_1",
+      "competency_group": "Mathématiques et raisonnement",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "MGR_3_03_2",
+      "level": "manager",
+      "title": "Manager — Mathématiques et raisonnement — vérification et intégration",
+      "parent_id": "SM_3_03"
+    },
+    {
+      "id": "TL_3_03_2",
+      "level": "team_leader",
+      "title": "Team Leader — Mathématiques et raisonnement — QA et mise en cohérence",
+      "parent_id": "MGR_3_03_2"
+    },
+    {
+      "id": "EX_3_03_2_01",
+      "level": "expert",
+      "title": "Enseignant mathématiques",
+      "parent_id": "TL_3_03_2",
+      "competency_group": "Mathématiques et raisonnement",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_03_2_02",
+      "level": "expert",
+      "title": "Expert algèbre",
+      "parent_id": "TL_3_03_2",
+      "competency_group": "Mathématiques et raisonnement",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_03_2_03",
+      "level": "expert",
+      "title": "Expert géométrie",
+      "parent_id": "TL_3_03_2",
+      "competency_group": "Mathématiques et raisonnement",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_03_2_04",
+      "level": "expert",
+      "title": "Expert statistiques",
+      "parent_id": "TL_3_03_2",
+      "competency_group": "Mathématiques et raisonnement",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_03_2_05",
+      "level": "expert",
+      "title": "Expert fonctions",
+      "parent_id": "TL_3_03_2",
+      "competency_group": "Mathématiques et raisonnement",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_03_2_06",
+      "level": "expert",
+      "title": "Expert calcul numérique",
+      "parent_id": "TL_3_03_2",
+      "competency_group": "Mathématiques et raisonnement",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_03_2_07",
+      "level": "expert",
+      "title": "Expert résolution de problèmes",
+      "parent_id": "TL_3_03_2",
+      "competency_group": "Mathématiques et raisonnement",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_03_2_08",
+      "level": "expert",
+      "title": "Expert exercices corrigés",
+      "parent_id": "TL_3_03_2",
+      "competency_group": "Mathématiques et raisonnement",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_03_2_09",
+      "level": "expert",
+      "title": "Correcteur mathématique",
+      "parent_id": "TL_3_03_2",
+      "competency_group": "Mathématiques et raisonnement",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "SM_3_04",
+      "level": "senior_manager",
+      "title": "Senior Manager — Langues arabe, français et anglais",
+      "parent_id": "DSI_03"
+    },
+    {
+      "id": "MGR_3_04_1",
+      "level": "manager",
+      "title": "Manager — Langues arabe, français et anglais — conception et production",
+      "parent_id": "SM_3_04"
+    },
+    {
+      "id": "TL_3_04_1",
+      "level": "team_leader",
+      "title": "Team Leader — Langues arabe, français et anglais — production",
+      "parent_id": "MGR_3_04_1"
+    },
+    {
+      "id": "EX_3_04_1_01",
+      "level": "expert",
+      "title": "Expert langue arabe",
+      "parent_id": "TL_3_04_1",
+      "competency_group": "Langues arabe, français et anglais",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_04_1_02",
+      "level": "expert",
+      "title": "Expert français collège",
+      "parent_id": "TL_3_04_1",
+      "competency_group": "Langues arabe, français et anglais",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_04_1_03",
+      "level": "expert",
+      "title": "Expert anglais collège",
+      "parent_id": "TL_3_04_1",
+      "competency_group": "Langues arabe, français et anglais",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_04_1_04",
+      "level": "expert",
+      "title": "Expert expression écrite",
+      "parent_id": "TL_3_04_1",
+      "competency_group": "Langues arabe, français et anglais",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_04_1_05",
+      "level": "expert",
+      "title": "Expert compréhension",
+      "parent_id": "TL_3_04_1",
+      "competency_group": "Langues arabe, français et anglais",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_04_1_06",
+      "level": "expert",
+      "title": "Expert grammaire",
+      "parent_id": "TL_3_04_1",
+      "competency_group": "Langues arabe, français et anglais",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_04_1_07",
+      "level": "expert",
+      "title": "Expert traduction pédagogique",
+      "parent_id": "TL_3_04_1",
+      "competency_group": "Langues arabe, français et anglais",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_04_1_08",
+      "level": "expert",
+      "title": "Expert lecture",
+      "parent_id": "TL_3_04_1",
+      "competency_group": "Langues arabe, français et anglais",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_04_1_09",
+      "level": "expert",
+      "title": "Correcteur linguistique",
+      "parent_id": "TL_3_04_1",
+      "competency_group": "Langues arabe, français et anglais",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "MGR_3_04_2",
+      "level": "manager",
+      "title": "Manager — Langues arabe, français et anglais — vérification et intégration",
+      "parent_id": "SM_3_04"
+    },
+    {
+      "id": "TL_3_04_2",
+      "level": "team_leader",
+      "title": "Team Leader — Langues arabe, français et anglais — QA et mise en cohérence",
+      "parent_id": "MGR_3_04_2"
+    },
+    {
+      "id": "EX_3_04_2_01",
+      "level": "expert",
+      "title": "Expert langue arabe",
+      "parent_id": "TL_3_04_2",
+      "competency_group": "Langues arabe, français et anglais",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_04_2_02",
+      "level": "expert",
+      "title": "Expert français collège",
+      "parent_id": "TL_3_04_2",
+      "competency_group": "Langues arabe, français et anglais",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_04_2_03",
+      "level": "expert",
+      "title": "Expert anglais collège",
+      "parent_id": "TL_3_04_2",
+      "competency_group": "Langues arabe, français et anglais",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_04_2_04",
+      "level": "expert",
+      "title": "Expert expression écrite",
+      "parent_id": "TL_3_04_2",
+      "competency_group": "Langues arabe, français et anglais",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_04_2_05",
+      "level": "expert",
+      "title": "Expert compréhension",
+      "parent_id": "TL_3_04_2",
+      "competency_group": "Langues arabe, français et anglais",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_04_2_06",
+      "level": "expert",
+      "title": "Expert grammaire",
+      "parent_id": "TL_3_04_2",
+      "competency_group": "Langues arabe, français et anglais",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_04_2_07",
+      "level": "expert",
+      "title": "Expert traduction pédagogique",
+      "parent_id": "TL_3_04_2",
+      "competency_group": "Langues arabe, français et anglais",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_04_2_08",
+      "level": "expert",
+      "title": "Expert lecture",
+      "parent_id": "TL_3_04_2",
+      "competency_group": "Langues arabe, français et anglais",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_04_2_09",
+      "level": "expert",
+      "title": "Correcteur linguistique",
+      "parent_id": "TL_3_04_2",
+      "competency_group": "Langues arabe, français et anglais",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "SM_3_05",
+      "level": "senior_manager",
+      "title": "Senior Manager — Sciences expérimentales et technologie",
+      "parent_id": "DSI_03"
+    },
+    {
+      "id": "MGR_3_05_1",
+      "level": "manager",
+      "title": "Manager — Sciences expérimentales et technologie — conception et production",
+      "parent_id": "SM_3_05"
+    },
+    {
+      "id": "TL_3_05_1",
+      "level": "team_leader",
+      "title": "Team Leader — Sciences expérimentales et technologie — production",
+      "parent_id": "MGR_3_05_1"
+    },
+    {
+      "id": "EX_3_05_1_01",
+      "level": "expert",
+      "title": "Expert physique",
+      "parent_id": "TL_3_05_1",
+      "competency_group": "Sciences expérimentales et technologie",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_05_1_02",
+      "level": "expert",
+      "title": "Expert chimie",
+      "parent_id": "TL_3_05_1",
+      "competency_group": "Sciences expérimentales et technologie",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_05_1_03",
+      "level": "expert",
+      "title": "Expert SVT",
+      "parent_id": "TL_3_05_1",
+      "competency_group": "Sciences expérimentales et technologie",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_05_1_04",
+      "level": "expert",
+      "title": "Expert technologie",
+      "parent_id": "TL_3_05_1",
+      "competency_group": "Sciences expérimentales et technologie",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_05_1_05",
+      "level": "expert",
+      "title": "Expert manipulations",
+      "parent_id": "TL_3_05_1",
+      "competency_group": "Sciences expérimentales et technologie",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_05_1_06",
+      "level": "expert",
+      "title": "Expert schémas scientifiques",
+      "parent_id": "TL_3_05_1",
+      "competency_group": "Sciences expérimentales et technologie",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_05_1_07",
+      "level": "expert",
+      "title": "Expert sécurité expérimentale",
+      "parent_id": "TL_3_05_1",
+      "competency_group": "Sciences expérimentales et technologie",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_05_1_08",
+      "level": "expert",
+      "title": "Expert exercices sciences",
+      "parent_id": "TL_3_05_1",
+      "competency_group": "Sciences expérimentales et technologie",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_05_1_09",
+      "level": "expert",
+      "title": "Correcteur scientifique",
+      "parent_id": "TL_3_05_1",
+      "competency_group": "Sciences expérimentales et technologie",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "MGR_3_05_2",
+      "level": "manager",
+      "title": "Manager — Sciences expérimentales et technologie — vérification et intégration",
+      "parent_id": "SM_3_05"
+    },
+    {
+      "id": "TL_3_05_2",
+      "level": "team_leader",
+      "title": "Team Leader — Sciences expérimentales et technologie — QA et mise en cohérence",
+      "parent_id": "MGR_3_05_2"
+    },
+    {
+      "id": "EX_3_05_2_01",
+      "level": "expert",
+      "title": "Expert physique",
+      "parent_id": "TL_3_05_2",
+      "competency_group": "Sciences expérimentales et technologie",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_05_2_02",
+      "level": "expert",
+      "title": "Expert chimie",
+      "parent_id": "TL_3_05_2",
+      "competency_group": "Sciences expérimentales et technologie",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_05_2_03",
+      "level": "expert",
+      "title": "Expert SVT",
+      "parent_id": "TL_3_05_2",
+      "competency_group": "Sciences expérimentales et technologie",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_05_2_04",
+      "level": "expert",
+      "title": "Expert technologie",
+      "parent_id": "TL_3_05_2",
+      "competency_group": "Sciences expérimentales et technologie",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_05_2_05",
+      "level": "expert",
+      "title": "Expert manipulations",
+      "parent_id": "TL_3_05_2",
+      "competency_group": "Sciences expérimentales et technologie",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_05_2_06",
+      "level": "expert",
+      "title": "Expert schémas scientifiques",
+      "parent_id": "TL_3_05_2",
+      "competency_group": "Sciences expérimentales et technologie",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_05_2_07",
+      "level": "expert",
+      "title": "Expert sécurité expérimentale",
+      "parent_id": "TL_3_05_2",
+      "competency_group": "Sciences expérimentales et technologie",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_05_2_08",
+      "level": "expert",
+      "title": "Expert exercices sciences",
+      "parent_id": "TL_3_05_2",
+      "competency_group": "Sciences expérimentales et technologie",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_05_2_09",
+      "level": "expert",
+      "title": "Correcteur scientifique",
+      "parent_id": "TL_3_05_2",
+      "competency_group": "Sciences expérimentales et technologie",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "SM_3_06",
+      "level": "senior_manager",
+      "title": "Senior Manager — Histoire, géographie, civisme et autres disciplines",
+      "parent_id": "DSI_03"
+    },
+    {
+      "id": "MGR_3_06_1",
+      "level": "manager",
+      "title": "Manager — Histoire, géographie, civisme et autres disciplines — conception et production",
+      "parent_id": "SM_3_06"
+    },
+    {
+      "id": "TL_3_06_1",
+      "level": "team_leader",
+      "title": "Team Leader — Histoire, géographie, civisme et autres disciplines — production",
+      "parent_id": "MGR_3_06_1"
+    },
+    {
+      "id": "EX_3_06_1_01",
+      "level": "expert",
+      "title": "Expert histoire",
+      "parent_id": "TL_3_06_1",
+      "competency_group": "Histoire, géographie, civisme et autres disciplines",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_06_1_02",
+      "level": "expert",
+      "title": "Expert géographie",
+      "parent_id": "TL_3_06_1",
+      "competency_group": "Histoire, géographie, civisme et autres disciplines",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_06_1_03",
+      "level": "expert",
+      "title": "Expert éducation civique",
+      "parent_id": "TL_3_06_1",
+      "competency_group": "Histoire, géographie, civisme et autres disciplines",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_06_1_04",
+      "level": "expert",
+      "title": "Expert éducation islamique",
+      "parent_id": "TL_3_06_1",
+      "competency_group": "Histoire, géographie, civisme et autres disciplines",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_06_1_05",
+      "level": "expert",
+      "title": "Expert cartographie",
+      "parent_id": "TL_3_06_1",
+      "competency_group": "Histoire, géographie, civisme et autres disciplines",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_06_1_06",
+      "level": "expert",
+      "title": "Expert analyse de documents",
+      "parent_id": "TL_3_06_1",
+      "competency_group": "Histoire, géographie, civisme et autres disciplines",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_06_1_07",
+      "level": "expert",
+      "title": "Expert contextualisation Maroc",
+      "parent_id": "TL_3_06_1",
+      "competency_group": "Histoire, géographie, civisme et autres disciplines",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_06_1_08",
+      "level": "expert",
+      "title": "Expert mémorisation",
+      "parent_id": "TL_3_06_1",
+      "competency_group": "Histoire, géographie, civisme et autres disciplines",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_06_1_09",
+      "level": "expert",
+      "title": "Correcteur humanités",
+      "parent_id": "TL_3_06_1",
+      "competency_group": "Histoire, géographie, civisme et autres disciplines",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "MGR_3_06_2",
+      "level": "manager",
+      "title": "Manager — Histoire, géographie, civisme et autres disciplines — vérification et intégration",
+      "parent_id": "SM_3_06"
+    },
+    {
+      "id": "TL_3_06_2",
+      "level": "team_leader",
+      "title": "Team Leader — Histoire, géographie, civisme et autres disciplines — QA et mise en cohérence",
+      "parent_id": "MGR_3_06_2"
+    },
+    {
+      "id": "EX_3_06_2_01",
+      "level": "expert",
+      "title": "Expert histoire",
+      "parent_id": "TL_3_06_2",
+      "competency_group": "Histoire, géographie, civisme et autres disciplines",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_06_2_02",
+      "level": "expert",
+      "title": "Expert géographie",
+      "parent_id": "TL_3_06_2",
+      "competency_group": "Histoire, géographie, civisme et autres disciplines",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_06_2_03",
+      "level": "expert",
+      "title": "Expert éducation civique",
+      "parent_id": "TL_3_06_2",
+      "competency_group": "Histoire, géographie, civisme et autres disciplines",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_06_2_04",
+      "level": "expert",
+      "title": "Expert éducation islamique",
+      "parent_id": "TL_3_06_2",
+      "competency_group": "Histoire, géographie, civisme et autres disciplines",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_06_2_05",
+      "level": "expert",
+      "title": "Expert cartographie",
+      "parent_id": "TL_3_06_2",
+      "competency_group": "Histoire, géographie, civisme et autres disciplines",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_06_2_06",
+      "level": "expert",
+      "title": "Expert analyse de documents",
+      "parent_id": "TL_3_06_2",
+      "competency_group": "Histoire, géographie, civisme et autres disciplines",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_06_2_07",
+      "level": "expert",
+      "title": "Expert contextualisation Maroc",
+      "parent_id": "TL_3_06_2",
+      "competency_group": "Histoire, géographie, civisme et autres disciplines",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_06_2_08",
+      "level": "expert",
+      "title": "Expert mémorisation",
+      "parent_id": "TL_3_06_2",
+      "competency_group": "Histoire, géographie, civisme et autres disciplines",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_3_06_2_09",
+      "level": "expert",
+      "title": "Correcteur humanités",
+      "parent_id": "TL_3_06_2",
+      "competency_group": "Histoire, géographie, civisme et autres disciplines",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "DSI_04",
+      "level": "dsi",
+      "title": "DSI — Data, analytique et IA maîtrisée",
+      "parent_id": "OWNER"
+    },
+    {
+      "id": "SM_4_01",
+      "level": "senior_manager",
+      "title": "Senior Manager — Data engineering et ingestion responsable",
+      "parent_id": "DSI_04"
+    },
+    {
+      "id": "MGR_4_01_1",
+      "level": "manager",
+      "title": "Manager — Data engineering et ingestion responsable — conception et production",
+      "parent_id": "SM_4_01"
+    },
+    {
+      "id": "TL_4_01_1",
+      "level": "team_leader",
+      "title": "Team Leader — Data engineering et ingestion responsable — production",
+      "parent_id": "MGR_4_01_1"
+    },
+    {
+      "id": "EX_4_01_1_01",
+      "level": "expert",
+      "title": "Data engineer",
+      "parent_id": "TL_4_01_1",
+      "competency_group": "Data engineering et ingestion responsable",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_01_1_02",
+      "level": "expert",
+      "title": "Expert ETL",
+      "parent_id": "TL_4_01_1",
+      "competency_group": "Data engineering et ingestion responsable",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_01_1_03",
+      "level": "expert",
+      "title": "Expert qualité d'ingestion",
+      "parent_id": "TL_4_01_1",
+      "competency_group": "Data engineering et ingestion responsable",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_01_1_04",
+      "level": "expert",
+      "title": "Expert données scolaires",
+      "parent_id": "TL_4_01_1",
+      "competency_group": "Data engineering et ingestion responsable",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_01_1_05",
+      "level": "expert",
+      "title": "Expert pipeline",
+      "parent_id": "TL_4_01_1",
+      "competency_group": "Data engineering et ingestion responsable",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_01_1_06",
+      "level": "expert",
+      "title": "Expert versionnage datasets",
+      "parent_id": "TL_4_01_1",
+      "competency_group": "Data engineering et ingestion responsable",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_01_1_07",
+      "level": "expert",
+      "title": "Expert nettoyage",
+      "parent_id": "TL_4_01_1",
+      "competency_group": "Data engineering et ingestion responsable",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_01_1_08",
+      "level": "expert",
+      "title": "Expert traçabilité sources",
+      "parent_id": "TL_4_01_1",
+      "competency_group": "Data engineering et ingestion responsable",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_01_1_09",
+      "level": "expert",
+      "title": "Expert traitement PDF autorisé",
+      "parent_id": "TL_4_01_1",
+      "competency_group": "Data engineering et ingestion responsable",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_01_1_10",
+      "level": "expert",
+      "title": "Data engineer",
+      "parent_id": "TL_4_01_1",
+      "competency_group": "Data engineering et ingestion responsable",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "MGR_4_01_2",
+      "level": "manager",
+      "title": "Manager — Data engineering et ingestion responsable — vérification et intégration",
+      "parent_id": "SM_4_01"
+    },
+    {
+      "id": "TL_4_01_2",
+      "level": "team_leader",
+      "title": "Team Leader — Data engineering et ingestion responsable — QA et mise en cohérence",
+      "parent_id": "MGR_4_01_2"
+    },
+    {
+      "id": "EX_4_01_2_01",
+      "level": "expert",
+      "title": "Data engineer",
+      "parent_id": "TL_4_01_2",
+      "competency_group": "Data engineering et ingestion responsable",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_01_2_02",
+      "level": "expert",
+      "title": "Expert ETL",
+      "parent_id": "TL_4_01_2",
+      "competency_group": "Data engineering et ingestion responsable",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_01_2_03",
+      "level": "expert",
+      "title": "Expert qualité d'ingestion",
+      "parent_id": "TL_4_01_2",
+      "competency_group": "Data engineering et ingestion responsable",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_01_2_04",
+      "level": "expert",
+      "title": "Expert données scolaires",
+      "parent_id": "TL_4_01_2",
+      "competency_group": "Data engineering et ingestion responsable",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_01_2_05",
+      "level": "expert",
+      "title": "Expert pipeline",
+      "parent_id": "TL_4_01_2",
+      "competency_group": "Data engineering et ingestion responsable",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_01_2_06",
+      "level": "expert",
+      "title": "Expert versionnage datasets",
+      "parent_id": "TL_4_01_2",
+      "competency_group": "Data engineering et ingestion responsable",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_01_2_07",
+      "level": "expert",
+      "title": "Expert nettoyage",
+      "parent_id": "TL_4_01_2",
+      "competency_group": "Data engineering et ingestion responsable",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_01_2_08",
+      "level": "expert",
+      "title": "Expert traçabilité sources",
+      "parent_id": "TL_4_01_2",
+      "competency_group": "Data engineering et ingestion responsable",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_01_2_09",
+      "level": "expert",
+      "title": "Expert traitement PDF autorisé",
+      "parent_id": "TL_4_01_2",
+      "competency_group": "Data engineering et ingestion responsable",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "SM_4_02",
+      "level": "senior_manager",
+      "title": "Senior Manager — Architecture des données et gouvernance",
+      "parent_id": "DSI_04"
+    },
+    {
+      "id": "MGR_4_02_1",
+      "level": "manager",
+      "title": "Manager — Architecture des données et gouvernance — conception et production",
+      "parent_id": "SM_4_02"
+    },
+    {
+      "id": "TL_4_02_1",
+      "level": "team_leader",
+      "title": "Team Leader — Architecture des données et gouvernance — production",
+      "parent_id": "MGR_4_02_1"
+    },
+    {
+      "id": "EX_4_02_1_01",
+      "level": "expert",
+      "title": "Data architect",
+      "parent_id": "TL_4_02_1",
+      "competency_group": "Architecture des données et gouvernance",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_02_1_02",
+      "level": "expert",
+      "title": "Expert modélisation",
+      "parent_id": "TL_4_02_1",
+      "competency_group": "Architecture des données et gouvernance",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_02_1_03",
+      "level": "expert",
+      "title": "Data steward",
+      "parent_id": "TL_4_02_1",
+      "competency_group": "Architecture des données et gouvernance",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_02_1_04",
+      "level": "expert",
+      "title": "Expert métadonnées",
+      "parent_id": "TL_4_02_1",
+      "competency_group": "Architecture des données et gouvernance",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_02_1_05",
+      "level": "expert",
+      "title": "Expert schéma élève",
+      "parent_id": "TL_4_02_1",
+      "competency_group": "Architecture des données et gouvernance",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_02_1_06",
+      "level": "expert",
+      "title": "Expert rétention",
+      "parent_id": "TL_4_02_1",
+      "competency_group": "Architecture des données et gouvernance",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_02_1_07",
+      "level": "expert",
+      "title": "Expert gouvernance",
+      "parent_id": "TL_4_02_1",
+      "competency_group": "Architecture des données et gouvernance",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_02_1_08",
+      "level": "expert",
+      "title": "Expert intégrité",
+      "parent_id": "TL_4_02_1",
+      "competency_group": "Architecture des données et gouvernance",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_02_1_09",
+      "level": "expert",
+      "title": "Auditeur data",
+      "parent_id": "TL_4_02_1",
+      "competency_group": "Architecture des données et gouvernance",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "MGR_4_02_2",
+      "level": "manager",
+      "title": "Manager — Architecture des données et gouvernance — vérification et intégration",
+      "parent_id": "SM_4_02"
+    },
+    {
+      "id": "TL_4_02_2",
+      "level": "team_leader",
+      "title": "Team Leader — Architecture des données et gouvernance — QA et mise en cohérence",
+      "parent_id": "MGR_4_02_2"
+    },
+    {
+      "id": "EX_4_02_2_01",
+      "level": "expert",
+      "title": "Data architect",
+      "parent_id": "TL_4_02_2",
+      "competency_group": "Architecture des données et gouvernance",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_02_2_02",
+      "level": "expert",
+      "title": "Expert modélisation",
+      "parent_id": "TL_4_02_2",
+      "competency_group": "Architecture des données et gouvernance",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_02_2_03",
+      "level": "expert",
+      "title": "Data steward",
+      "parent_id": "TL_4_02_2",
+      "competency_group": "Architecture des données et gouvernance",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_02_2_04",
+      "level": "expert",
+      "title": "Expert métadonnées",
+      "parent_id": "TL_4_02_2",
+      "competency_group": "Architecture des données et gouvernance",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_02_2_05",
+      "level": "expert",
+      "title": "Expert schéma élève",
+      "parent_id": "TL_4_02_2",
+      "competency_group": "Architecture des données et gouvernance",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_02_2_06",
+      "level": "expert",
+      "title": "Expert rétention",
+      "parent_id": "TL_4_02_2",
+      "competency_group": "Architecture des données et gouvernance",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_02_2_07",
+      "level": "expert",
+      "title": "Expert gouvernance",
+      "parent_id": "TL_4_02_2",
+      "competency_group": "Architecture des données et gouvernance",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_02_2_08",
+      "level": "expert",
+      "title": "Expert intégrité",
+      "parent_id": "TL_4_02_2",
+      "competency_group": "Architecture des données et gouvernance",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_02_2_09",
+      "level": "expert",
+      "title": "Auditeur data",
+      "parent_id": "TL_4_02_2",
+      "competency_group": "Architecture des données et gouvernance",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "SM_4_03",
+      "level": "senior_manager",
+      "title": "Senior Manager — Data analytics et tableaux de bord",
+      "parent_id": "DSI_04"
+    },
+    {
+      "id": "MGR_4_03_1",
+      "level": "manager",
+      "title": "Manager — Data analytics et tableaux de bord — conception et production",
+      "parent_id": "SM_4_03"
+    },
+    {
+      "id": "TL_4_03_1",
+      "level": "team_leader",
+      "title": "Team Leader — Data analytics et tableaux de bord — production",
+      "parent_id": "MGR_4_03_1"
+    },
+    {
+      "id": "EX_4_03_1_01",
+      "level": "expert",
+      "title": "Data analyst",
+      "parent_id": "TL_4_03_1",
+      "competency_group": "Data analytics et tableaux de bord",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_03_1_02",
+      "level": "expert",
+      "title": "Expert BI",
+      "parent_id": "TL_4_03_1",
+      "competency_group": "Data analytics et tableaux de bord",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_03_1_03",
+      "level": "expert",
+      "title": "Expert tableaux élèves",
+      "parent_id": "TL_4_03_1",
+      "competency_group": "Data analytics et tableaux de bord",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_03_1_04",
+      "level": "expert",
+      "title": "Expert indicateurs",
+      "parent_id": "TL_4_03_1",
+      "competency_group": "Data analytics et tableaux de bord",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_03_1_05",
+      "level": "expert",
+      "title": "Expert visualisation",
+      "parent_id": "TL_4_03_1",
+      "competency_group": "Data analytics et tableaux de bord",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_03_1_06",
+      "level": "expert",
+      "title": "Expert rapports parents",
+      "parent_id": "TL_4_03_1",
+      "competency_group": "Data analytics et tableaux de bord",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_03_1_07",
+      "level": "expert",
+      "title": "Expert SQL analytique",
+      "parent_id": "TL_4_03_1",
+      "competency_group": "Data analytics et tableaux de bord",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_03_1_08",
+      "level": "expert",
+      "title": "Expert qualité métriques",
+      "parent_id": "TL_4_03_1",
+      "competency_group": "Data analytics et tableaux de bord",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_03_1_09",
+      "level": "expert",
+      "title": "Expert instrumentation respectueuse",
+      "parent_id": "TL_4_03_1",
+      "competency_group": "Data analytics et tableaux de bord",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "MGR_4_03_2",
+      "level": "manager",
+      "title": "Manager — Data analytics et tableaux de bord — vérification et intégration",
+      "parent_id": "SM_4_03"
+    },
+    {
+      "id": "TL_4_03_2",
+      "level": "team_leader",
+      "title": "Team Leader — Data analytics et tableaux de bord — QA et mise en cohérence",
+      "parent_id": "MGR_4_03_2"
+    },
+    {
+      "id": "EX_4_03_2_01",
+      "level": "expert",
+      "title": "Data analyst",
+      "parent_id": "TL_4_03_2",
+      "competency_group": "Data analytics et tableaux de bord",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_03_2_02",
+      "level": "expert",
+      "title": "Expert BI",
+      "parent_id": "TL_4_03_2",
+      "competency_group": "Data analytics et tableaux de bord",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_03_2_03",
+      "level": "expert",
+      "title": "Expert tableaux élèves",
+      "parent_id": "TL_4_03_2",
+      "competency_group": "Data analytics et tableaux de bord",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_03_2_04",
+      "level": "expert",
+      "title": "Expert indicateurs",
+      "parent_id": "TL_4_03_2",
+      "competency_group": "Data analytics et tableaux de bord",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_03_2_05",
+      "level": "expert",
+      "title": "Expert visualisation",
+      "parent_id": "TL_4_03_2",
+      "competency_group": "Data analytics et tableaux de bord",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_03_2_06",
+      "level": "expert",
+      "title": "Expert rapports parents",
+      "parent_id": "TL_4_03_2",
+      "competency_group": "Data analytics et tableaux de bord",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_03_2_07",
+      "level": "expert",
+      "title": "Expert SQL analytique",
+      "parent_id": "TL_4_03_2",
+      "competency_group": "Data analytics et tableaux de bord",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_03_2_08",
+      "level": "expert",
+      "title": "Expert qualité métriques",
+      "parent_id": "TL_4_03_2",
+      "competency_group": "Data analytics et tableaux de bord",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_03_2_09",
+      "level": "expert",
+      "title": "Expert instrumentation respectueuse",
+      "parent_id": "TL_4_03_2",
+      "competency_group": "Data analytics et tableaux de bord",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "SM_4_04",
+      "level": "senior_manager",
+      "title": "Senior Manager — Data science et évaluation de l'apprentissage",
+      "parent_id": "DSI_04"
+    },
+    {
+      "id": "MGR_4_04_1",
+      "level": "manager",
+      "title": "Manager — Data science et évaluation de l'apprentissage — conception et production",
+      "parent_id": "SM_4_04"
+    },
+    {
+      "id": "TL_4_04_1",
+      "level": "team_leader",
+      "title": "Team Leader — Data science et évaluation de l'apprentissage — production",
+      "parent_id": "MGR_4_04_1"
+    },
+    {
+      "id": "EX_4_04_1_01",
+      "level": "expert",
+      "title": "Data scientist",
+      "parent_id": "TL_4_04_1",
+      "competency_group": "Data science et évaluation de l'apprentissage",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_04_1_02",
+      "level": "expert",
+      "title": "Statisticien",
+      "parent_id": "TL_4_04_1",
+      "competency_group": "Data science et évaluation de l'apprentissage",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_04_1_03",
+      "level": "expert",
+      "title": "Expert psychométrie",
+      "parent_id": "TL_4_04_1",
+      "competency_group": "Data science et évaluation de l'apprentissage",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_04_1_04",
+      "level": "expert",
+      "title": "Expert validité mesure",
+      "parent_id": "TL_4_04_1",
+      "competency_group": "Data science et évaluation de l'apprentissage",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_04_1_05",
+      "level": "expert",
+      "title": "Expert diagnostic erreurs",
+      "parent_id": "TL_4_04_1",
+      "competency_group": "Data science et évaluation de l'apprentissage",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_04_1_06",
+      "level": "expert",
+      "title": "Expert expérimentation",
+      "parent_id": "TL_4_04_1",
+      "competency_group": "Data science et évaluation de l'apprentissage",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_04_1_07",
+      "level": "expert",
+      "title": "Expert biais",
+      "parent_id": "TL_4_04_1",
+      "competency_group": "Data science et évaluation de l'apprentissage",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_04_1_08",
+      "level": "expert",
+      "title": "Expert métriques pédagogiques",
+      "parent_id": "TL_4_04_1",
+      "competency_group": "Data science et évaluation de l'apprentissage",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_04_1_09",
+      "level": "expert",
+      "title": "Expert interprétabilité",
+      "parent_id": "TL_4_04_1",
+      "competency_group": "Data science et évaluation de l'apprentissage",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "MGR_4_04_2",
+      "level": "manager",
+      "title": "Manager — Data science et évaluation de l'apprentissage — vérification et intégration",
+      "parent_id": "SM_4_04"
+    },
+    {
+      "id": "TL_4_04_2",
+      "level": "team_leader",
+      "title": "Team Leader — Data science et évaluation de l'apprentissage — QA et mise en cohérence",
+      "parent_id": "MGR_4_04_2"
+    },
+    {
+      "id": "EX_4_04_2_01",
+      "level": "expert",
+      "title": "Data scientist",
+      "parent_id": "TL_4_04_2",
+      "competency_group": "Data science et évaluation de l'apprentissage",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_04_2_02",
+      "level": "expert",
+      "title": "Statisticien",
+      "parent_id": "TL_4_04_2",
+      "competency_group": "Data science et évaluation de l'apprentissage",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_04_2_03",
+      "level": "expert",
+      "title": "Expert psychométrie",
+      "parent_id": "TL_4_04_2",
+      "competency_group": "Data science et évaluation de l'apprentissage",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_04_2_04",
+      "level": "expert",
+      "title": "Expert validité mesure",
+      "parent_id": "TL_4_04_2",
+      "competency_group": "Data science et évaluation de l'apprentissage",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_04_2_05",
+      "level": "expert",
+      "title": "Expert diagnostic erreurs",
+      "parent_id": "TL_4_04_2",
+      "competency_group": "Data science et évaluation de l'apprentissage",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_04_2_06",
+      "level": "expert",
+      "title": "Expert expérimentation",
+      "parent_id": "TL_4_04_2",
+      "competency_group": "Data science et évaluation de l'apprentissage",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_04_2_07",
+      "level": "expert",
+      "title": "Expert biais",
+      "parent_id": "TL_4_04_2",
+      "competency_group": "Data science et évaluation de l'apprentissage",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_04_2_08",
+      "level": "expert",
+      "title": "Expert métriques pédagogiques",
+      "parent_id": "TL_4_04_2",
+      "competency_group": "Data science et évaluation de l'apprentissage",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_04_2_09",
+      "level": "expert",
+      "title": "Expert interprétabilité",
+      "parent_id": "TL_4_04_2",
+      "competency_group": "Data science et évaluation de l'apprentissage",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "SM_4_05",
+      "level": "senior_manager",
+      "title": "Senior Manager — AI engineering local et modèles accessibles",
+      "parent_id": "DSI_04"
+    },
+    {
+      "id": "MGR_4_05_1",
+      "level": "manager",
+      "title": "Manager — AI engineering local et modèles accessibles — conception et production",
+      "parent_id": "SM_4_05"
+    },
+    {
+      "id": "TL_4_05_1",
+      "level": "team_leader",
+      "title": "Team Leader — AI engineering local et modèles accessibles — production",
+      "parent_id": "MGR_4_05_1"
+    },
+    {
+      "id": "EX_4_05_1_01",
+      "level": "expert",
+      "title": "AI engineer",
+      "parent_id": "TL_4_05_1",
+      "competency_group": "AI engineering local et modèles accessibles",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_05_1_02",
+      "level": "expert",
+      "title": "Expert IA locale",
+      "parent_id": "TL_4_05_1",
+      "competency_group": "AI engineering local et modèles accessibles",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_05_1_03",
+      "level": "expert",
+      "title": "Expert modèles ouverts",
+      "parent_id": "TL_4_05_1",
+      "competency_group": "AI engineering local et modèles accessibles",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_05_1_04",
+      "level": "expert",
+      "title": "Expert inférence",
+      "parent_id": "TL_4_05_1",
+      "competency_group": "AI engineering local et modèles accessibles",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_05_1_05",
+      "level": "expert",
+      "title": "Expert évaluation LLM",
+      "parent_id": "TL_4_05_1",
+      "competency_group": "AI engineering local et modèles accessibles",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_05_1_06",
+      "level": "expert",
+      "title": "Expert sécurité IA",
+      "parent_id": "TL_4_05_1",
+      "competency_group": "AI engineering local et modèles accessibles",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_05_1_07",
+      "level": "expert",
+      "title": "Expert intégration sans API payante",
+      "parent_id": "TL_4_05_1",
+      "competency_group": "AI engineering local et modèles accessibles",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_05_1_08",
+      "level": "expert",
+      "title": "Expert embeddings locaux",
+      "parent_id": "TL_4_05_1",
+      "competency_group": "AI engineering local et modèles accessibles",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_05_1_09",
+      "level": "expert",
+      "title": "Expert robustesse IA",
+      "parent_id": "TL_4_05_1",
+      "competency_group": "AI engineering local et modèles accessibles",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "MGR_4_05_2",
+      "level": "manager",
+      "title": "Manager — AI engineering local et modèles accessibles — vérification et intégration",
+      "parent_id": "SM_4_05"
+    },
+    {
+      "id": "TL_4_05_2",
+      "level": "team_leader",
+      "title": "Team Leader — AI engineering local et modèles accessibles — QA et mise en cohérence",
+      "parent_id": "MGR_4_05_2"
+    },
+    {
+      "id": "EX_4_05_2_01",
+      "level": "expert",
+      "title": "AI engineer",
+      "parent_id": "TL_4_05_2",
+      "competency_group": "AI engineering local et modèles accessibles",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_05_2_02",
+      "level": "expert",
+      "title": "Expert IA locale",
+      "parent_id": "TL_4_05_2",
+      "competency_group": "AI engineering local et modèles accessibles",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_05_2_03",
+      "level": "expert",
+      "title": "Expert modèles ouverts",
+      "parent_id": "TL_4_05_2",
+      "competency_group": "AI engineering local et modèles accessibles",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_05_2_04",
+      "level": "expert",
+      "title": "Expert inférence",
+      "parent_id": "TL_4_05_2",
+      "competency_group": "AI engineering local et modèles accessibles",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_05_2_05",
+      "level": "expert",
+      "title": "Expert évaluation LLM",
+      "parent_id": "TL_4_05_2",
+      "competency_group": "AI engineering local et modèles accessibles",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_05_2_06",
+      "level": "expert",
+      "title": "Expert sécurité IA",
+      "parent_id": "TL_4_05_2",
+      "competency_group": "AI engineering local et modèles accessibles",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_05_2_07",
+      "level": "expert",
+      "title": "Expert intégration sans API payante",
+      "parent_id": "TL_4_05_2",
+      "competency_group": "AI engineering local et modèles accessibles",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_05_2_08",
+      "level": "expert",
+      "title": "Expert embeddings locaux",
+      "parent_id": "TL_4_05_2",
+      "competency_group": "AI engineering local et modèles accessibles",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_05_2_09",
+      "level": "expert",
+      "title": "Expert robustesse IA",
+      "parent_id": "TL_4_05_2",
+      "competency_group": "AI engineering local et modèles accessibles",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "SM_4_06",
+      "level": "senior_manager",
+      "title": "Senior Manager — Personnalisation explicable et moteur de règles",
+      "parent_id": "DSI_04"
+    },
+    {
+      "id": "MGR_4_06_1",
+      "level": "manager",
+      "title": "Manager — Personnalisation explicable et moteur de règles — conception et production",
+      "parent_id": "SM_4_06"
+    },
+    {
+      "id": "TL_4_06_1",
+      "level": "team_leader",
+      "title": "Team Leader — Personnalisation explicable et moteur de règles — production",
+      "parent_id": "MGR_4_06_1"
+    },
+    {
+      "id": "EX_4_06_1_01",
+      "level": "expert",
+      "title": "Expert learning analytics",
+      "parent_id": "TL_4_06_1",
+      "competency_group": "Personnalisation explicable et moteur de règles",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_06_1_02",
+      "level": "expert",
+      "title": "Expert règles adaptatives",
+      "parent_id": "TL_4_06_1",
+      "competency_group": "Personnalisation explicable et moteur de règles",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_06_1_03",
+      "level": "expert",
+      "title": "Expert connaissances préalables",
+      "parent_id": "TL_4_06_1",
+      "competency_group": "Personnalisation explicable et moteur de règles",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_06_1_04",
+      "level": "expert",
+      "title": "Expert recommandation",
+      "parent_id": "TL_4_06_1",
+      "competency_group": "Personnalisation explicable et moteur de règles",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_06_1_05",
+      "level": "expert",
+      "title": "Expert révision espacée",
+      "parent_id": "TL_4_06_1",
+      "competency_group": "Personnalisation explicable et moteur de règles",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_06_1_06",
+      "level": "expert",
+      "title": "Expert tests moteurs",
+      "parent_id": "TL_4_06_1",
+      "competency_group": "Personnalisation explicable et moteur de règles",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_06_1_07",
+      "level": "expert",
+      "title": "Expert explicabilité",
+      "parent_id": "TL_4_06_1",
+      "competency_group": "Personnalisation explicable et moteur de règles",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_06_1_08",
+      "level": "expert",
+      "title": "Expert garde-fous mineurs",
+      "parent_id": "TL_4_06_1",
+      "competency_group": "Personnalisation explicable et moteur de règles",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_06_1_09",
+      "level": "expert",
+      "title": "Expert mesure d'impact",
+      "parent_id": "TL_4_06_1",
+      "competency_group": "Personnalisation explicable et moteur de règles",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "MGR_4_06_2",
+      "level": "manager",
+      "title": "Manager — Personnalisation explicable et moteur de règles — vérification et intégration",
+      "parent_id": "SM_4_06"
+    },
+    {
+      "id": "TL_4_06_2",
+      "level": "team_leader",
+      "title": "Team Leader — Personnalisation explicable et moteur de règles — QA et mise en cohérence",
+      "parent_id": "MGR_4_06_2"
+    },
+    {
+      "id": "EX_4_06_2_01",
+      "level": "expert",
+      "title": "Expert learning analytics",
+      "parent_id": "TL_4_06_2",
+      "competency_group": "Personnalisation explicable et moteur de règles",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_06_2_02",
+      "level": "expert",
+      "title": "Expert règles adaptatives",
+      "parent_id": "TL_4_06_2",
+      "competency_group": "Personnalisation explicable et moteur de règles",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_06_2_03",
+      "level": "expert",
+      "title": "Expert connaissances préalables",
+      "parent_id": "TL_4_06_2",
+      "competency_group": "Personnalisation explicable et moteur de règles",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_06_2_04",
+      "level": "expert",
+      "title": "Expert recommandation",
+      "parent_id": "TL_4_06_2",
+      "competency_group": "Personnalisation explicable et moteur de règles",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_06_2_05",
+      "level": "expert",
+      "title": "Expert révision espacée",
+      "parent_id": "TL_4_06_2",
+      "competency_group": "Personnalisation explicable et moteur de règles",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_06_2_06",
+      "level": "expert",
+      "title": "Expert tests moteurs",
+      "parent_id": "TL_4_06_2",
+      "competency_group": "Personnalisation explicable et moteur de règles",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_06_2_07",
+      "level": "expert",
+      "title": "Expert explicabilité",
+      "parent_id": "TL_4_06_2",
+      "competency_group": "Personnalisation explicable et moteur de règles",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_06_2_08",
+      "level": "expert",
+      "title": "Expert garde-fous mineurs",
+      "parent_id": "TL_4_06_2",
+      "competency_group": "Personnalisation explicable et moteur de règles",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_4_06_2_09",
+      "level": "expert",
+      "title": "Expert mesure d'impact",
+      "parent_id": "TL_4_06_2",
+      "competency_group": "Personnalisation explicable et moteur de règles",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "DSI_05",
+      "level": "dsi",
+      "title": "DSI — Sécurité, opérations et développement produit",
+      "parent_id": "OWNER"
+    },
+    {
+      "id": "SM_5_01",
+      "level": "senior_manager",
+      "title": "Senior Manager — Cybersécurité applicative et contrôle d'accès",
+      "parent_id": "DSI_05"
+    },
+    {
+      "id": "MGR_5_01_1",
+      "level": "manager",
+      "title": "Manager — Cybersécurité applicative et contrôle d'accès — conception et production",
+      "parent_id": "SM_5_01"
+    },
+    {
+      "id": "TL_5_01_1",
+      "level": "team_leader",
+      "title": "Team Leader — Cybersécurité applicative et contrôle d'accès — production",
+      "parent_id": "MGR_5_01_1"
+    },
+    {
+      "id": "EX_5_01_1_01",
+      "level": "expert",
+      "title": "Expert AppSec",
+      "parent_id": "TL_5_01_1",
+      "competency_group": "Cybersécurité applicative et contrôle d'accès",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_01_1_02",
+      "level": "expert",
+      "title": "Expert IAM",
+      "parent_id": "TL_5_01_1",
+      "competency_group": "Cybersécurité applicative et contrôle d'accès",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_01_1_03",
+      "level": "expert",
+      "title": "Expert threat modeling",
+      "parent_id": "TL_5_01_1",
+      "competency_group": "Cybersécurité applicative et contrôle d'accès",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_01_1_04",
+      "level": "expert",
+      "title": "Expert pentest autorisé",
+      "parent_id": "TL_5_01_1",
+      "competency_group": "Cybersécurité applicative et contrôle d'accès",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_01_1_05",
+      "level": "expert",
+      "title": "Expert sécurisation WordPress",
+      "parent_id": "TL_5_01_1",
+      "competency_group": "Cybersécurité applicative et contrôle d'accès",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_01_1_06",
+      "level": "expert",
+      "title": "Expert API security",
+      "parent_id": "TL_5_01_1",
+      "competency_group": "Cybersécurité applicative et contrôle d'accès",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_01_1_07",
+      "level": "expert",
+      "title": "Expert vulnérabilités",
+      "parent_id": "TL_5_01_1",
+      "competency_group": "Cybersécurité applicative et contrôle d'accès",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_01_1_08",
+      "level": "expert",
+      "title": "Expert secrets",
+      "parent_id": "TL_5_01_1",
+      "competency_group": "Cybersécurité applicative et contrôle d'accès",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_01_1_09",
+      "level": "expert",
+      "title": "Auditeur sécurité",
+      "parent_id": "TL_5_01_1",
+      "competency_group": "Cybersécurité applicative et contrôle d'accès",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_01_1_10",
+      "level": "expert",
+      "title": "Expert AppSec",
+      "parent_id": "TL_5_01_1",
+      "competency_group": "Cybersécurité applicative et contrôle d'accès",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "MGR_5_01_2",
+      "level": "manager",
+      "title": "Manager — Cybersécurité applicative et contrôle d'accès — vérification et intégration",
+      "parent_id": "SM_5_01"
+    },
+    {
+      "id": "TL_5_01_2",
+      "level": "team_leader",
+      "title": "Team Leader — Cybersécurité applicative et contrôle d'accès — QA et mise en cohérence",
+      "parent_id": "MGR_5_01_2"
+    },
+    {
+      "id": "EX_5_01_2_01",
+      "level": "expert",
+      "title": "Expert AppSec",
+      "parent_id": "TL_5_01_2",
+      "competency_group": "Cybersécurité applicative et contrôle d'accès",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_01_2_02",
+      "level": "expert",
+      "title": "Expert IAM",
+      "parent_id": "TL_5_01_2",
+      "competency_group": "Cybersécurité applicative et contrôle d'accès",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_01_2_03",
+      "level": "expert",
+      "title": "Expert threat modeling",
+      "parent_id": "TL_5_01_2",
+      "competency_group": "Cybersécurité applicative et contrôle d'accès",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_01_2_04",
+      "level": "expert",
+      "title": "Expert pentest autorisé",
+      "parent_id": "TL_5_01_2",
+      "competency_group": "Cybersécurité applicative et contrôle d'accès",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_01_2_05",
+      "level": "expert",
+      "title": "Expert sécurisation WordPress",
+      "parent_id": "TL_5_01_2",
+      "competency_group": "Cybersécurité applicative et contrôle d'accès",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_01_2_06",
+      "level": "expert",
+      "title": "Expert API security",
+      "parent_id": "TL_5_01_2",
+      "competency_group": "Cybersécurité applicative et contrôle d'accès",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_01_2_07",
+      "level": "expert",
+      "title": "Expert vulnérabilités",
+      "parent_id": "TL_5_01_2",
+      "competency_group": "Cybersécurité applicative et contrôle d'accès",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_01_2_08",
+      "level": "expert",
+      "title": "Expert secrets",
+      "parent_id": "TL_5_01_2",
+      "competency_group": "Cybersécurité applicative et contrôle d'accès",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_01_2_09",
+      "level": "expert",
+      "title": "Auditeur sécurité",
+      "parent_id": "TL_5_01_2",
+      "competency_group": "Cybersécurité applicative et contrôle d'accès",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "SM_5_02",
+      "level": "senior_manager",
+      "title": "Senior Manager — Données des mineurs, vie privée et conformité",
+      "parent_id": "DSI_05"
+    },
+    {
+      "id": "MGR_5_02_1",
+      "level": "manager",
+      "title": "Manager — Données des mineurs, vie privée et conformité — conception et production",
+      "parent_id": "SM_5_02"
+    },
+    {
+      "id": "TL_5_02_1",
+      "level": "team_leader",
+      "title": "Team Leader — Données des mineurs, vie privée et conformité — production",
+      "parent_id": "MGR_5_02_1"
+    },
+    {
+      "id": "EX_5_02_1_01",
+      "level": "expert",
+      "title": "Expert loi marocaine 09-08",
+      "parent_id": "TL_5_02_1",
+      "competency_group": "Données des mineurs, vie privée et conformité",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_02_1_02",
+      "level": "expert",
+      "title": "Expert protection des mineurs",
+      "parent_id": "TL_5_02_1",
+      "competency_group": "Données des mineurs, vie privée et conformité",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_02_1_03",
+      "level": "expert",
+      "title": "Expert consentement",
+      "parent_id": "TL_5_02_1",
+      "competency_group": "Données des mineurs, vie privée et conformité",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_02_1_04",
+      "level": "expert",
+      "title": "Expert CNDP",
+      "parent_id": "TL_5_02_1",
+      "competency_group": "Données des mineurs, vie privée et conformité",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_02_1_05",
+      "level": "expert",
+      "title": "Expert minimisation",
+      "parent_id": "TL_5_02_1",
+      "competency_group": "Données des mineurs, vie privée et conformité",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_02_1_06",
+      "level": "expert",
+      "title": "Expert droit d'auteur",
+      "parent_id": "TL_5_02_1",
+      "competency_group": "Données des mineurs, vie privée et conformité",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_02_1_07",
+      "level": "expert",
+      "title": "Expert licences",
+      "parent_id": "TL_5_02_1",
+      "competency_group": "Données des mineurs, vie privée et conformité",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_02_1_08",
+      "level": "expert",
+      "title": "Expert privacy by design",
+      "parent_id": "TL_5_02_1",
+      "competency_group": "Données des mineurs, vie privée et conformité",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_02_1_09",
+      "level": "expert",
+      "title": "Expert conformité contrats",
+      "parent_id": "TL_5_02_1",
+      "competency_group": "Données des mineurs, vie privée et conformité",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "MGR_5_02_2",
+      "level": "manager",
+      "title": "Manager — Données des mineurs, vie privée et conformité — vérification et intégration",
+      "parent_id": "SM_5_02"
+    },
+    {
+      "id": "TL_5_02_2",
+      "level": "team_leader",
+      "title": "Team Leader — Données des mineurs, vie privée et conformité — QA et mise en cohérence",
+      "parent_id": "MGR_5_02_2"
+    },
+    {
+      "id": "EX_5_02_2_01",
+      "level": "expert",
+      "title": "Expert loi marocaine 09-08",
+      "parent_id": "TL_5_02_2",
+      "competency_group": "Données des mineurs, vie privée et conformité",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_02_2_02",
+      "level": "expert",
+      "title": "Expert protection des mineurs",
+      "parent_id": "TL_5_02_2",
+      "competency_group": "Données des mineurs, vie privée et conformité",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_02_2_03",
+      "level": "expert",
+      "title": "Expert consentement",
+      "parent_id": "TL_5_02_2",
+      "competency_group": "Données des mineurs, vie privée et conformité",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_02_2_04",
+      "level": "expert",
+      "title": "Expert CNDP",
+      "parent_id": "TL_5_02_2",
+      "competency_group": "Données des mineurs, vie privée et conformité",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_02_2_05",
+      "level": "expert",
+      "title": "Expert minimisation",
+      "parent_id": "TL_5_02_2",
+      "competency_group": "Données des mineurs, vie privée et conformité",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_02_2_06",
+      "level": "expert",
+      "title": "Expert droit d'auteur",
+      "parent_id": "TL_5_02_2",
+      "competency_group": "Données des mineurs, vie privée et conformité",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_02_2_07",
+      "level": "expert",
+      "title": "Expert licences",
+      "parent_id": "TL_5_02_2",
+      "competency_group": "Données des mineurs, vie privée et conformité",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_02_2_08",
+      "level": "expert",
+      "title": "Expert privacy by design",
+      "parent_id": "TL_5_02_2",
+      "competency_group": "Données des mineurs, vie privée et conformité",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_02_2_09",
+      "level": "expert",
+      "title": "Expert conformité contrats",
+      "parent_id": "TL_5_02_2",
+      "competency_group": "Données des mineurs, vie privée et conformité",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "SM_5_03",
+      "level": "senior_manager",
+      "title": "Senior Manager — Direction produit, PMO et exécution",
+      "parent_id": "DSI_05"
+    },
+    {
+      "id": "MGR_5_03_1",
+      "level": "manager",
+      "title": "Manager — Direction produit, PMO et exécution — conception et production",
+      "parent_id": "SM_5_03"
+    },
+    {
+      "id": "TL_5_03_1",
+      "level": "team_leader",
+      "title": "Team Leader — Direction produit, PMO et exécution — production",
+      "parent_id": "MGR_5_03_1"
+    },
+    {
+      "id": "EX_5_03_1_01",
+      "level": "expert",
+      "title": "Product owner",
+      "parent_id": "TL_5_03_1",
+      "competency_group": "Direction produit, PMO et exécution",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_03_1_02",
+      "level": "expert",
+      "title": "Product manager",
+      "parent_id": "TL_5_03_1",
+      "competency_group": "Direction produit, PMO et exécution",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_03_1_03",
+      "level": "expert",
+      "title": "Scrum master",
+      "parent_id": "TL_5_03_1",
+      "competency_group": "Direction produit, PMO et exécution",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_03_1_04",
+      "level": "expert",
+      "title": "Expert backlog",
+      "parent_id": "TL_5_03_1",
+      "competency_group": "Direction produit, PMO et exécution",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_03_1_05",
+      "level": "expert",
+      "title": "Expert priorisation",
+      "parent_id": "TL_5_03_1",
+      "competency_group": "Direction produit, PMO et exécution",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_03_1_06",
+      "level": "expert",
+      "title": "Expert spécifications",
+      "parent_id": "TL_5_03_1",
+      "competency_group": "Direction produit, PMO et exécution",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_03_1_07",
+      "level": "expert",
+      "title": "Expert delivery",
+      "parent_id": "TL_5_03_1",
+      "competency_group": "Direction produit, PMO et exécution",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_03_1_08",
+      "level": "expert",
+      "title": "Expert gestion des risques",
+      "parent_id": "TL_5_03_1",
+      "competency_group": "Direction produit, PMO et exécution",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_03_1_09",
+      "level": "expert",
+      "title": "Expert contrôle budget",
+      "parent_id": "TL_5_03_1",
+      "competency_group": "Direction produit, PMO et exécution",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "MGR_5_03_2",
+      "level": "manager",
+      "title": "Manager — Direction produit, PMO et exécution — vérification et intégration",
+      "parent_id": "SM_5_03"
+    },
+    {
+      "id": "TL_5_03_2",
+      "level": "team_leader",
+      "title": "Team Leader — Direction produit, PMO et exécution — QA et mise en cohérence",
+      "parent_id": "MGR_5_03_2"
+    },
+    {
+      "id": "EX_5_03_2_01",
+      "level": "expert",
+      "title": "Product owner",
+      "parent_id": "TL_5_03_2",
+      "competency_group": "Direction produit, PMO et exécution",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_03_2_02",
+      "level": "expert",
+      "title": "Product manager",
+      "parent_id": "TL_5_03_2",
+      "competency_group": "Direction produit, PMO et exécution",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_03_2_03",
+      "level": "expert",
+      "title": "Scrum master",
+      "parent_id": "TL_5_03_2",
+      "competency_group": "Direction produit, PMO et exécution",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_03_2_04",
+      "level": "expert",
+      "title": "Expert backlog",
+      "parent_id": "TL_5_03_2",
+      "competency_group": "Direction produit, PMO et exécution",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_03_2_05",
+      "level": "expert",
+      "title": "Expert priorisation",
+      "parent_id": "TL_5_03_2",
+      "competency_group": "Direction produit, PMO et exécution",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_03_2_06",
+      "level": "expert",
+      "title": "Expert spécifications",
+      "parent_id": "TL_5_03_2",
+      "competency_group": "Direction produit, PMO et exécution",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_03_2_07",
+      "level": "expert",
+      "title": "Expert delivery",
+      "parent_id": "TL_5_03_2",
+      "competency_group": "Direction produit, PMO et exécution",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_03_2_08",
+      "level": "expert",
+      "title": "Expert gestion des risques",
+      "parent_id": "TL_5_03_2",
+      "competency_group": "Direction produit, PMO et exécution",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_03_2_09",
+      "level": "expert",
+      "title": "Expert contrôle budget",
+      "parent_id": "TL_5_03_2",
+      "competency_group": "Direction produit, PMO et exécution",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "SM_5_04",
+      "level": "senior_manager",
+      "title": "Senior Manager — SEO, recherche et croissance responsable",
+      "parent_id": "DSI_05"
+    },
+    {
+      "id": "MGR_5_04_1",
+      "level": "manager",
+      "title": "Manager — SEO, recherche et croissance responsable — conception et production",
+      "parent_id": "SM_5_04"
+    },
+    {
+      "id": "TL_5_04_1",
+      "level": "team_leader",
+      "title": "Team Leader — SEO, recherche et croissance responsable — production",
+      "parent_id": "MGR_5_04_1"
+    },
+    {
+      "id": "EX_5_04_1_01",
+      "level": "expert",
+      "title": "Expert SEO technique",
+      "parent_id": "TL_5_04_1",
+      "competency_group": "SEO, recherche et croissance responsable",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_04_1_02",
+      "level": "expert",
+      "title": "Expert contenu organique",
+      "parent_id": "TL_5_04_1",
+      "competency_group": "SEO, recherche et croissance responsable",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_04_1_03",
+      "level": "expert",
+      "title": "Expert métadonnées",
+      "parent_id": "TL_5_04_1",
+      "competency_group": "SEO, recherche et croissance responsable",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_04_1_04",
+      "level": "expert",
+      "title": "Expert search UX",
+      "parent_id": "TL_5_04_1",
+      "competency_group": "SEO, recherche et croissance responsable",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_04_1_05",
+      "level": "expert",
+      "title": "Expert Search Console",
+      "parent_id": "TL_5_04_1",
+      "competency_group": "SEO, recherche et croissance responsable",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_04_1_06",
+      "level": "expert",
+      "title": "Expert balisage structuré",
+      "parent_id": "TL_5_04_1",
+      "competency_group": "SEO, recherche et croissance responsable",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_04_1_07",
+      "level": "expert",
+      "title": "Expert accessibilité SEO",
+      "parent_id": "TL_5_04_1",
+      "competency_group": "SEO, recherche et croissance responsable",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_04_1_08",
+      "level": "expert",
+      "title": "Expert performance SEO",
+      "parent_id": "TL_5_04_1",
+      "competency_group": "SEO, recherche et croissance responsable",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_04_1_09",
+      "level": "expert",
+      "title": "Expert acquisition éthique",
+      "parent_id": "TL_5_04_1",
+      "competency_group": "SEO, recherche et croissance responsable",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "MGR_5_04_2",
+      "level": "manager",
+      "title": "Manager — SEO, recherche et croissance responsable — vérification et intégration",
+      "parent_id": "SM_5_04"
+    },
+    {
+      "id": "TL_5_04_2",
+      "level": "team_leader",
+      "title": "Team Leader — SEO, recherche et croissance responsable — QA et mise en cohérence",
+      "parent_id": "MGR_5_04_2"
+    },
+    {
+      "id": "EX_5_04_2_01",
+      "level": "expert",
+      "title": "Expert SEO technique",
+      "parent_id": "TL_5_04_2",
+      "competency_group": "SEO, recherche et croissance responsable",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_04_2_02",
+      "level": "expert",
+      "title": "Expert contenu organique",
+      "parent_id": "TL_5_04_2",
+      "competency_group": "SEO, recherche et croissance responsable",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_04_2_03",
+      "level": "expert",
+      "title": "Expert métadonnées",
+      "parent_id": "TL_5_04_2",
+      "competency_group": "SEO, recherche et croissance responsable",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_04_2_04",
+      "level": "expert",
+      "title": "Expert search UX",
+      "parent_id": "TL_5_04_2",
+      "competency_group": "SEO, recherche et croissance responsable",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_04_2_05",
+      "level": "expert",
+      "title": "Expert Search Console",
+      "parent_id": "TL_5_04_2",
+      "competency_group": "SEO, recherche et croissance responsable",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_04_2_06",
+      "level": "expert",
+      "title": "Expert balisage structuré",
+      "parent_id": "TL_5_04_2",
+      "competency_group": "SEO, recherche et croissance responsable",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_04_2_07",
+      "level": "expert",
+      "title": "Expert accessibilité SEO",
+      "parent_id": "TL_5_04_2",
+      "competency_group": "SEO, recherche et croissance responsable",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_04_2_08",
+      "level": "expert",
+      "title": "Expert performance SEO",
+      "parent_id": "TL_5_04_2",
+      "competency_group": "SEO, recherche et croissance responsable",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_04_2_09",
+      "level": "expert",
+      "title": "Expert acquisition éthique",
+      "parent_id": "TL_5_04_2",
+      "competency_group": "SEO, recherche et croissance responsable",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "SM_5_05",
+      "level": "senior_manager",
+      "title": "Senior Manager — Accompagnement élèves, parents et communauté",
+      "parent_id": "DSI_05"
+    },
+    {
+      "id": "MGR_5_05_1",
+      "level": "manager",
+      "title": "Manager — Accompagnement élèves, parents et communauté — conception et production",
+      "parent_id": "SM_5_05"
+    },
+    {
+      "id": "TL_5_05_1",
+      "level": "team_leader",
+      "title": "Team Leader — Accompagnement élèves, parents et communauté — production",
+      "parent_id": "MGR_5_05_1"
+    },
+    {
+      "id": "EX_5_05_1_01",
+      "level": "expert",
+      "title": "Expert support parents",
+      "parent_id": "TL_5_05_1",
+      "competency_group": "Accompagnement élèves, parents et communauté",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_05_1_02",
+      "level": "expert",
+      "title": "Expert support élèves",
+      "parent_id": "TL_5_05_1",
+      "competency_group": "Accompagnement élèves, parents et communauté",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_05_1_03",
+      "level": "expert",
+      "title": "Expert aide contextuelle",
+      "parent_id": "TL_5_05_1",
+      "competency_group": "Accompagnement élèves, parents et communauté",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_05_1_04",
+      "level": "expert",
+      "title": "Expert FAQ",
+      "parent_id": "TL_5_05_1",
+      "competency_group": "Accompagnement élèves, parents et communauté",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_05_1_05",
+      "level": "expert",
+      "title": "Expert qualité relationnelle",
+      "parent_id": "TL_5_05_1",
+      "competency_group": "Accompagnement élèves, parents et communauté",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_05_1_06",
+      "level": "expert",
+      "title": "Expert communication FR",
+      "parent_id": "TL_5_05_1",
+      "competency_group": "Accompagnement élèves, parents et communauté",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_05_1_07",
+      "level": "expert",
+      "title": "Expert communication AR",
+      "parent_id": "TL_5_05_1",
+      "competency_group": "Accompagnement élèves, parents et communauté",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_05_1_08",
+      "level": "expert",
+      "title": "Expert modération",
+      "parent_id": "TL_5_05_1",
+      "competency_group": "Accompagnement élèves, parents et communauté",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_05_1_09",
+      "level": "expert",
+      "title": "Expert formation utilisateurs",
+      "parent_id": "TL_5_05_1",
+      "competency_group": "Accompagnement élèves, parents et communauté",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "MGR_5_05_2",
+      "level": "manager",
+      "title": "Manager — Accompagnement élèves, parents et communauté — vérification et intégration",
+      "parent_id": "SM_5_05"
+    },
+    {
+      "id": "TL_5_05_2",
+      "level": "team_leader",
+      "title": "Team Leader — Accompagnement élèves, parents et communauté — QA et mise en cohérence",
+      "parent_id": "MGR_5_05_2"
+    },
+    {
+      "id": "EX_5_05_2_01",
+      "level": "expert",
+      "title": "Expert support parents",
+      "parent_id": "TL_5_05_2",
+      "competency_group": "Accompagnement élèves, parents et communauté",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_05_2_02",
+      "level": "expert",
+      "title": "Expert support élèves",
+      "parent_id": "TL_5_05_2",
+      "competency_group": "Accompagnement élèves, parents et communauté",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_05_2_03",
+      "level": "expert",
+      "title": "Expert aide contextuelle",
+      "parent_id": "TL_5_05_2",
+      "competency_group": "Accompagnement élèves, parents et communauté",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_05_2_04",
+      "level": "expert",
+      "title": "Expert FAQ",
+      "parent_id": "TL_5_05_2",
+      "competency_group": "Accompagnement élèves, parents et communauté",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_05_2_05",
+      "level": "expert",
+      "title": "Expert qualité relationnelle",
+      "parent_id": "TL_5_05_2",
+      "competency_group": "Accompagnement élèves, parents et communauté",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_05_2_06",
+      "level": "expert",
+      "title": "Expert communication FR",
+      "parent_id": "TL_5_05_2",
+      "competency_group": "Accompagnement élèves, parents et communauté",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_05_2_07",
+      "level": "expert",
+      "title": "Expert communication AR",
+      "parent_id": "TL_5_05_2",
+      "competency_group": "Accompagnement élèves, parents et communauté",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_05_2_08",
+      "level": "expert",
+      "title": "Expert modération",
+      "parent_id": "TL_5_05_2",
+      "competency_group": "Accompagnement élèves, parents et communauté",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_05_2_09",
+      "level": "expert",
+      "title": "Expert formation utilisateurs",
+      "parent_id": "TL_5_05_2",
+      "competency_group": "Accompagnement élèves, parents et communauté",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "SM_5_06",
+      "level": "senior_manager",
+      "title": "Senior Manager — FinOps, observabilité et continuité",
+      "parent_id": "DSI_05"
+    },
+    {
+      "id": "MGR_5_06_1",
+      "level": "manager",
+      "title": "Manager — FinOps, observabilité et continuité — conception et production",
+      "parent_id": "SM_5_06"
+    },
+    {
+      "id": "TL_5_06_1",
+      "level": "team_leader",
+      "title": "Team Leader — FinOps, observabilité et continuité — production",
+      "parent_id": "MGR_5_06_1"
+    },
+    {
+      "id": "EX_5_06_1_01",
+      "level": "expert",
+      "title": "Expert FinOps",
+      "parent_id": "TL_5_06_1",
+      "competency_group": "FinOps, observabilité et continuité",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_06_1_02",
+      "level": "expert",
+      "title": "Expert exploitation",
+      "parent_id": "TL_5_06_1",
+      "competency_group": "FinOps, observabilité et continuité",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_06_1_03",
+      "level": "expert",
+      "title": "Expert monitoring",
+      "parent_id": "TL_5_06_1",
+      "competency_group": "FinOps, observabilité et continuité",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_06_1_04",
+      "level": "expert",
+      "title": "Expert alerting",
+      "parent_id": "TL_5_06_1",
+      "competency_group": "FinOps, observabilité et continuité",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_06_1_05",
+      "level": "expert",
+      "title": "Expert incident response",
+      "parent_id": "TL_5_06_1",
+      "competency_group": "FinOps, observabilité et continuité",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_06_1_06",
+      "level": "expert",
+      "title": "Expert sauvegarde",
+      "parent_id": "TL_5_06_1",
+      "competency_group": "FinOps, observabilité et continuité",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_06_1_07",
+      "level": "expert",
+      "title": "Expert restauration",
+      "parent_id": "TL_5_06_1",
+      "competency_group": "FinOps, observabilité et continuité",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_06_1_08",
+      "level": "expert",
+      "title": "Expert capacité",
+      "parent_id": "TL_5_06_1",
+      "competency_group": "FinOps, observabilité et continuité",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_06_1_09",
+      "level": "expert",
+      "title": "Expert continuité opérationnelle",
+      "parent_id": "TL_5_06_1",
+      "competency_group": "FinOps, observabilité et continuité",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "MGR_5_06_2",
+      "level": "manager",
+      "title": "Manager — FinOps, observabilité et continuité — vérification et intégration",
+      "parent_id": "SM_5_06"
+    },
+    {
+      "id": "TL_5_06_2",
+      "level": "team_leader",
+      "title": "Team Leader — FinOps, observabilité et continuité — QA et mise en cohérence",
+      "parent_id": "MGR_5_06_2"
+    },
+    {
+      "id": "EX_5_06_2_01",
+      "level": "expert",
+      "title": "Expert FinOps",
+      "parent_id": "TL_5_06_2",
+      "competency_group": "FinOps, observabilité et continuité",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_06_2_02",
+      "level": "expert",
+      "title": "Expert exploitation",
+      "parent_id": "TL_5_06_2",
+      "competency_group": "FinOps, observabilité et continuité",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_06_2_03",
+      "level": "expert",
+      "title": "Expert monitoring",
+      "parent_id": "TL_5_06_2",
+      "competency_group": "FinOps, observabilité et continuité",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_06_2_04",
+      "level": "expert",
+      "title": "Expert alerting",
+      "parent_id": "TL_5_06_2",
+      "competency_group": "FinOps, observabilité et continuité",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_06_2_05",
+      "level": "expert",
+      "title": "Expert incident response",
+      "parent_id": "TL_5_06_2",
+      "competency_group": "FinOps, observabilité et continuité",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_06_2_06",
+      "level": "expert",
+      "title": "Expert sauvegarde",
+      "parent_id": "TL_5_06_2",
+      "competency_group": "FinOps, observabilité et continuité",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_06_2_07",
+      "level": "expert",
+      "title": "Expert restauration",
+      "parent_id": "TL_5_06_2",
+      "competency_group": "FinOps, observabilité et continuité",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_06_2_08",
+      "level": "expert",
+      "title": "Expert capacité",
+      "parent_id": "TL_5_06_2",
+      "competency_group": "FinOps, observabilité et continuité",
+      "state": "catalogued_not_running"
+    },
+    {
+      "id": "EX_5_06_2_09",
+      "level": "expert",
+      "title": "Expert continuité opérationnelle",
+      "parent_id": "TL_5_06_2",
+      "competency_group": "FinOps, observabilité et continuité",
+      "state": "catalogued_not_running"
+    }
+  ]
+}
