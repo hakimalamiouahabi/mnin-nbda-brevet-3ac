@@ -1,0 +1,30 @@
+name: Verification non destructive des 700 profils
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - agents/manifest-700-target.json
+      - scripts/validate_700_catalog.py
+      - scripts/route_700_catalog.py
+      - scripts/test_route_700_catalog.py
+      - tests/test_route_700_catalog.py
+      - .github/workflows/validate-700-catalog.yml
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Recuperer les sources
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Verifier les 700 profils sans API ni ecriture
+        run: python3 scripts/validate_700_catalog.py
+      - name: Verifier le routage des profils existants
+        run: |
+          python3 scripts/route_700_catalog.py --mission "WordPress" --count 3
+          python3 scripts/route_700_catalog.py --mission "Équipe 700 : ton outil ne fonctionne plus" --count 5
+      - name: Tester les formulations françaises et le routage sûr
+        run: |
+          python3 -m unittest discover -s scripts -p "test_route_700_catalog.py" -v
+          python3 -m unittest discover -s tests -p "test_route_700_catalog.py" -v

@@ -1,3 +1,11 @@
+# MNIN NBDA — utilisation des 700 experts exclusivement dans ChatGPT
+
+**Pour utiliser les 700 profils existants directement dans une conversation ChatGPT Pro standard, sans Work, Codex ni API IA payante :** lire [MODE 700 EXPERTS DANS LE CHAT](docs/CHAT_ONLY_700.md).
+
+Il suffit d'écrire sa mission en langage naturel. ChatGPT sélectionne les profils pertinents à partir de `agents/manifest-700-target.json` et effectue le travail pendant la conversation. Aucune IA séparée ni activité permanente n'est lancée. Le registre historique de 43 rôles documenté plus bas reste conservé sans créer de profils supplémentaires.
+
+---
+
 # MNIN NBDA — organisation de 43 profils IA spécialisés
 
 Configuration GitHub de la structure demandée pour développer la plateforme WordPress MNIN NBDA **sans API IA payante**.
