@@ -47,3 +47,40 @@ jobs:
           path: mnin-bridge-qa-results/oss-tools-report.json
           retention-days: 3
           if-no-files-found: warn
+
+  browser-fixture-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout public synthetic fixture
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright and axe-core
+        working-directory: mnin-bridge/runner
+        run: |
+          npm install --no-save --no-package-lock --no-audit --no-fund \
+            playwright@1.64.0 \
+            axe-core@4.14.0
+          npx playwright install --with-deps chromium
+      - name: Start strictly local fixture server
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/mnin-fixture-http.log 2>&1 &
+          sleep 2
+      - name: Five-viewport browser and WCAG automated smoke
+        env:
+          MNIN_HOME_PATH: preview/oss-smoke.html
+          MNIN_QA_MATRIX: smoke
+        run: node mnin-bridge/runner/home-qa.mjs
+      - name: Upload synthetic screenshots and report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: mnin-oss-public-browser-qa
+          path: mnin-bridge-qa-results/
+          retention-days: 3
+          if-no-files-found: warn
