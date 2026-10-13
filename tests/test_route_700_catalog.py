@@ -20,7 +20,7 @@ class TestRoutage(unittest.TestCase):
 
     def check_mission(self, sentence):
         result = router.route(CATALOG, sentence, count=6)
-        self.assertEqual(result["status"], "MATCHED", sentence)
+        self.assertEqual(result["status"], "ROUTAGE_PRET", sentence)
         self.assertTrue(result["no_new_agents"])
         self.assertFalse(result["inference_started"])
         self.assertGreaterEqual(result["selected"], 2)
@@ -47,7 +47,7 @@ class TestRoutage(unittest.TestCase):
 
     def test_sans_expert_direct(self):
         result = router.route(CATALOG, "Trouve des subventions publiques françaises")
-        self.assertEqual(result["status"], "NO_DIRECT_MATCH")
+        self.assertEqual(result["status"], "AUCUN_PROFIL_IDENTIFIE")
         self.assertEqual(result["assignments"], [])
 
     def test_identifiant_exact(self):
