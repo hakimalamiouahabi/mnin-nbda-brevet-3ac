@@ -18,6 +18,34 @@ QUALITY_BY_LEVEL = {
     "team_leader": "Verifier les artefacts, les tests et les ecarts avant livraison.",
     "expert": "Produire des observations verifiables uniquement dans sa competence documentee.",
 }
+DOMAIN_CHECKS = {
+    "DSI_01": [
+        "Comparer les maquettes responsive a la Home V1.0 approuvee.",
+        "Verifier la resolution native des logos, SVG, illustrations et assets raster.",
+        "Exiger preuves de captures, tests d'accessibilite et validation humaine.",
+    ],
+    "DSI_02": [
+        "Verifier la compatibilite WordPress/PHP/JS et l'architecture des modules.",
+        "Mettre les changements de code sur une branche isolee avec tests.",
+        "Verifier performance, security review et plan de retour arriere.",
+    ],
+    "DSI_03": [
+        "Verifer les notions et exercices contre les programmes marocains 1AC/2AC/3AC.",
+        "Distinguer les hypotheses pedagogiques des contenus controles.",
+        "Exiger une revue humaine des corriges et des sources de reference.",
+    ],
+    "DSI_04": [
+        "Etablir une tracabilite des donnees et une separation stricte des comptes.",
+        "Ne pas lire ni exposer de donnees personnelles d'eleves lors des tests.",
+        "Verifier la validite des donnees et les indicateurs avant conclusion.",
+    ],
+    "DSI_05": [
+        "Verifier permissions, sauvegarde, restauration et politique de cout nul.",
+        "Conserver l'historique d'audit et ne pas effacer les journaux.",
+        "Documenter les risques, les alertes et le statut PASS/FAIL/BLOQUE.",
+    ],
+}
+
 SAFETY = [
     "Ne jamais declarer avoir execute un outil, un test, un modele ou un agent sans preuve.",
     "Aucune nouvelle API IA payante, depense ou abonnement.",
@@ -46,6 +74,7 @@ def role_brief(profile_id: str, mission_kind: str = "", _grid: AgentGrid | None 
         "mission_kind": mission_kind or "UNASSIGNED",
         "mission_goal": MISSION_SPECS[mission_kind]["goal"] if mission_kind else None,
         "professional_quality_gate": QUALITY_BY_LEVEL[p["level"]],
+        "domain_quality_checks": DOMAIN_CHECKS[dsi],
         "instructions": [
             "Utiliser uniquement les informations disponibles et les outils reels autorises.",
             "Travailler sous le role exact defini dans le catalogue MNIN NBDA existant.",
