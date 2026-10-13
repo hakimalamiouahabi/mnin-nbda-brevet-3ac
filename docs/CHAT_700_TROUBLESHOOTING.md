@@ -29,3 +29,6 @@ Le registre d'origine se trouve dans `agents/manifest-700-target.json`. Ce guide
 ## Statut de correction
 
 Cette documentation accompagne la branche de réparation isolée. Ne pas annoncer le script « réparé » sans que le test GitHub Actions correspondant ait effectivement réussi.
+
+### Branche de référence pour cette PR
+La réparation est comparée à `proposal/organization-700`, qui contient le registre d'origine. Les validations GitHub ne doivent pas exiger la fusion d'une autre PR de développement, encore modifiable, pour être déclenchées.
