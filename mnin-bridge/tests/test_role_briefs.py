@@ -36,6 +36,17 @@ class RoleContractTests(unittest.TestCase):
         self.assertEqual(p["mission_kind"],"home_8k_asset_qa")
         self.assertTrue(p["mission_goal"])
 
+    def test_each_domain_has_specific_quality_controls(self):
+        controls={}
+        for i in range(1,6):
+            p=role_brief(f"DSI_{i:02d}")
+            checks=p["domain_quality_checks"]
+            self.assertGreaterEqual(len(checks),3)
+            controls[i]=tuple(checks)
+        self.assertEqual(len(set(controls.values())),5)
+        self.assertIn("resolution native", " ".join(controls[1]))
+        self.assertIn("sauvegarde", " ".join(controls[5]))
+
     def test_only_existing_professional_identifiers_allowed(self):
         with self.assertRaises(ValueError):
             role_brief("NEW_800th_AGENT")
