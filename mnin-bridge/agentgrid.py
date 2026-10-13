@@ -131,7 +131,7 @@ class AgentGrid:
         for idx in range(1, 6):
             did = f"DSI_{idx:02d}"
             member_ids = [p["id"] for p in self.profiles
-                          if p["id"] == did or self.ancestors(p["id"])[0]["id"] == did]
+                          if self._dsi_id(p) == did]
             counts = Counter(self.by_id[k]["level"] for k in member_ids)
             results.append({
                 "dsi": did,
