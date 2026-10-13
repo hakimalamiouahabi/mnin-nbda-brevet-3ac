@@ -14,21 +14,21 @@ TOOLS = (
         "url": "https://github.com/microsoft/playwright", "license": "Apache-2.0",
         "purpose": "Captured browser QA, 21 responsive viewports, console errors",
         "domains": ["browser", "responsive", "functional", "fr_ar_rtl"],
-        "package": "playwright", "execution": "EXISTING_LOCAL_RUNNER",
+        "package": "playwright", "execution": "TESTED_PUBLIC_SYNTHETIC_BROWSER_CI",
     },
     {
         "id": "axe_core", "repository": "dequelabs/axe-core",
         "url": "https://github.com/dequelabs/axe-core", "license": "MPL-2.0",
         "purpose": "Rule-based accessibility violations in local browser QA",
         "domains": ["accessibility", "browser", "fr_ar_rtl"],
-        "package": "axe-core", "execution": "IN_MANUAL_BROWSER_QA_CODE",
+        "package": "axe-core", "execution": "TESTED_PUBLIC_SYNTHETIC_BROWSER_CI",
     },
     {
         "id": "html_validate", "repository": "html-validate/html-validate",
         "url": "https://github.com/html-validate/html-validate", "license": "MIT",
         "purpose": "Offline HTML structure validation",
         "domains": ["html", "accessibility", "quality"],
-        "package": "html-validate", "execution": "IN_MANUAL_BROWSER_QA_WORKFLOW",
+        "package": "html-validate", "execution": "TESTED_PUBLIC_SYNTHETIC_STATIC_CI",
     },
     {
         "id": "lighthouse", "repository": "GoogleChrome/lighthouse",
@@ -42,14 +42,14 @@ TOOLS = (
         "url": "https://github.com/svg/svgo", "license": "MIT",
         "purpose": "SVG optimization on an isolated copy, originals preserved",
         "domains": ["assets", "svg", "design"],
-        "package": "svgo", "execution": "PLANNED_NOT_INSTALLED",
+        "package": "svgo", "execution": "TESTED_PUBLIC_SYNTHETIC_STATIC_CI",
     },
     {
         "id": "sharp", "repository": "lovell/sharp",
         "url": "https://github.com/lovell/sharp", "license": "Apache-2.0",
         "purpose": "Inspect raster image metadata and generate opt-in derivatives only",
         "domains": ["assets", "performance", "images"],
-        "package": "sharp", "execution": "PLANNED_NOT_INSTALLED",
+        "package": "sharp", "execution": "TESTED_PUBLIC_SYNTHETIC_STATIC_CI",
     },
     {
         "id": "wordpress_cs", "repository": "WordPress/WordPress-Coding-Standards",
@@ -64,7 +64,7 @@ TOOLS = (
         "url": "https://github.com/prettier/prettier", "license": "MIT",
         "purpose": "Consistent HTML/CSS/JavaScript formatting (check mode)",
         "domains": ["html", "css", "quality", "design"],
-        "package": "prettier", "execution": "PLANNED_NOT_INSTALLED",
+        "package": "prettier", "execution": "TESTED_PUBLIC_SYNTHETIC_STATIC_CI",
     },
 )
 
@@ -78,7 +78,7 @@ def catalog_open_source_tools(domain: str = "") -> dict:
         raise ValueError("Invalid domain")
     selected = [dict(item) for item in TOOLS if not domain or domain in item["domains"]]
     return {
-        "version": "0.7.0",
+        "version": "0.8.0",
         "count": len(selected),
         "available_domains": sorted({d for item in TOOLS for d in item["domains"]}),
         "upstreams": selected,
