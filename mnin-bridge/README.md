@@ -1,3 +1,19 @@
+# MNIN Bridge Pro — AgentGrid v0.8
+
+**Validation technique : 122 tests Python PASS dans GitHub Actions, 700 profils originaux vérifiés et 700 contrats de rôles générés. Zéro nouvel agent ajouté ; zéro session LLM autonome lancée.**
+
+- Code : `agentgrid.py`, `role_briefs.py`, `agentgrid_proof.py`, `agentgrid/profiles-700.json`.
+- Outils MCP de lecture : statut, recherche, plan de mission, portefeuille et contrat de rôle.
+- Exécution démontrée sans API IA payante : **vérifications déterministes sur des runners hébergés par GitHub**.
+- Preuves : https://github.com/hakimalamiouahabi/mnin-nbda-brevet-3ac/actions/runs/38327072681
+- Compte rendu et limites : `docs/AGENTGRID_700_NO_NEW_INFRA_NO_PAID_AI_API.md`.
+- **Blocage inchangé** : serveur MCP Pro distant non déployé, outils privés non connectés ; aucun passage magique à 700 intelligences autonomes.
+- Restrictions Pro officielles : https://help.openai.com/en/articles/12584461-developer-mode-and-full-mcp-connectors-in-chatgpt
+- Sans serveur personnel oui, sans calcul/infra au sens littéral non : GitHub Actions utilise les machines de GitHub.
+- Les connecteurs actuels GitHub/Cloudflare/WordPress restent accessibles **selon leurs propres autorisations**, sans modifier le WordPress MNIN ni supprimer de données D1.
+
+---
+
 
 # MNIN Bridge v0.5 — Hub de bibliothèques GitHub publiques
 
