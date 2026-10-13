@@ -12,6 +12,7 @@ from quality_lab import inspect_asset
 from open_source_registry import list_upstreams, readiness
 from db_guardian import (audit_sqlite_snapshot, preview_cleanup, wordpress_readonly_plan, github_readonly_plan, cloudflare_readonly_plan, maintenance_guardrails)
 from agentgrid import AgentGrid, roster_status
+from role_briefs import role_brief
 
 mcp = FastMCP("MNIN Bridge", host="127.0.0.1", port=8000, stateless_http=True, json_response=True)
 
@@ -209,6 +210,12 @@ def bridge_agentgrid_plan_mission(mission_kind: str, expert_limit: int = 9) -> d
 def bridge_agentgrid_plan_portfolio(mission_kinds: list[str], expert_limit: int = 6, max_concurrent_jobs: int = 2) -> dict:
     """Plan up to five controlled jobs with existing roles; never spawn 700 LLMs."""
     return AgentGrid().portfolio(mission_kinds, expert_limit, max_concurrent_jobs)
+
+
+@mcp.tool()
+def bridge_agentgrid_role_brief(profile_id: str, mission_kind: str = "") -> dict:
+    """Retrieve an approved existing professional role contract. Not a new AI session."""
+    return role_brief(profile_id, mission_kind)
 
 
 if __name__ == "__main__":
