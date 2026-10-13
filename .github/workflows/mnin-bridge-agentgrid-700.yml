@@ -5,6 +5,8 @@ on:
       - 'mnin-bridge/agentgrid/**'
       - 'mnin-bridge/agentgrid.py'
       - 'mnin-bridge/agentgrid_proof.py'
+      - 'mnin-bridge/role_briefs.py'
+      - 'mnin-bridge/tests/test_role_briefs.py'
       - 'mnin-bridge/tests/test_agentgrid_700.py'
       - 'mnin-bridge/tests/test_agentgrid_proof.py'
       - '.github/workflows/mnin-bridge-agentgrid-700.yml'
@@ -26,6 +28,22 @@ jobs:
           python -m unittest discover -s mnin-bridge/tests -v
       - name: Verify all 700 original role definitions with no AI runtime
         run: python mnin-bridge/agentgrid_proof.py --output mnin-bridge-qa-results/agentgrid-700-report.json
+      - name: Generate contracts for the same 700 existing roles
+        run: python mnin-bridge/role_briefs.py --output mnin-bridge-qa-results/agentgrid-700-role-contracts.json
+      - name: Verify 700 contracts and zero generated agents
+        run: |
+          python - <<'PY'
+          import json
+          p='mnin-bridge-qa-results/agentgrid-700-role-contracts.json'
+          d=json.load(open(p, encoding='utf-8'))
+          assert d['total_existing_roles']==700
+          assert len(d['contracts'])==700
+          assert len({x['role_id'] for x in d['contracts']})==700
+          assert d['additional_roles_created']==0
+          assert d['individual_ai_agents_running']==0
+          assert all(c['execution']=='ROLE_BRIEF_ONLY' for c in d['contracts'])
+          print('AGENTGRID_700_EXISTING_ROLE_BRIEFS_PASS')
+          PY
       - name: Independently verify evidence and no false AI agent claims
         run: |
           python - <<'PY'
@@ -50,6 +68,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: mnin-agentgrid-700-verified-role-plans
-          path: mnin-bridge-qa-results/agentgrid-700-report.json
+          path: |
+            mnin-bridge-qa-results/agentgrid-700-report.json
+            mnin-bridge-qa-results/agentgrid-700-role-contracts.json
           if-no-files-found: warn
           retention-days: 7
