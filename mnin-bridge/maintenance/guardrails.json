@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0",
+  "mode": "READ_ONLY",
+  "config_effect": "DESIGN_GUARDRAILS_ONLY_NOT_AN_EXECUTOR",
+  "scope": {
+    "cloudflare_d1_allowlist": [
+      "mnin-nbda-staging"
+    ],
+    "wordpress_allowlist": [
+      "intellego718821273.wpcomstaging.com"
+    ],
+    "github_allowlist": [
+      "hakimalamiouahabi/mnin-nbda-brevet-3ac"
+    ],
+    "external_projects_excluded": true
+  },
+  "risk_matrix": {
+    "PROTECTED": [
+      "children",
+      "users",
+      "accounts",
+      "payments",
+      "orders",
+      "finance",
+      "sessions",
+      "tokens",
+      "audit",
+      "security",
+      "entitlements",
+      "subscriptions"
+    ],
+    "REQUIRES_REVIEW": [
+      "expired_cache",
+      "unreferenced_asset",
+      "expired_artifact",
+      "merged_branch"
+    ],
+    "NEVER_BLIND_DELETE": [
+      "old_educational_content",
+      "student_progress",
+      "versions",
+      "legal_logs",
+      "payments",
+      "authentication"
+    ]
+  },
+  "guardrails": {
+    "dry_run_default": true,
+    "every_write_requires_independent_approval": true,
+    "backup_and_restore_preflight_required": true,
+    "restore_point_required": true,
+    "separate_repository_clone_required_for_git_history_work": true,
+    "permitted_target": "STAGING_ONLY_WHEN_VERIFIED",
+    "max_parallel_write_workers": 0,
+    "max_rows_per_batch_if_approved_later": 100,
+    "max_percent_of_table_per_batch_if_approved_later": 1,
+    "max_runtime_seconds_per_batch_if_approved_later": 120,
+    "minimum_artifact_retention_days_proposed": 90,
+    "minimum_deleted_cache_age_days_proposed": 30,
+    "max_incremental_cost_eur": 0,
+    "prevent_live_database_commands": [
+      "DELETE",
+      "TRUNCATE",
+      "DROP",
+      "ALTER",
+      "UPDATE",
+      "VACUUM",
+      "REINDEX",
+      "PRAGMA writable_schema"
+    ],
+    "prevent_git_operations": [
+      "push --force",
+      "push --mirror",
+      "delete protected branches",
+      "filter-repo on only clone"
+    ],
+    "prevent_wordpress_commands": [
+      "wp db clean",
+      "wp db drop",
+      "wp db reset",
+      "wp transient delete --all"
+    ],
+    "stop_on_unknown_schema": true,
+    "stop_on_foreign_key_dependencies": true,
+    "stop_on_missing_backup": true,
+    "stop_on_missing_entitlement_proof": true,
+    "block_exports_of_child_or_personal_data": true,
+    "redact_secrets_in_audit_logs": true,
+    "retain_execution_evidence": true
+  },
+  "phase_gates": {
+    "inventory": {
+      "allowed": true,
+      "readonly": true
+    },
+    "dry_run": {
+      "allowed": true,
+      "readonly": true
+    },
+    "backup": {
+      "allowed": false,
+      "reason": "Backup destinations and quotas must be authorized"
+    },
+    "execute_staging": {
+      "allowed": false,
+      "reason": "No destructive executor implemented"
+    },
+    "execute_production": {
+      "allowed": false,
+      "reason": "Separate owner approval and recovery proof required"
+    }
+  },
+  "notes": [
+    "These are proposed safety ceilings, not data retention or compliance requirements.",
+    "Cloudflare D1 Time Travel retention depends on plan and version.",
+    "Does not extend ChatGPT Pro MCP custom write permissions.",
+    "No automatic cleanup of other Cloudflare databases or unrelated sites."
+  ]
+}
