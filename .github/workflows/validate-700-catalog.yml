@@ -5,6 +5,7 @@ on:
     paths:
       - agents/manifest-700-target.json
       - scripts/validate_700_catalog.py
+      - scripts/route_700_catalog.py
       - .github/workflows/validate-700-catalog.yml
 permissions:
   contents: read
@@ -17,3 +18,5 @@ jobs:
         uses: actions/checkout@v4
       - name: Verifier les 700 profils sans API ni ecriture
         run: python3 scripts/validate_700_catalog.py
+      - name: Verifier le routage des profils existants
+        run: python3 scripts/route_700_catalog.py --mission "WordPress" --count 3
