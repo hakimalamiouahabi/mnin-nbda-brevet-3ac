@@ -27,6 +27,24 @@ EXPIRY_COLUMNS = {"expires", "expires_at", "expires_on", "expiresat",
 ALLOWED_REPO = re.compile(r"^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$")
 
 
+def maintenance_guardrails() -> dict:
+    """Read reviewed safety ceilings. An editable JSON file NEVER enables execution."""
+    path=Path(__file__).with_name("maintenance") / "guardrails.json"
+    rule=json.loads(path.read_text(encoding="utf-8"))
+    if rule.get("schema_version") != "1.0" or rule.get("mode") != "READ_ONLY":
+        raise RuntimeError("Unsupported or write-enabled DBGuardian guardrails")
+    stages=rule.get("phase_gates",{})
+    for key in ("backup","execute_staging","execute_production"):
+        if stages.get(key,{}).get("allowed") is not False:
+            raise RuntimeError("Unexpected mutable DBGuardian phase enabled")
+    g=rule.get("guardrails",{})
+    if g.get("max_parallel_write_workers") != 0 or g.get("dry_run_default") is not True:
+        raise RuntimeError("Read-only maintenance constraints missing")
+    if g.get("every_write_requires_independent_approval") is not True:
+        raise RuntimeError("Owner authorization requirement missing")
+    return rule
+
+
 def _audit_root() -> Path:
     root = os.getenv("MNIN_DB_AUDIT_ROOT", "")
     if not root:
