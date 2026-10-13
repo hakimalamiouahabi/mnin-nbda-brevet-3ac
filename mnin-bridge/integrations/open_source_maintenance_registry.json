@@ -1,0 +1,89 @@
+{
+  "schema_version": "1.0",
+  "scope": "MNIN DBGuardian read-only planning and future sandbox tools",
+  "github_repositories_public_checked": true,
+  "do_not_assume_installed": true,
+  "wordpress_changes_allowed": false,
+  "cloudflare_d1_writes_allowed": false,
+  "github_history_rewrites_allowed": false,
+  "registry": [
+    {
+      "id": "cloudflare/workers-sdk",
+      "url": "https://github.com/cloudflare/workers-sdk",
+      "license_claim_to_verify": "MIT OR Apache-2.0",
+      "role": "Wrangler CLI: D1 export, inspection, Time Travel checkpoint",
+      "adapter": "cloudflare_readonly_plan",
+      "status": "CATALOGUED_FOR_RUNNER"
+    },
+    {
+      "id": "simonw/sqlite-utils",
+      "url": "https://github.com/simonw/sqlite-utils",
+      "license_claim_to_verify": "Apache-2.0",
+      "role": "Inspect and profile SQLite snapshots locally with a read-only permission gate",
+      "adapter": "db_guardian.audit_sqlite_snapshot",
+      "status": "INTEGRATION_DESIGNED_NOT_INSTALLED"
+    },
+    {
+      "id": "simonw/datasette",
+      "url": "https://github.com/simonw/datasette",
+      "license_claim_to_verify": "Apache-2.0",
+      "role": "Local, isolated read-only dashboard on a sanitized SQLite snapshot",
+      "adapter": "FUTURE",
+      "status": "CATALOGUED"
+    },
+    {
+      "id": "github/git-sizer",
+      "url": "https://github.com/github/git-sizer",
+      "license_claim_to_verify": "MIT",
+      "role": "Identify oversized Git objects and history problems without rewriting refs",
+      "adapter": "github_readonly_plan",
+      "status": "CATALOGUED"
+    },
+    {
+      "id": "newren/git-filter-repo",
+      "url": "https://github.com/newren/git-filter-repo",
+      "license_claim_to_verify": "MIT",
+      "role": "Proposed history rewrite tool, high-risk explicit approval and isolated clone only",
+      "adapter": "FORBIDDEN_AUTOMATIC",
+      "status": "CATALOGUED_HIGH_RISK"
+    },
+    {
+      "id": "gitleaks/gitleaks",
+      "url": "https://github.com/gitleaks/gitleaks",
+      "license_claim_to_verify": "MIT",
+      "role": "Scan repository clone for possible exposed secrets, redact outputs",
+      "adapter": "FUTURE",
+      "status": "CATALOGUED"
+    },
+    {
+      "id": "cli/cli",
+      "url": "https://github.com/cli/cli",
+      "license_claim_to_verify": "MIT",
+      "role": "GitHub CLI to query stale branch and Actions artifact inventories in CI",
+      "adapter": "github_readonly_plan",
+      "status": "CATALOGUED"
+    },
+    {
+      "id": "wp-cli/db-command",
+      "url": "https://github.com/wp-cli/db-command",
+      "license_claim_to_verify": "MIT",
+      "role": "WordPress DB check and size, no clean/drop/reset automatic",
+      "adapter": "wordpress_readonly_plan",
+      "status": "CATALOGUED"
+    },
+    {
+      "id": "OpenRefine/OpenRefine",
+      "url": "https://github.com/OpenRefine/OpenRefine",
+      "license_claim_to_verify": "BSD-3-Clause",
+      "role": "Review transformed offline tabular exports, never live site changes",
+      "adapter": "FUTURE",
+      "status": "CATALOGUED"
+    }
+  ],
+  "restrictions": [
+    "No automatic purge or VACUUM",
+    "No role-based bypass of platform MCP Pro restrictions",
+    "No credentials or original data exported to public GitHub",
+    "All real execution requires independent platform permissions"
+  ]
+}
