@@ -1,0 +1,62 @@
+name: MNIN Bridge - DBGuardian dry-run assurance
+on:
+  pull_request:
+    paths:
+      - 'mnin-bridge/**'
+      - '.github/workflows/mnin-bridge-dbguardian.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  sqlite-read-only:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Compile and run full Python tests
+        run: |
+          python -m compileall -q mnin-bridge
+          python -m unittest discover -s mnin-bridge/tests -v
+      - name: Verify actual OSS sqlite-utils on fake data
+        run: |
+          python -m pip install --disable-pip-version-check 'sqlite-utils>=3.38,<5'
+          python - <<'PY'
+          import sqlite3, tempfile
+          from pathlib import Path
+          root=Path(tempfile.gettempdir())
+          path=root/'mnin-dbguardian-synthetic-fixture.sqlite3'
+          with sqlite3.connect(path) as conn:
+              conn.execute('CREATE TABLE IF NOT EXISTS synthetic_demo (id INTEGER PRIMARY KEY,expires_at INT)')
+              conn.execute('DELETE FROM synthetic_demo')
+              conn.execute('INSERT INTO synthetic_demo(expires_at) VALUES (100)')
+          print('SAFE_SYNTHETIC_DB_CREATED')
+          PY
+          sqlite-utils tables /tmp/mnin-dbguardian-synthetic-fixture.sqlite3 --counts
+          python - <<'PY'
+          import os,tempfile
+          from db_guardian import audit_sqlite_snapshot
+          os.environ['MNIN_DB_AUDIT_ROOT']=tempfile.gettempdir()
+          r=audit_sqlite_snapshot('mnin-dbguardian-synthetic-fixture.sqlite3')
+          assert r['table_count']==1 and r['write_operations_performed']==0
+          assert r['integrity_quick_check']=='ok'
+          print('DBGUARDIAN_SYNTHETIC_AUDIT_PASS')
+          PY
+        env:
+          PYTHONPATH: mnin-bridge
+      - name: Verify manifest does not claim real activation
+        run: |
+          python - <<'PY'
+          import json
+          p='mnin-bridge/integrations/open_source_maintenance_registry.json'
+          m=json.load(open(p))
+          assert len(m['registry'])==9
+          assert not m['wordpress_changes_allowed']
+          assert not m['cloudflare_d1_writes_allowed']
+          assert not m['github_history_rewrites_allowed']
+          print('DBGUARDIAN_REGISTRY_PASS')
+          PY
+      - name: No destructive operations
+        run: echo 'This job only inspects synthetic SQLite fixture. No Cloudflare, WP or GitHub writes.'
