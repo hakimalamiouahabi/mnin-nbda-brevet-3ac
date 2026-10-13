@@ -79,5 +79,8 @@ const result = {
   disclaimer: 'Does not attest production quality, security, WCAG compliance or live WordPress.'
 };
 fs.writeFileSync(path.join(output, 'oss-tools-report.json'), JSON.stringify(result, null, 2));
-console.log(JSON.stringify({ passed: result.passed, failed: result.failed, checks: checks.map(x => ({ id: x.id, status: x.status })) }));
+console.log(JSON.stringify({
+  passed: result.passed, failed: result.failed,
+  checks: checks.map(x => ({ id: x.id, status: x.status, ...(x.status === 'FAIL' ? { error: x.error } : {}) }))
+}));
 if (result.failed) process.exitCode = 1;
