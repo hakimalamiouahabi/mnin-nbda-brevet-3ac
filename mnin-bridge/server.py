@@ -10,7 +10,7 @@ from mission_control import MissionStore, capability_catalog, validate_request
 from access_policy import public_policy_summary
 from quality_lab import inspect_asset
 from open_source_registry import list_upstreams, readiness
-from db_guardian import (audit_sqlite_snapshot, preview_cleanup, wordpress_readonly_plan, github_readonly_plan, cloudflare_readonly_plan)
+from db_guardian import (audit_sqlite_snapshot, preview_cleanup, wordpress_readonly_plan, github_readonly_plan, cloudflare_readonly_plan, maintenance_guardrails)
 
 mcp = FastMCP("MNIN Bridge", host="127.0.0.1", port=8000, stateless_http=True, json_response=True)
 
@@ -178,6 +178,12 @@ def bridge_github_cleanup_plan(repository: str) -> dict:
 def bridge_cloudflare_cleanup_plan(database: str) -> dict:
     """Show Cloudflare D1 cleanup audit steps; no live SQL is executed by this tool."""
     return cloudflare_readonly_plan(database)
+
+
+@mcp.tool()
+def bridge_maintenance_safety_limits() -> dict:
+    """Read fail-closed D1, GitHub and WordPress cleanup safety ceilings."""
+    return maintenance_guardrails()
 
 
 if __name__ == "__main__":
