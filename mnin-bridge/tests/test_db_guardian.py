@@ -10,7 +10,7 @@ from unittest.mock import patch
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from db_guardian import (
     audit_sqlite_snapshot, preview_cleanup, wordpress_readonly_plan,
-    github_readonly_plan, cloudflare_readonly_plan,
+    github_readonly_plan, cloudflare_readonly_plan, maintenance_guardrails,
 )
 
 
@@ -142,6 +142,26 @@ class DBGuardianTests(unittest.TestCase):
     def test_cloudflare_bad_database_denied(self):
         with self.assertRaises(ValueError):
             cloudflare_readonly_plan("../production")
+
+    def test_guardrails_have_staging_only_scope(self):
+        p=maintenance_guardrails()
+        self.assertEqual(p["mode"],"READ_ONLY")
+        self.assertEqual(p["scope"]["cloudflare_d1_allowlist"],["mnin-nbda-staging"])
+        self.assertTrue(p["scope"]["external_projects_excluded"])
+
+    def test_guardrails_disallow_deleting_and_parallel_writes(self):
+        p=maintenance_guardrails()
+        self.assertEqual(p["guardrails"]["max_parallel_write_workers"],0)
+        self.assertTrue(p["guardrails"]["every_write_requires_independent_approval"])
+        self.assertFalse(p["phase_gates"]["execute_staging"]["allowed"])
+        self.assertFalse(p["phase_gates"]["execute_production"]["allowed"])
+
+    def test_guardrails_require_restorable_backup(self):
+        p=maintenance_guardrails()
+        self.assertTrue(p["guardrails"]["backup_and_restore_preflight_required"])
+        self.assertTrue(p["guardrails"]["stop_on_missing_backup"])
+        self.assertIn("wp db drop",p["guardrails"]["prevent_wordpress_commands"])
+
 
 if __name__=="__main__":
     unittest.main()
