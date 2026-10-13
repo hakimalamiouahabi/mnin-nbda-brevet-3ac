@@ -10,6 +10,7 @@ from mission_control import MissionStore, capability_catalog, validate_request
 from access_policy import public_policy_summary
 from quality_lab import inspect_asset
 from open_source_registry import list_upstreams, readiness
+from db_guardian import (audit_sqlite_snapshot, preview_cleanup, wordpress_readonly_plan, github_readonly_plan, cloudflare_readonly_plan, maintenance_guardrails)
 
 mcp = FastMCP("MNIN Bridge", host="127.0.0.1", port=8000, stateless_http=True, json_response=True)
 
@@ -23,7 +24,7 @@ def _require_verified_pro_standard_chat() -> None:
 def bridge_status() -> dict:
     """Read actual readiness. Does not claim agents are active."""
     return {
-        "version": "0.5.0-prototype",
+        "version": "0.7.0-prototype",
         "repository": github_repo(),
         "asset_directory_configured": bool(os.getenv("MNIN_ASSET_ROOT")),
         "github_credentials_configured": bool(os.getenv("MNIN_GITHUB_TOKEN")),
@@ -146,6 +147,43 @@ def bridge_open_source_catalog(domain: str = "") -> dict:
 def bridge_open_source_readiness() -> dict:
     """Report registered vs actually connected OSS components without fabricating readiness."""
     return readiness()
+
+
+@mcp.tool()
+def bridge_sqlite_snapshot_audit(filename: str) -> dict:
+    """Audit an authorized offline SQLite snapshot; never inspect or change row-level data."""
+    _require_verified_pro_standard_chat()
+    return audit_sqlite_snapshot(filename)
+
+
+@mcp.tool()
+def bridge_cleanup_dry_run(context: str, candidates: list[dict]) -> dict:
+    """Prepare a NON-EXECUTING cleanup plan for D1, WordPress or GitHub."""
+    return preview_cleanup(context, candidates)
+
+
+@mcp.tool()
+def bridge_wordpress_cleanup_plan() -> dict:
+    """Show allowed read-only WP-CLI checks and blocked cleanup commands."""
+    return wordpress_readonly_plan()
+
+
+@mcp.tool()
+def bridge_github_cleanup_plan(repository: str) -> dict:
+    """Show GitHub cleanup audit steps without rewriting history or deleting branches."""
+    return github_readonly_plan(repository)
+
+
+@mcp.tool()
+def bridge_cloudflare_cleanup_plan(database: str) -> dict:
+    """Show Cloudflare D1 cleanup audit steps; no live SQL is executed by this tool."""
+    return cloudflare_readonly_plan(database)
+
+
+@mcp.tool()
+def bridge_maintenance_safety_limits() -> dict:
+    """Read fail-closed D1, GitHub and WordPress cleanup safety ceilings."""
+    return maintenance_guardrails()
 
 
 if __name__ == "__main__":
