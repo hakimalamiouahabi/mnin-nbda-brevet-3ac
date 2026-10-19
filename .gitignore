@@ -1,0 +1,9 @@
+# Confidentialité des captures et sessions MNIN NBDA
+.mnin-private/
+.venv/
+reports/private/
+playwright-report/
+test-results/
+__pycache__/
+*.pyc
+reference/mes-objectifs-reference.png
