@@ -1,0 +1,37 @@
+name: MNIN Student Privacy & Progress
+on:
+  pull_request:
+    paths:
+      - 'wordpress/plugins/mnin-progress-quality/**'
+      - 'tests/progress_privacy_tests.php'
+      - '.github/workflows/mnin-privacy-progress.yml'
+  workflow_dispatch:
+jobs:
+  php-checks:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: PHP syntax
+        run: |
+          php -l wordpress/plugins/mnin-progress-quality/mnin-progress-quality.php
+          php -l wordpress/plugins/mnin-progress-quality/reception.php
+          php -l tests/progress_privacy_tests.php
+      - name: WordPress-mocked unit tests
+        run: php tests/progress_privacy_tests.php
+      - name: Build installable WordPress ZIP
+        run: |
+          mkdir -p dist/mnin-progress-quality
+          cp wordpress/plugins/mnin-progress-quality/mnin-progress-quality.php dist/mnin-progress-quality/
+          cp wordpress/plugins/mnin-progress-quality/readme.txt dist/mnin-progress-quality/
+          cp wordpress/plugins/mnin-progress-quality/reception.php dist/mnin-progress-quality/
+          cd dist
+          zip -q -r mnin-progress-quality-1.0.3.zip mnin-progress-quality
+          unzip -t mnin-progress-quality-1.0.3.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: mnin-progress-quality-1.0.3-installable
+          path: dist/mnin-progress-quality-1.0.3.zip
+          if-no-files-found: error
+          retention-days: 14
