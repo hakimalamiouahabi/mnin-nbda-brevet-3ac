@@ -16,6 +16,7 @@ jobs:
       - name: PHP syntax
         run: |
           php -l wordpress/plugins/mnin-progress-quality/mnin-progress-quality.php
+          php -l wordpress/plugins/mnin-progress-quality/reception.php
           php -l tests/progress_privacy_tests.php
       - name: WordPress-mocked unit tests
         run: php tests/progress_privacy_tests.php
@@ -24,6 +25,7 @@ jobs:
           mkdir -p dist/mnin-progress-quality
           cp wordpress/plugins/mnin-progress-quality/mnin-progress-quality.php dist/mnin-progress-quality/
           cp wordpress/plugins/mnin-progress-quality/readme.txt dist/mnin-progress-quality/
+          cp wordpress/plugins/mnin-progress-quality/reception.php dist/mnin-progress-quality/
           cd dist
           zip -q -r mnin-progress-quality-1.0.3.zip mnin-progress-quality
           unzip -t mnin-progress-quality-1.0.3.zip
